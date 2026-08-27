@@ -169,6 +169,43 @@ footer b{color:var(--tinta)}
 .oculto{display:none!important}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 @media(min-width:700px){.campo{grid-template-columns:92px 1fr}}
+
+/* ---------- diagramas ---------- */
+.fig-palco svg{width:100%;height:auto;display:block}
+.fig-palco{background:#FFFDF7;padding:10px}
+.o1{fill:#F3ECDD;stroke:#3A3228;stroke-width:1.6;stroke-linejoin:round}
+.o2{fill:#E6D9C2;stroke:#3A3228;stroke-width:1.4;stroke-linejoin:round}
+.o3{fill:#D3C3A4;stroke:#3A3228;stroke-width:1.4;stroke-linejoin:round}
+.osso-fundo{fill:#EFE7D8;stroke:#3A3228;stroke-width:1.4}
+.cav{fill:#4A4238;stroke:#3A3228;stroke-width:1.2}
+.ln{fill:none;stroke:#3A3228;stroke-width:1.3;stroke-linecap:round}
+.ln2{fill:none;stroke:#3A3228;stroke-width:2.2;stroke-linecap:round}
+.ln3{fill:none;stroke:#8A7A5E;stroke-width:1.3;stroke-dasharray:5 4}
+.linha-corte{fill:none;stroke:#3A3228;stroke-width:1.2;stroke-dasharray:7 5}
+.pele{fill:#F7EFE6;stroke:#3A3228;stroke-width:1.4}
+.tendao{fill:#EFE6D3;stroke:#7A3A33;stroke-width:1.5}
+.m1{fill:#C4695F;stroke:#77362F;stroke-width:1.3;stroke-linejoin:round}
+.m1e{fill:none;stroke:#C4695F;stroke-width:11}
+.m2{fill:#A85248;stroke:#68302A;stroke-width:1.2;stroke-linejoin:round}
+.m3{fill:#8C4038;stroke:#5A2822;stroke-width:1.2;stroke-linejoin:round}
+.m4{fill:#D48D80;stroke:#77362F;stroke-width:1.1;stroke-linejoin:round}
+.m5{fill:#B85E54;stroke:#68302A;stroke-width:1.2;stroke-linejoin:round}
+.marc circle{fill:#1F5D4C;stroke:#fff;stroke-width:2}
+.marc text{fill:#fff;font:700 11px "JetBrains Mono",ui-monospace,monospace;text-anchor:middle}
+.marc.ativo circle{fill:#B8433A}
+.treino{border:1px solid var(--linha);background:var(--papel);color:var(--tinta);padding:6px 11px;
+  border-radius:8px;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
+.treino[aria-pressed="true"]{background:var(--mostarda);border-color:var(--mostarda);color:#22190A}
+.legenda{list-style:none;margin:0;padding:11px 13px;display:grid;gap:7px;border-top:1px solid var(--linha)}
+.legenda li{display:grid;grid-template-columns:26px 1fr;gap:9px;align-items:baseline;cursor:pointer}
+.legenda li b{font-family:"JetBrains Mono",monospace;font-size:11px;color:#fff;background:var(--verde);
+  border-radius:50%;width:22px;height:22px;display:grid;place-items:center;font-weight:700}
+.lg-nome{font-size:14px;font-weight:600}
+.lg-nota{grid-column:2;font-size:12.5px;color:var(--cinza);margin-top:-2px}
+.fig.treinando .lg-nome{color:transparent;background:var(--linha);border-radius:6px}
+.fig.treinando .lg-nota{display:none}
+.fig.treinando li.revelado .lg-nome{color:var(--verde);background:none}
+.fig.treinando li.revelado .lg-nota{display:block}
 </style>
 </head>
 <body>
@@ -196,7 +233,7 @@ footer b{color:var(--tinta)}
 <main id="main"></main>
 
 <footer>
-  <p><b>Imagens:</b> carregadas do Wikimedia Commons (domínio público / Creative Commons). Precisa de internet na primeira abertura de cada seção; o texto funciona offline.</p>
+  <p><b>Diagramas:</b> desenhados para este material, com nomenclatura em português (Terminologia Anatômica). Toque em “Ocultar nomes” para treinar a identificação e toque em cada número para conferir. Tudo funciona offline.</p>
   <p><b>Referências do roteiro:</b> Moore, Dalley &amp; Agur — <i>Anatomia orientada para a clínica</i>, 8ª ed.; Netter — <i>Atlas de Anatomia Humana</i>, 7ª ed.</p>
 </footer>
 
@@ -234,19 +271,7 @@ const SECOES=[
 {
  id:"cranio", n:"01", titulo:"Ossos do crânio", tag:"ossea",
  resumo:"Neurocrânio (8 ossos, a caixa) + viscerocrânio (14 ossos, a face). Na bancada, oriente a peça por três referências antes de qualquer coisa: órbita, meato acústico externo e forame magno.",
- figuras:[
-  {t:"Crânio — vista lateral", file:"705 Lateral View of Skull-01.jpg", q:"skull lateral view labeled bones", olhar:"Ache o meato acústico externo. Atrás dele: mastoide. À frente e abaixo: fossa mandibular e arco zigomático. Acima e à frente: ptério."},
-  {t:"Crânio — vista anterior", q:"skull anterior view labeled bones anatomy", olhar:"Margem supraorbital, órbita, abertura piriforme do nariz, maxila e mandíbula com seus processos alveolares."},
-  {t:"Crânio — vista superior e suturas", q:"skull superior view sutures coronal sagittal lambdoid", olhar:"Sutura coronal cruzando a sagital = bregma. Sagital com a lambdóidea = lambda."},
-  {t:"Base do crânio — vistas interna e externa", file:"707 Superior-Inferior View of Skull Base-01.jpg", q:"skull base inferior view labeled foramen magnum", olhar:"Forame magno no centro, côndilos occipitais nas laterais, processos estiloide e mastoide, palato duro à frente."},
-  {t:"Fossas cranianas (interior da base)", q:"cranial fossae interior skull base sella turcica", olhar:"Degraus de três andares: fossa anterior (crista galli e lâmina cribriforme), média (sela túrcica) e posterior (forame magno)."},
-  {t:"Osso frontal isolado", q:"frontal bone anatomy isolated labeled", olhar:"Glabela na linha média, margens supraorbitais nas bordas e a incisura supraorbital no terço medial."},
-  {t:"Osso temporal isolado", q:"temporal bone anatomy isolated labeled", olhar:"As quatro partes (escamosa, timpânica, mastóidea, petrosa) e os três processos: zigomático, estiloide e mastoide."},
-  {t:"Osso esfenoide isolado", q:"sphenoid bone superior view labeled", olhar:"O 'morcego': asas menores à frente, asas maiores atrás e a sela túrcica bem no meio do corpo."},
-  {t:"Osso etmoide isolado", q:"ethmoid bone anatomy labeled crista galli", olhar:"Crista galli apontando para cima, lâmina cribriforme peneirada e as conchas superior e média penduradas."},
-  {t:"Mandíbula", q:"mandible bone lateral view labeled coronoid condylar", olhar:"Corpo em ferradura, ramo subindo, ângulo no canto e os dois processos separados pela incisura mandibular."},
-  {t:"Cavidade nasal e conchas", q:"nasal cavity lateral wall conchae labeled", olhar:"Três conchas empilhadas: superior e média são do etmoide; a inferior é osso independente e a maior."}
- ],
+ diagramas:["cranio-lateral","cranio-anterior","cranio-base","esfenoide","mandibula"],
  macete:"22 ossos: 8 no neurocrânio (frontal, occipital, esfenoide, etmoide + 2 parietais e 2 temporais) e 14 na face. Só a mandíbula se move — o resto está travado por suturas.",
  armadilhas:["Concha nasal superior e média pertencem ao ETMOIDE; a inferior é um osso próprio e independente.","O processo zigomático do temporal e o processo temporal do zigomático são coisas diferentes — juntos formam o arco.","O ptério não é um osso, é um encontro de quatro ossos.","Nem todo forame grande da base é o magno: os forames jugular e oval também são amplos — o magno é o central e o maior."],
  grupos:[
@@ -306,12 +331,7 @@ const SECOES=[
 {
  id:"face", n:"02", titulo:"Músculos da face e da mastigação", tag:"musc",
  resumo:"Dois grupos com lógicas opostas. A mímica se insere na PELE, é fina, superficial e inervada pelo nervo facial (VII). A mastigação move a MANDÍBULA, é espessa, potente e inervada pelo trigêmeo (V3).",
- figuras:[
-  {t:"Músculos da expressão facial", q:"muscles of facial expression head anatomy labeled", olhar:"Repare que quase todos convergem para o orbicular da boca ou para a órbita — e que nenhum termina em osso na outra ponta."},
-  {t:"Face — vista lateral superficial", q:"facial muscles lateral view platysma risorius", olhar:"O platisma é a folha mais superficial descendo para o pescoço; o risório corre horizontal em direção ao canto da boca."},
-  {t:"Temporal e masseter", q:"temporalis masseter muscle mastication anatomy", olhar:"O temporal é um leque que passa POR DENTRO do arco zigomático; o masseter é um bloco que vem POR FORA do arco."},
-  {t:"Pterigóideos medial e lateral", q:"medial lateral pterygoid muscle anatomy dissection", olhar:"O lateral é o único com fibras horizontais, indo para o colo do côndilo; o medial desce em espelho ao masseter até o ângulo."}
- ],
+ diagramas:["face-mimica","face-mastigacao"],
  macete:"Terminou na PELE e faz careta → mímica → nervo facial (VII). Terminou na MANDÍBULA e faz força → mastigação → trigêmeo (V3).",
  tabelas:[{
   titulo:"Mímica × mastigação",
@@ -352,13 +372,7 @@ const SECOES=[
 {
  id:"torax-ossos", n:"03", titulo:"Ossos do tórax", tag:"ossea",
  resumo:"Caixa formada por 12 pares de costelas, 12 vértebras torácicas e o esterno, fechada pelas cartilagens costais. A referência que organiza tudo é o ângulo do esterno.",
- figuras:[
-  {t:"Caixa torácica completa", q:"rib cage thorax skeleton anterior view labeled", olhar:"Conte de cima para baixo: 1–7 chegam ao esterno com cartilagem própria, 8–10 se apoiam na de cima, 11 e 12 param no meio do caminho."},
-  {t:"Costela típica", q:"typical rib anatomy head neck tubercle angle labeled", olhar:"Da coluna para a frente: cabeça (2 facetas) → colo → tubérculo (1 faceta) → ângulo → corpo."},
-  {t:"Costela — face interna e sulco costal", q:"rib costal groove internal surface anatomy", olhar:"Vire a costela: a calha fica na borda inferior, por dentro. É onde correm veia, artéria e nervo."},
-  {t:"Esterno", file:"", q:"sternum manubrium body xiphoid process labeled", olhar:"A espada: manúbrio (cabo), corpo (lâmina), xifoide (ponta). O degrau entre cabo e lâmina é o ângulo do esterno."},
-  {t:"Articulações costovertebrais", q:"costovertebral joint rib vertebra articulation anatomy", olhar:"A cabeça encaixa entre DUAS vértebras; o tubérculo encaixa no processo transverso de UMA."}
- ],
+ diagramas:["torax-caixa","costela","esterno"],
  macete:"Costelas 1–7 verdadeiras (cartilagem própria até o esterno) · 8–10 falsas (unem-se à cartilagem de cima, formando o arco costal) · 11–12 flutuantes (terminam livres na parede).",
  tabelas:[{
   titulo:"Classificação das costelas",
@@ -396,12 +410,7 @@ const SECOES=[
 {
  id:"torax-musc", n:"04", titulo:"Músculos do tórax", tag:"musc",
  resumo:"Dois papéis diferentes: uns partem do tórax para mover o membro superior (peitorais, serrátil); outros movem a própria caixa para respirar (intercostais, diafragma).",
- figuras:[
-  {t:"Peitoral maior e menor", q:"pectoralis major minor muscle anatomy labeled", olhar:"O peitoral menor só aparece quando o maior é rebatido — procure o gancho no processo coracoide."},
-  {t:"Serrátil anterior", q:"serratus anterior muscle anatomy digitations", olhar:"As digitações em dentes de serra na lateral das costelas, indo por baixo da escápula."},
-  {t:"Intercostais", q:"external internal intercostal muscles thoracic wall", olhar:"Compare a direção: os externos descem para frente; os internos cruzam em X com eles."},
-  {t:"Diafragma — vista inferior", q:"thoracic diaphragm inferior view crura hiatus labeled", olhar:"Centro tendíneo claro no meio, pilares descendo pela coluna e os três hiatos: cava, esôfago e aorta."}
- ],
+ diagramas:["torax-musculos","diafragma"],
  macete:"Inspiração tranquila = diafragma (cerca de 70%) + intercostais externos. Expiração tranquila = passiva, pelo recuo elástico. Forçada = abdominais + intercostais internos.",
  tabelas:[{
   titulo:"Hiatos do diafragma",
@@ -428,16 +437,7 @@ const SECOES=[
 {
  id:"coluna", n:"05", titulo:"Coluna vertebral", tag:"ossea",
  resumo:"33 vértebras: 7 cervicais, 12 torácicas, 5 lombares, 5 sacrais fundidas e 4 coccígeas. Na prova, identifique a REGIÃO pelo detalhe exclusivo antes de olhar qualquer outra coisa.",
- figuras:[
-  {t:"Coluna vertebral inteira", file:"Vertebral column.png", q:"vertebral column lateral view regions curvatures labeled", olhar:"As quatro curvaturas alternadas e a mudança de tamanho dos corpos, que crescem de cima para baixo."},
-  {t:"Vértebra típica", file:"718 Vertebra.jpg", q:"typical vertebra superior view labeled body pedicle lamina", olhar:"Corpo à frente, forame no meio, pedículos e lâminas fechando o arco, quatro processos articulares nos cantos."},
-  {t:"Atlas (C1)", q:"atlas vertebra C1 superior view labeled", olhar:"Não tem corpo nem espinhoso: só dois arcos e duas massas laterais com facetas côncavas em cima."},
-  {t:"Áxis (C2)", q:"axis vertebra C2 dens odontoid process labeled", olhar:"O dente subindo do corpo — é o único osso do corpo com esse formato."},
-  {t:"Vértebra cervical típica", q:"cervical vertebra superior view transverse foramen bifid", olhar:"Os dois forames transversários e o espinhoso bifurcado em garfo."},
-  {t:"Vértebra torácica", q:"thoracic vertebra lateral superior view costal facets", olhar:"Meias-facetas nas laterais do corpo, faceta na ponta do processo transverso e espinhoso longo apontando para baixo."},
-  {t:"Vértebra lombar", q:"lumbar vertebra superior view mammillary process labeled", olhar:"Corpo grande em rim, espinhoso quadrado como uma machadinha, transversos finos e longos."},
-  {t:"Sacro e cóccix", q:"sacrum coccyx anterior posterior view labeled", olhar:"Frente: forames lisos e promontório. Atrás: crista mediana e hiato sacral entre os cornos."}
- ],
+ diagramas:["coluna-geral","vertebra-tipica","vertebra-cervical","vertebra-toracica","vertebra-lombar","atlas-axis","sacro"],
  macete:"Fluxo de identificação: tem forame transversário? CERVICAL. Tem fóvea costal? TORÁCICA. Corpo grande e espinhoso quadrado? LOMBAR. Sem corpo? ATLAS. Com dente? ÁXIS.",
  tabelas:[{
   titulo:"Comparativo entre as regiões",
@@ -497,12 +497,7 @@ const SECOES=[
 {
  id:"dorso", n:"06", titulo:"Músculos do dorso e do pescoço", tag:"musc",
  resumo:"Extrínsecos movem o membro superior a partir do dorso; intrínsecos movem a própria coluna. No pescoço, ECOM e escalenos orientam a cabeça e ajudam a respirar no esforço.",
- figuras:[
-  {t:"Dorso — camada superficial", q:"superficial back muscles trapezius latissimus dorsi labeled", olhar:"Trapézio em losango na parte alta; grande dorsal cobrindo a região lombar e subindo para a axila."},
-  {t:"Romboides (camada abaixo do trapézio)", q:"rhomboid major minor levator scapulae muscles", olhar:"Feixes oblíquos descendo dos espinhosos até a margem medial da escápula."},
-  {t:"Eretores da espinha", q:"erector spinae iliocostalis longissimus spinalis muscles", olhar:"Três colunas verticais: iliocostal (lateral), longuíssimo (meio), espinal (junto à linha média)."},
-  {t:"ECOM e escalenos", q:"sternocleidomastoid scalene muscles neck anatomy labeled", olhar:"O ECOM cruzando o pescoço na diagonal e, por baixo dele, os três escalenos descendo às primeiras costelas."}
- ],
+ diagramas:["dorso"],
  macete:"Eretores da espinha de lateral para medial: I Love Spaghetti — Iliocostal, Longuíssimo, Espinal.",
  armadilhas:["Trapézio é inervado pelo nervo acessório (XI), não por nervos espinhais comuns.","Os romboides são profundos ao trapézio — não aparecem na vista superficial.","O ECOM roda a cabeça para o lado OPOSTO ao músculo que contrai."],
  grupos:[
@@ -525,11 +520,7 @@ const SECOES=[
 {
  id:"abdome", n:"07", titulo:"Músculos do abdome e lombares", tag:"musc",
  resumo:"Uma cinta de quatro camadas na frente e dois estabilizadores profundos atrás. A direção das fibras identifica cada um deles.",
- figuras:[
-  {t:"Parede abdominal anterior", q:"abdominal wall muscles rectus abdominis linea alba labeled", olhar:"As duas faixas verticais do reto, com as interseções tendíneas, dentro da bainha do reto."},
-  {t:"Oblíquos e transverso", q:"external internal oblique transversus abdominis muscle layers", olhar:"Três camadas cruzadas como compensado de madeira: externo oblíquo para baixo, interno para cima, transverso horizontal."},
-  {t:"Quadrado lombar e psoas maior", q:"quadratus lumborum psoas major muscle posterior abdominal wall", olhar:"O quadrado lombar preenchendo o vão entre a 12ª costela e a crista ilíaca; o psoas descendo pela lateral dos corpos lombares."}
- ],
+ diagramas:["abdome"],
  macete:"Oblíquo externo: fibras de “mão no bolso”. Oblíquo interno: perpendicular a ele. Transverso: horizontal, como um cinto. Externo roda para o lado OPOSTO; interno, para o MESMO lado.",
  tabelas:[{
   titulo:"Direção das fibras e rotação",
@@ -599,15 +590,7 @@ SECOES.forEach(sec=>{
   chips.insertAdjacentHTML("beforeend",`<a href="#${sec.id}">${sec.n} · ${esc(sec.titulo)}</a>`);
   let html=`<section id="${sec.id}">
     <div class="cab"><div class="n">${sec.n}</div><div><h2>${esc(sec.titulo)}</h2><p>${esc(sec.resumo)}</p></div></div>`;
-  sec.figuras.forEach(f=>{
-    html+=`<figure class="fig" data-q="${esc(f.q)}"${f.file?` data-file="${esc(f.file)}"`:""}>
-      <div class="fig-topo"><span class="fig-tit">${esc(f.t)}</span>
-        <span class="fig-nav"><button data-dir="-1" aria-label="Imagem anterior">‹</button><span class="cont">–</span><button data-dir="1" aria-label="Próxima imagem">›</button></span></div>
-      <div class="fig-palco"><div class="fig-estado">Carregando imagens…</div></div>
-      ${f.olhar?`<div class="fig-olhar"><span>O que procurar</span>${esc(f.olhar)}</div>`:""}
-      <figcaption class="fig-pe"><span class="cred">Wikimedia Commons</span><a class="orig" href="https://commons.wikimedia.org/w/index.php?search=${encodeURIComponent(f.q)}&ns6=1" target="_blank" rel="noopener">ver original</a></figcaption>
-    </figure>`;
-  });
+  (sec.diagramas||[]).forEach(id=>{ html+=`<figure class="fig" data-diag="${id}"></figure>`; });
   if(sec.macete) html+=`<div class="macete"><b>Macete</b>${esc(sec.macete)}</div>`;
   (sec.tabelas||[]).forEach(t=>html+=tabelaHTML(t));
   sec.grupos.forEach(g=>{
@@ -672,60 +655,658 @@ document.getElementById("tema").addEventListener("click",()=>{
 });
 
 /* ============================================================
-   3. IMAGENS REAIS — Wikimedia Commons
+   3. DIAGRAMAS — desenhos próprios, em português
+   Cada diagrama: vb (viewBox), svg (desenho) e pontos (marcadores numerados)
    ============================================================ */
-async function buscarCommons(termo,limite){
-  const url="https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*"
-    +"&generator=search&gsrnamespace=6&gsrlimit="+limite
-    +"&gsrsearch="+encodeURIComponent("filetype:bitmap "+termo)
-    +"&prop=imageinfo&iiprop=url&iiurlwidth=1100";
-  const r=await fetch(url);
-  if(!r.ok) throw new Error("rede");
-  const d=await r.json();
-  const p=(d&&d.query&&d.query.pages)||{};
-  return Object.values(p).sort((a,b)=>a.index-b.index).map(x=>({
-    src:x.imageinfo&&x.imageinfo[0]&&(x.imageinfo[0].thumburl||x.imageinfo[0].url),
-    titulo:(x.title||"").replace(/^File:/,""),
-    pag:x.imageinfo&&x.imageinfo[0]&&x.imageinfo[0].descriptionurl
-  })).filter(x=>x.src);
-}
-function montarFig(fig,imgs){
-  const palco=fig.querySelector(".fig-palco"), cont=fig.querySelector(".cont");
-  const cred=fig.querySelector(".cred"), orig=fig.querySelector(".orig");
-  let i=0;
-  const pintar=()=>{
-    const im=imgs[i];
-    palco.innerHTML=`<img src="${im.src}" alt="${esc(im.titulo)}" loading="lazy">`;
-    cont.textContent=(i+1)+"/"+imgs.length;
-    cred.textContent=im.titulo.length>40?im.titulo.slice(0,40)+"…":im.titulo;
-    if(im.pag) orig.href=im.pag;
-  };
-  fig.querySelectorAll(".fig-nav button").forEach(b=>b.addEventListener("click",()=>{
-    i=(i+Number(b.dataset.dir)+imgs.length)%imgs.length; pintar();
-  }));
-  pintar();
-}
-async function carregarFig(fig){
-  const imgs=[];
-  if(fig.dataset.file){
-    imgs.push({src:"https://commons.wikimedia.org/wiki/Special:FilePath/"+encodeURIComponent(fig.dataset.file)+"?width=1100",
-      titulo:fig.dataset.file,
-      pag:"https://commons.wikimedia.org/wiki/File:"+encodeURIComponent(fig.dataset.file)});
+const arco=(x1,y1,x2,y2,cx,cy,cls)=>`<path class="${cls}" d="M${x1},${y1} Q${cx},${cy} ${x2},${y2}"/>`;
+
+/* costelas da caixa torácica (vista anterior) */
+function caixaCostelas(){
+  let s="";
+  for(let i=0;i<10;i++){
+    const y=52+i*17, larg=52+i*9.5, queda=26+i*9;
+    s+=`<path class="ln" d="M168,${y} C${168-larg*0.5},${y-2} ${168-larg},${y+10} ${168-larg-6},${y+queda}"/>`;
+    s+=`<path class="ln" d="M172,${y} C${172+larg*0.5},${y-2} ${172+larg},${y+10} ${172+larg+6},${y+queda}"/>`;
   }
-  try{
-    const achados=await buscarCommons(fig.dataset.q, fig.dataset.file?4:5);
-    achados.forEach(a=>{ if(!imgs.some(x=>x.titulo===a.titulo)) imgs.push(a); });
-  }catch(e){}
-  if(!imgs.length){
-    fig.querySelector(".fig-palco").innerHTML='<div class="fig-estado">Sem conexão para carregar as imagens. Toque em “ver original” quando estiver online.</div>';
-    return;
+  for(let i=10;i<12;i++){
+    const y=52+i*17, larg=52+i*7;
+    s+=`<path class="ln" d="M168,${y} C${168-larg*0.5},${y+4} ${168-larg},${y+16} ${168-larg-10},${y+30}"/>`;
+    s+=`<path class="ln" d="M172,${y} C${172+larg*0.5},${y+4} ${172+larg},${y+16} ${172+larg+10},${y+30}"/>`;
   }
-  montarFig(fig,imgs);
+  return s;
 }
-const obs=new IntersectionObserver(ents=>{
-  ents.forEach(e=>{ if(e.isIntersecting){ obs.unobserve(e.target); carregarFig(e.target); } });
-},{rootMargin:"350px"});
-document.querySelectorAll(".fig").forEach(f=>obs.observe(f));
+/* pilha de vértebras da coluna (vista lateral) */
+function pilhaColuna(){
+  const reg=[{n:7,w:15,h:11,cor:"o1"},{n:12,w:20,h:14,cor:"o2"},{n:5,w:26,h:18,cor:"o1"}];
+  let y=30,s="",fase=0;
+  reg.forEach((r,ri)=>{
+    for(let i=0;i<r.n;i++){
+      const t=(y-30)/300;
+      const x=96+Math.sin(t*Math.PI*2.1+0.4)*18;
+      s+=`<rect class="${r.cor}" x="${x-r.w/2}" y="${y}" width="${r.w}" height="${r.h}" rx="3"/>`;
+      s+=`<path class="ln" d="M${x-r.w/2-2},${y+r.h/2} L${x-r.w/2-(ri===1?22:14)},${y+r.h/2+(ri===1?9:3)}"/>`;
+      y+=r.h+3.5;
+    }
+  });
+  return s;
+}
+
+const DIAGRAMAS={
+
+"cranio-lateral":{titulo:"Crânio — vista lateral (perfil olhando para a esquerda)",vb:"0 0 420 300",
+svg:`
+<path class="o1" d="M96,132 C100,66 168,34 240,42 C310,50 352,100 350,156 C348,194 322,214 292,218 L214,222 C150,220 106,192 96,132 Z"/>
+<path class="o2" d="M96,132 C100,66 168,34 240,42 L232,46 C196,74 168,104 162,142 C140,146 112,142 96,132 Z"/>
+<path class="o3" d="M168,140 C210,158 268,156 306,128 C312,152 306,178 292,196 L214,198 C186,192 172,168 168,140 Z"/>
+<path class="o2" d="M318,64 C330,96 336,138 330,178 C324,196 310,208 292,214 L316,212 C338,200 350,176 350,152 C350,116 338,86 318,64 Z"/>
+<ellipse class="cav" cx="120" cy="152" rx="30" ry="25"/>
+<path class="o3" d="M92,150 C92,132 104,124 120,124 C136,124 150,132 152,150 L146,152 C140,138 130,132 120,132 C108,132 100,138 96,152 Z"/>
+<path class="o2" d="M138,168 L172,164 L176,190 L142,194 Z"/>
+<path class="o1" d="M100,178 L128,176 L130,186 L102,188 Z"/>
+<path class="cav" d="M104,192 C114,190 124,192 128,200 L104,206 Z"/>
+<path class="o1" d="M100,196 L166,192 L172,222 L104,226 Z"/>
+<path class="o2" d="M148,158 L246,152 L248,162 L150,170 Z"/>
+<path class="o1" d="M96,228 L214,232 L232,222 L246,178 L262,176 L268,196 L258,226 L232,244 L150,250 C118,250 98,242 96,228 Z"/>
+<path class="o3" d="M222,178 L234,152 L240,178 Z"/>
+<ellipse class="o3" cx="264" cy="164" rx="13" ry="9"/>
+<circle class="cav" cx="256" cy="176" r="8"/>
+<path class="o3" d="M262,188 L280,190 L272,214 Z"/>
+<path class="ln" d="M254,190 L244,216"/>
+<path class="ln" d="M170,44 C160,80 152,106 150,134"/>
+<path class="ln" d="M316,66 C312,104 318,140 328,168"/>
+<path class="ln" d="M150,134 C190,154 262,152 308,124"/>
+<path class="ln2" d="M132,96 C176,74 240,72 288,90"/>
+<path class="ln2" d="M136,108 C178,88 240,86 292,102"/>
+`,
+pontos:[
+ {n:1,x:126,y:88,nome:"Osso frontal",nota:"Testa e teto da órbita"},
+ {n:2,x:232,y:74,nome:"Osso parietal",nota:"Teto e lateral da caixa"},
+ {n:3,x:236,y:140,nome:"Osso temporal",nota:"Abaixo da sutura escamosa"},
+ {n:4,x:332,y:130,nome:"Osso occipital",nota:"Atrás da sutura lambdóidea"},
+ {n:5,x:154,y:126,nome:"Ptério (asa maior do esfenoide)",nota:"Encontro em H de 4 ossos — o ponto mais frágil"},
+ {n:6,x:196,y:160,nome:"Arco zigomático",nota:"Ponte entre temporal e zigomático"},
+ {n:7,x:256,y:176,nome:"Meato acústico externo",nota:"Sua bússola na vista lateral"},
+ {n:8,x:272,y:200,nome:"Processo mastoide",nota:"Cone rugoso atrás da orelha — ECOM"},
+ {n:9,x:246,y:212,nome:"Processo estiloide",nota:"Espícula fina apontando para baixo"},
+ {n:10,x:158,y:178,nome:"Osso zigomático",nota:"Maçã do rosto"},
+ {n:11,x:112,y:180,nome:"Osso nasal",nota:"Ponte do nariz"},
+ {n:12,x:130,y:208,nome:"Maxila",nota:"Traz os dentes superiores"},
+ {n:13,x:150,y:238,nome:"Corpo da mandíbula",nota:"Ferradura com os dentes inferiores"},
+ {n:14,x:242,y:232,nome:"Ângulo da mandíbula",nota:"Canto entre corpo e ramo"},
+ {n:15,x:232,y:164,nome:"Processo coronoide",nota:"Bico anterior — músculo temporal"},
+ {n:16,x:266,y:160,nome:"Processo condilar",nota:"Cabeça redonda posterior — ATM"},
+ {n:17,x:200,y:96,nome:"Linhas temporais",nota:"Superior: fáscia. Inferior: músculo temporal"},
+ {n:18,x:120,y:152,nome:"Órbita",nota:"Cavidade formada por 7 ossos"}
+]},
+
+"cranio-anterior":{titulo:"Crânio — vista anterior (de frente)",vb:"0 0 340 320",
+svg:`
+<path class="o1" d="M58,124 C58,52 116,22 170,22 C224,22 282,52 282,124 C282,178 262,210 246,232 L94,232 C78,210 58,178 58,124 Z"/>
+<path class="o2" d="M58,124 C58,52 116,22 170,22 C224,22 282,52 282,124 L272,126 C258,112 232,104 170,104 C108,104 82,112 68,126 Z"/>
+<ellipse class="cav" cx="112" cy="146" rx="38" ry="30"/>
+<ellipse class="cav" cx="228" cy="146" rx="38" ry="30"/>
+<path class="ln" d="M70,120 C84,104 96,100 112,100 C130,100 144,106 152,120"/>
+<path class="ln" d="M188,120 C196,106 210,100 228,100 C244,100 256,104 270,120"/>
+<path class="o3" d="M158,116 L182,116 L184,166 L156,166 Z"/>
+<path class="cav" d="M170,168 C186,172 196,190 194,208 L146,208 C144,190 154,172 170,168 Z"/>
+<path class="o2" d="M166,176 L174,176 L176,208 L164,208 Z"/>
+<path class="o3" d="M152,182 C160,186 160,196 152,200 Z"/>
+<path class="o3" d="M188,182 C180,186 180,196 188,200 Z"/>
+<path class="o2" d="M62,150 C74,142 92,140 100,146 L96,178 C82,176 68,166 62,150 Z"/>
+<path class="o2" d="M278,150 C266,142 248,140 240,146 L244,178 C258,176 272,166 278,150 Z"/>
+<path class="o1" d="M92,190 L248,190 L242,232 L98,232 Z"/>
+<path class="o1" d="M96,238 L244,238 L238,272 C222,290 196,298 170,298 C144,298 118,290 102,272 Z"/>
+<path class="ln" d="M100,244 L240,244"/>
+<circle class="ln" cx="118" cy="258" r="4"/>
+<circle class="ln" cx="222" cy="258" r="4"/>
+<path class="ln" d="M156,288 C162,282 178,282 184,288"/>
+`,
+pontos:[
+ {n:1,x:170,y:60,nome:"Osso frontal",nota:"Toda a testa"},
+ {n:2,x:170,y:98,nome:"Glabela",nota:"Área lisa entre as sobrancelhas"},
+ {n:3,x:112,y:112,nome:"Margem supraorbital",nota:"Borda superior da órbita"},
+ {n:4,x:228,y:146,nome:"Órbita",nota:"Cavidade do globo ocular"},
+ {n:5,x:170,y:130,nome:"Ossos nasais",nota:"Par, formam a ponte do nariz"},
+ {n:6,x:170,y:190,nome:"Abertura piriforme",nota:"Entrada óssea da cavidade nasal"},
+ {n:7,x:170,y:200,nome:"Vômer / septo nasal",nota:"Lâmina em arado que divide as narinas"},
+ {n:8,x:150,y:194,nome:"Concha nasal inferior",nota:"Osso próprio, a maior das três"},
+ {n:9,x:74,y:160,nome:"Osso zigomático",nota:"Maçã do rosto"},
+ {n:10,x:118,y:204,nome:"Maxila",nota:"Osso da arcada superior"},
+ {n:11,x:170,y:222,nome:"Processo alveolar",nota:"Arco com os alvéolos dos dentes"},
+ {n:12,x:170,y:254,nome:"Corpo da mandíbula",nota:"Arcada inferior"},
+ {n:13,x:118,y:258,nome:"Forame mentual",nota:"Saída do nervo do lábio inferior"},
+ {n:14,x:170,y:288,nome:"Protuberância mentual",nota:"O queixo propriamente dito"}
+]},
+
+"cranio-base":{titulo:"Base do crânio — vista inferior (por baixo, sem a mandíbula)",vb:"0 0 300 360",
+svg:`
+<ellipse class="o1" cx="150" cy="180" rx="112" ry="168"/>
+<path class="o2" d="M104,34 L196,34 L200,124 L100,124 Z"/>
+<path class="ln" d="M150,34 L150,124"/>
+<path class="ln" d="M100,98 L200,98"/>
+<path class="cav" d="M118,130 L144,130 L144,166 L118,166 Z"/>
+<path class="cav" d="M156,130 L182,130 L182,166 L156,166 Z"/>
+<path class="o3" d="M146,128 L154,128 L154,168 L146,168 Z"/>
+<ellipse class="cav" cx="150" cy="266" rx="27" ry="35"/>
+<ellipse class="o3" cx="118" cy="252" rx="14" ry="9" transform="rotate(-18 118 252)"/>
+<ellipse class="o3" cx="182" cy="252" rx="14" ry="9" transform="rotate(18 182 252)"/>
+<path class="ln" d="M96,208 L88,214"/>
+<path class="ln" d="M204,208 L212,214"/>
+<ellipse class="cav" cx="96" cy="196" rx="14" ry="9"/>
+<ellipse class="cav" cx="204" cy="196" rx="14" ry="9"/>
+<path class="o3" d="M92,236 L106,240 L98,262 Z"/>
+<path class="o3" d="M208,236 L194,240 L202,262 Z"/>
+<path class="ln2" d="M62,150 C74,168 78,190 76,208"/>
+<path class="ln2" d="M238,150 C226,168 222,190 224,208"/>
+<circle class="ln" cx="150" cy="330" r="7"/>
+<path class="ln" d="M104,318 C130,306 170,306 196,318"/>
+`,
+pontos:[
+ {n:1,x:150,y:66,nome:"Processo palatino da maxila",nota:"2/3 anteriores do palato duro"},
+ {n:2,x:150,y:112,nome:"Ossos palatinos",nota:"1/3 posterior do palato duro"},
+ {n:3,x:150,y:148,nome:"Vômer",nota:"Divide as duas coanas"},
+ {n:4,x:128,y:148,nome:"Coanas",nota:"Saída posterior da cavidade nasal"},
+ {n:5,x:150,y:266,nome:"Forame magno",nota:"O maior forame — sua referência central"},
+ {n:6,x:116,y:252,nome:"Côndilos occipitais",nota:"Articulam com o atlas — movimento de sim"},
+ {n:7,x:96,y:196,nome:"Fossa mandibular",nota:"Recebe a cabeça da mandíbula (ATM)"},
+ {n:8,x:96,y:248,nome:"Processo mastoide",nota:"Cone rugoso lateral"},
+ {n:9,x:206,y:246,nome:"Processo estiloide",nota:"Espícula fina medial ao mastoide"},
+ {n:10,x:64,y:170,nome:"Arco zigomático",nota:"Visto de baixo, corre pela lateral"},
+ {n:11,x:150,y:330,nome:"Protuberância occipital externa",nota:"Saliência mediana da nuca"}
+]},
+
+"esfenoide":{titulo:"Esfenoide — vista superior (o “morcego” no centro da base)",vb:"0 0 360 220",
+svg:`
+<path class="o1" d="M150,72 L210,72 L214,150 L146,150 Z"/>
+<path class="o2" d="M148,74 C120,60 96,58 74,66 C58,72 54,86 66,94 C92,102 124,100 148,92 Z"/>
+<path class="o2" d="M212,74 C240,60 264,58 286,66 C302,72 306,86 294,94 C268,102 236,100 212,92 Z"/>
+<path class="o3" d="M146,96 C112,96 76,108 58,130 C46,146 54,164 76,164 C108,162 136,146 148,124 Z"/>
+<path class="o3" d="M214,96 C248,96 284,108 302,130 C314,146 306,164 284,164 C252,162 224,146 212,124 Z"/>
+<path class="cav" d="M158,92 C158,116 164,126 180,126 C196,126 202,116 202,92 L194,92 C194,110 190,118 180,118 C170,118 166,110 166,92 Z"/>
+<path class="o3" d="M156,82 L204,82 L204,92 L156,92 Z"/>
+<path class="o3" d="M158,126 L202,126 L202,140 L158,140 Z"/>
+<circle class="cav" cx="140" cy="80" r="6"/>
+<circle class="cav" cx="220" cy="80" r="6"/>
+<path class="o2" d="M154,150 L170,150 L168,204 L152,204 Z"/>
+<path class="o2" d="M190,150 L206,150 L208,204 L192,204 Z"/>
+`,
+pontos:[
+ {n:1,x:180,y:110,nome:"Corpo do esfenoide",nota:"Bloco central, oco (seio esfenoidal)"},
+ {n:2,x:104,y:78,nome:"Asa menor",nota:"Anterior e mais fina — limita a fossa anterior"},
+ {n:3,x:88,y:132,nome:"Asa maior",nota:"Posterior e larga — assoalho da fossa média"},
+ {n:4,x:180,y:104,nome:"Sela túrcica (fossa hipofisial)",nota:"A sela onde a hipófise se senta"},
+ {n:5,x:180,y:134,nome:"Dorso da sela",nota:"O encosto posterior da sela"},
+ {n:6,x:180,y:86,nome:"Processos clinoides",nota:"Os quatro cantos da sela"},
+ {n:7,x:140,y:80,nome:"Canal óptico",nota:"Passagem do nervo óptico, na raiz da asa menor"},
+ {n:8,x:160,y:186,nome:"Lâminas pterigóideas",nota:"Descem: origem dos pterigóideos"}
+]},
+
+"mandibula":{titulo:"Mandíbula — vista lateral (queixo à esquerda)",vb:"0 0 340 230",
+svg:`
+<path class="o1" d="M26,150 C24,124 34,116 56,114 L196,124 L214,132 L226,170 L200,182 L60,180 C34,178 26,170 26,150 Z"/>
+<path class="o1" d="M196,124 L216,60 L232,54 L238,96 L252,96 L258,52 L276,56 L282,120 L276,164 L246,180 L206,180 L196,140 Z"/>
+<path class="ln" d="M30,124 L192,132"/>
+<path class="ln" d="M40,120 L40,132 M58,120 L58,133 M76,121 L76,134 M94,122 L94,135 M112,123 L112,136 M130,124 L130,137 M148,125 L148,138 M166,126 L166,139"/>
+<path class="ln" d="M238,96 C244,86 250,86 252,96"/>
+<circle class="ln" cx="76" cy="158" r="5"/>
+<path class="ln" d="M28,166 C36,158 48,158 56,166"/>
+<circle class="cav" cx="252" cy="130" r="5"/>
+`,
+pontos:[
+ {n:1,x:110,y:150,nome:"Corpo da mandíbula",nota:"Porção horizontal, em ferradura"},
+ {n:2,x:240,y:150,nome:"Ramo da mandíbula",nota:"Porção vertical que sobe ao crânio"},
+ {n:3,x:250,y:176,nome:"Ângulo (gônio)",nota:"Canto entre corpo e ramo"},
+ {n:4,x:224,y:62,nome:"Processo coronoide",nota:"Bico anterior — músculo temporal"},
+ {n:5,x:268,y:60,nome:"Processo condilar",nota:"Cabeça posterior — ATM"},
+ {n:6,x:246,y:92,nome:"Incisura mandibular",nota:"Entalhe entre os dois processos"},
+ {n:7,x:76,y:158,nome:"Forame mentual",nota:"Abaixo do 2º pré-molar"},
+ {n:8,x:34,y:170,nome:"Protuberância mentual",nota:"O queixo"},
+ {n:9,x:110,y:128,nome:"Processo alveolar",nota:"Borda com os alvéolos dentários"},
+ {n:10,x:252,y:130,nome:"Forame mandibular",nota:"Na face interna — nervo alveolar inferior"}
+]},
+
+"face-mimica":{titulo:"Músculos da mímica facial — vista anterior",vb:"0 0 320 350",
+svg:`
+<path class="pele" d="M160,14 C218,14 254,58 254,120 C254,196 224,268 200,300 C186,318 172,326 160,326 C148,326 134,318 120,300 C96,268 66,196 66,120 C66,58 102,14 160,14 Z"/>
+<path class="m1" d="M92,44 L142,38 L146,96 L98,100 Z"/>
+<path class="m1" d="M178,38 L228,44 L222,100 L174,96 Z"/>
+<path class="m2" d="M150,92 L170,92 L172,124 L148,124 Z"/>
+<path class="m2" d="M116,102 L146,110 L142,120 L114,114 Z"/>
+<path class="m2" d="M204,102 L174,110 L178,120 L206,114 Z"/>
+<ellipse class="m1e" cx="114" cy="140" rx="34" ry="26"/>
+<ellipse class="m1e" cx="206" cy="140" rx="34" ry="26"/>
+<path class="m1" d="M148,126 L172,126 L182,182 L138,182 Z"/>
+<path class="m1" d="M232,158 L246,172 L192,224 L178,206 Z"/>
+<path class="m1" d="M212,156 L226,166 L180,212 L168,198 Z"/>
+<path class="m1" d="M136,158 L150,158 L154,206 L136,206 Z"/>
+<ellipse class="m1e" cx="160" cy="228" rx="46" ry="24"/>
+<path class="m1" d="M248,214 L252,228 L204,232 L204,220 Z"/>
+<path class="m2" d="M252,196 L258,210 L206,224 L202,210 Z"/>
+<path class="m1" d="M200,248 L214,252 L196,296 L182,290 Z"/>
+<path class="m1" d="M170,250 L182,254 L176,286 L164,284 Z"/>
+<path class="m1" d="M148,272 L172,272 L172,296 L148,296 Z"/>
+<path class="m2" d="M74,300 C110,286 210,286 246,300 L250,346 L70,346 Z"/>
+<path class="ln" d="M96,318 L104,344 M120,314 L124,344 M146,312 L148,344 M172,312 L172,344 M198,314 L196,344 M222,318 L216,344"/>
+`,
+pontos:[
+ {n:1,x:118,y:66,nome:"Frontal (occipitofrontal)",nota:"Eleva a sobrancelha — rugas horizontais"},
+ {n:2,x:160,y:108,nome:"Prócero",nota:"Ruga deitada da raiz do nariz — o “eca”"},
+ {n:3,x:126,y:110,nome:"Corrugador do supercílio",nota:"Rugas verticais da glabela — o “bravo”"},
+ {n:4,x:206,y:140,nome:"Orbicular do olho",nota:"Anel que fecha a pálpebra"},
+ {n:5,x:160,y:154,nome:"Nasal",nota:"Comprime e dilata as narinas"},
+ {n:6,x:220,y:190,nome:"Zigomático maior",nota:"Vai ao ÂNGULO da boca — o sorriso"},
+ {n:7,x:196,y:178,nome:"Zigomático menor",nota:"Vai ao LÁBIO superior"},
+ {n:8,x:144,y:182,nome:"Levantador do lábio superior",nota:"Sobe o lábio, aprofunda o sulco nasolabial"},
+ {n:9,x:160,y:228,nome:"Orbicular da boca",nota:"Anel dos lábios — assobiar e beijar"},
+ {n:10,x:228,y:224,nome:"Risório",nota:"Puxa reto para o lado — sorriso forçado"},
+ {n:11,x:230,y:206,nome:"Bucinador",nota:"Profundo, na bochecha — o trompetista"},
+ {n:12,x:198,y:272,nome:"Depressor do ângulo da boca",nota:"Boca em U invertido — tristeza"},
+ {n:13,x:172,y:268,nome:"Depressor do lábio inferior",nota:"Abaixa o lábio de baixo"},
+ {n:14,x:160,y:284,nome:"Mentual",nota:"Faz bico e enruga o queixo"},
+ {n:15,x:110,y:322,nome:"Platisma",nota:"Lençol fino do pescoço — o susto"}
+]},
+
+"face-mastigacao":{titulo:"Músculos da mastigação — vista lateral e plano profundo",vb:"0 0 380 280",
+svg:`
+<path class="osso-fundo" d="M40,120 C44,58 106,28 172,36 C238,44 276,92 274,144 C272,180 250,198 222,202 L150,206 C92,204 50,178 40,120 Z"/>
+<path class="osso-fundo" d="M42,214 L150,218 L172,208 L186,164 L200,162 L206,182 L196,212 L172,230 L96,236 C64,236 44,228 42,214 Z"/>
+<path class="m1" d="M62,116 C68,74 116,54 162,60 C186,64 196,80 190,98 L172,150 L158,152 C120,150 82,140 62,116 Z"/>
+<path class="ln" d="M78,110 L160,72 M86,124 L166,88 M96,134 L172,106"/>
+<path class="m2" d="M110,152 L188,148 L192,164 L178,206 L124,208 L108,170 Z"/>
+<path class="ln" d="M120,156 L128,204 M140,154 L146,206 M160,152 L164,206"/>
+<circle class="cav" cx="196" cy="158" r="6"/>
+<path class="linha-corte" d="M244,40 L244,244"/>
+<path class="osso-fundo" d="M266,60 C300,58 340,80 348,120 C354,152 340,186 316,204 L286,208 L280,120 Z"/>
+<path class="m3" d="M282,86 L318,80 L330,116 L296,128 Z"/>
+<path class="m1" d="M286,132 L322,124 L336,178 L306,196 L290,170 Z"/>
+<path class="ln" d="M296,138 L312,192 M310,134 L324,182"/>
+`,
+pontos:[
+ {n:1,x:118,y:104,nome:"Temporal",nota:"Leque na têmpora → processo coronoide. Eleva e retrai"},
+ {n:2,x:148,y:178,nome:"Masseter",nota:"Bloco do arco zigomático → ângulo. O mais potente"},
+ {n:3,x:308,y:104,nome:"Pterigóideo lateral",nota:"Fibras horizontais → colo do côndilo. O único que ABRE a boca"},
+ {n:4,x:310,y:162,nome:"Pterigóideo medial",nota:"Espelho interno do masseter → face medial do ângulo"},
+ {n:5,x:196,y:158,nome:"Processo condilar / ATM",nota:"Onde o pterigóideo lateral se prende"},
+ {n:6,x:244,y:250,nome:"Plano de corte",nota:"À direita: vista profunda, por dentro do ramo"}
+]},
+
+"torax-caixa":{titulo:"Caixa torácica — vista anterior",vb:"0 0 340 320",
+svg:`
+${caixaCostelas()}
+<path class="o1" d="M144,36 L196,36 L192,86 L148,86 Z"/>
+<path class="o1" d="M150,88 L190,88 L184,196 L156,196 Z"/>
+<path class="o2" d="M160,198 L180,198 L172,222 L168,222 Z"/>
+<path class="ln2" d="M148,86 L192,86"/>
+<path class="ln" d="M152,38 C160,50 180,50 188,38"/>
+<path class="o3" d="M144,96 C120,100 104,112 96,128"/>
+<path class="o3" d="M196,96 C220,100 236,112 244,128"/>
+<path class="ln3" d="M96,196 C120,214 140,226 156,232"/>
+<path class="ln3" d="M244,196 C220,214 200,226 184,232"/>
+<rect class="o2" x="164" y="30" width="12" height="230" rx="4" opacity="0.25"/>
+`,
+pontos:[
+ {n:1,x:170,y:60,nome:"Manúbrio",nota:"O cabo da espada"},
+ {n:2,x:170,y:140,nome:"Corpo do esterno",nota:"A lâmina"},
+ {n:3,x:170,y:214,nome:"Processo xifoide",nota:"A ponta — referência da RCP"},
+ {n:4,x:170,y:38,nome:"Incisura jugular",nota:"A covinha do pescoço"},
+ {n:5,x:170,y:88,nome:"Ângulo do esterno",nota:"Degrau onde chega a 2ª costela"},
+ {n:6,x:104,y:70,nome:"1ª costela",nota:"A mais curta e mais horizontal"},
+ {n:7,x:78,y:150,nome:"Costelas verdadeiras (1–7)",nota:"Cartilagem própria até o esterno"},
+ {n:8,x:250,y:212,nome:"Arco costal (falsas 8–10)",nota:"Unem-se à cartilagem de cima"},
+ {n:9,x:68,y:264,nome:"Costelas flutuantes (11–12)",nota:"Terminam livres na musculatura"},
+ {n:10,x:120,y:112,nome:"Cartilagens costais",nota:"Molas de cartilagem hialina"}
+]},
+
+"costela":{titulo:"Costela típica — vista superior (coluna à esquerda)",vb:"0 0 360 210",
+svg:`
+<path class="o1" d="M28,54 C16,66 18,86 34,94 C48,100 62,96 68,86 L96,80 C112,78 122,72 124,62 L120,48 C110,40 96,40 84,46 L48,44 C38,44 32,48 28,54 Z"/>
+<path class="o1" d="M120,62 C160,60 214,74 264,106 C302,132 326,158 336,178 L318,192 C304,168 280,142 246,120 C202,92 156,80 118,80 Z"/>
+<path class="ln" d="M30,60 C22,72 26,86 38,90"/>
+<path class="ln" d="M46,44 L44,94"/>
+<ellipse class="o3" cx="104" cy="62" rx="16" ry="12"/>
+<path class="ln2" d="M126,74 C168,74 218,90 262,120 C296,144 316,166 326,184"/>
+<circle class="ln" cx="122" cy="84" r="0"/>
+`,
+pontos:[
+ {n:1,x:36,y:70,nome:"Cabeça da costela",nota:"Duas facetas separadas por uma crista"},
+ {n:2,x:46,y:44,nome:"Face articular superior",nota:"Vai à vértebra de CIMA"},
+ {n:3,x:46,y:96,nome:"Face articular inferior",nota:"Vai à vértebra de mesmo número"},
+ {n:4,x:76,y:66,nome:"Colo",nota:"Estreito, sem faceta"},
+ {n:5,x:104,y:62,nome:"Tubérculo",nota:"TEM faceta — vai ao processo transverso"},
+ {n:6,x:132,y:76,nome:"Ângulo",nota:"Curva mais posterior — NÃO tem faceta"},
+ {n:7,x:230,y:112,nome:"Corpo",nota:"Lâmina achatada e torcida"},
+ {n:8,x:290,y:172,nome:"Sulco costal",nota:"Borda inferior, por dentro: veia, artéria e nervo"}
+]},
+
+"esterno":{titulo:"Esterno — vista anterior",vb:"0 0 200 320",
+svg:`
+<path class="o1" d="M52,34 C60,30 78,28 88,40 L112,40 C122,28 140,30 148,34 L152,96 L48,96 Z"/>
+<path class="o1" d="M56,100 L144,100 L136,238 L64,238 Z"/>
+<path class="o2" d="M82,240 L118,240 L104,286 L96,286 Z"/>
+<path class="ln2" d="M48,96 L152,96"/>
+<path class="ln" d="M88,40 C94,52 106,52 112,40"/>
+<path class="o3" d="M48,52 C40,48 34,54 38,62 L48,66 Z"/>
+<path class="o3" d="M152,52 C160,48 166,54 162,62 L152,66 Z"/>
+<path class="o3" d="M50,88 C42,86 38,92 44,96 L52,96 Z"/>
+<path class="o3" d="M56,116 C48,114 44,120 50,124 L58,124 Z"/>
+<path class="o3" d="M58,144 C50,142 46,148 52,152 L60,152 Z"/>
+<path class="o3" d="M60,172 C52,170 48,176 54,180 L62,180 Z"/>
+<path class="o3" d="M62,200 C54,198 50,204 56,208 L64,208 Z"/>
+<path class="o3" d="M64,226 C56,224 52,230 58,234 L66,234 Z"/>
+<path class="o3" d="M150,116 C158,114 162,120 156,124 L148,124 Z"/>
+<path class="o3" d="M148,144 C156,142 160,148 154,152 L146,152 Z"/>
+<path class="o3" d="M146,172 C154,170 158,176 152,180 L144,180 Z"/>
+<path class="o3" d="M144,200 C152,198 156,204 150,208 L142,208 Z"/>
+<path class="o3" d="M142,226 C150,224 154,230 148,234 L140,234 Z"/>
+`,
+pontos:[
+ {n:1,x:100,y:66,nome:"Manúbrio",nota:"Cabo da espada, mais largo"},
+ {n:2,x:100,y:170,nome:"Corpo",nota:"Lâmina, com as incisuras costais"},
+ {n:3,x:100,y:266,nome:"Processo xifoide",nota:"Ponta, cartilaginosa até ~40 anos"},
+ {n:4,x:100,y:44,nome:"Incisura jugular",nota:"Entalhe em U no topo"},
+ {n:5,x:40,y:58,nome:"Incisura clavicular",nota:"Articulação esternoclavicular"},
+ {n:6,x:100,y:96,nome:"Ângulo do esterno",nota:"Degrau = nível da 2ª costela"},
+ {n:7,x:44,y:150,nome:"Incisuras costais",nota:"Recebem as cartilagens da 1ª à 7ª"}
+]},
+
+"coluna-geral":{titulo:"Coluna vertebral — vista lateral (frente à esquerda)",vb:"0 0 200 400",
+svg:`
+${pilhaColuna()}
+<path class="o2" d="M92,326 L124,326 L118,378 L100,378 Z"/>
+<path class="o3" d="M102,380 L116,380 L112,398 L106,398 Z"/>
+<path class="ln3" d="M112,30 C86,66 84,110 106,150 C130,192 128,250 108,300"/>
+`,
+pontos:[
+ {n:1,x:66,y:60,nome:"Cervical (C1–C7)",nota:"Curvatura para frente (lordose)"},
+ {n:2,x:64,y:170,nome:"Torácica (T1–T12)",nota:"Curvatura para trás (cifose)"},
+ {n:3,x:60,y:288,nome:"Lombar (L1–L5)",nota:"Lordose, corpos maiores"},
+ {n:4,x:108,y:350,nome:"Sacro",nota:"5 vértebras fundidas"},
+ {n:5,x:110,y:390,nome:"Cóccix",nota:"3 a 5 peças rudimentares"},
+ {n:6,x:126,y:112,nome:"Vértebra proeminente (C7)",nota:"Espinhoso longo e palpável"},
+ {n:7,x:100,y:322,nome:"Promontório",nota:"Borda ântero-superior de S1"}
+]},
+
+"vertebra-tipica":{titulo:"Vértebra típica — vista superior (frente para cima)",vb:"0 0 320 280",
+svg:`
+<ellipse class="o1" cx="160" cy="72" rx="76" ry="44"/>
+<path class="o1" d="M96,106 L120,138 L200,138 L224,106 L214,96 L106,96 Z"/>
+<path class="o1" d="M120,140 L160,206 L200,140 Z"/>
+<path class="cav" d="M112,110 C130,100 190,100 208,110 L196,150 L160,178 L124,150 Z"/>
+<path class="o2" d="M118,138 L64,150 L28,150 L26,166 L70,168 L124,156 Z"/>
+<path class="o2" d="M202,138 L256,150 L292,150 L294,166 L250,168 L196,156 Z"/>
+<ellipse class="o3" cx="112" cy="132" rx="20" ry="13" transform="rotate(-20 112 132)"/>
+<ellipse class="o3" cx="208" cy="132" rx="20" ry="13" transform="rotate(20 208 132)"/>
+<path class="o1" d="M150,196 L170,196 L166,262 L154,262 Z"/>
+`,
+pontos:[
+ {n:1,x:160,y:70,nome:"Corpo vertebral",nota:"Anterior, sustenta a carga"},
+ {n:2,x:160,y:140,nome:"Forame vertebral",nota:"Aloja a medula espinhal"},
+ {n:3,x:112,y:108,nome:"Pedículo",nota:"Ponte curta entre corpo e arco"},
+ {n:4,x:134,y:172,nome:"Lâmina",nota:"Placa que fecha o arco por trás"},
+ {n:5,x:44,y:158,nome:"Processo transverso",nota:"Projeção lateral"},
+ {n:6,x:208,y:130,nome:"Processo articular superior",nota:"Faceta voltada para cima"},
+ {n:7,x:160,y:240,nome:"Processo espinhoso",nota:"O que você palpa nas costas"}
+]},
+
+"vertebra-cervical":{titulo:"Vértebra cervical típica — vista superior",vb:"0 0 320 260",
+svg:`
+<rect class="o1" x="98" y="34" width="124" height="56" rx="12"/>
+<path class="o1" d="M98,84 L118,120 L202,120 L222,84 L214,76 L106,76 Z"/>
+<path class="o1" d="M118,122 L160,186 L202,122 Z"/>
+<path class="cav" d="M108,92 C130,80 190,80 212,92 L198,140 L160,166 L122,140 Z"/>
+<path class="o2" d="M112,100 L58,104 L34,116 L38,132 L74,128 L118,124 Z"/>
+<path class="o2" d="M208,100 L262,104 L286,116 L282,132 L246,128 L202,124 Z"/>
+<circle class="cav" cx="62" cy="116" r="12"/>
+<circle class="cav" cx="258" cy="116" r="12"/>
+<path class="o1" d="M150,176 L146,236 L158,238 L162,196 L166,238 L176,234 L170,176 Z"/>
+`,
+pontos:[
+ {n:1,x:160,y:60,nome:"Corpo pequeno e retangular",nota:"Mais largo que profundo"},
+ {n:2,x:62,y:116,nome:"Forame transversário",nota:"EXCLUSIVO das cervicais — artéria vertebral"},
+ {n:3,x:160,y:124,nome:"Forame vertebral grande e triangular",nota:"Medula espessa na região"},
+ {n:4,x:160,y:222,nome:"Processo espinhoso bífido",nota:"Garfo de duas pontas (C3–C6)"},
+ {n:5,x:210,y:100,nome:"Processo articular superior",nota:"Facetas quase horizontais — muita rotação"}
+]},
+
+"vertebra-toracica":{titulo:"Vértebra torácica — vista lateral (frente à esquerda)",vb:"0 0 320 260",
+svg:`
+<path class="o1" d="M60,62 L150,58 L154,152 L62,150 C48,132 48,80 60,62 Z"/>
+<path class="o1" d="M152,66 L196,72 L206,120 L156,128 Z"/>
+<path class="o2" d="M196,74 L262,86 L272,110 L214,116 L200,104 Z"/>
+<path class="o1" d="M200,120 L286,178 L292,206 L212,164 Z"/>
+<ellipse class="o3" cx="152" cy="70" rx="14" ry="10"/>
+<ellipse class="o3" cx="156" cy="140" rx="14" ry="10"/>
+<ellipse class="o3" cx="252" cy="98" rx="14" ry="10"/>
+<path class="o3" d="M186,58 L216,52 L220,72 L192,76 Z"/>
+<path class="o3" d="M196,128 L226,124 L230,144 L200,146 Z"/>
+`,
+pontos:[
+ {n:1,x:104,y:104,nome:"Corpo em coração",nota:"Tamanho intermediário"},
+ {n:2,x:152,y:70,nome:"Fóvea costal superior",nota:"Meia-faceta para a cabeça da costela"},
+ {n:3,x:156,y:140,nome:"Fóvea costal inferior",nota:"A outra metade do encaixe"},
+ {n:4,x:252,y:98,nome:"Fóvea costal do processo transverso",nota:"Recebe o TUBÉRCULO da costela (T1–T10)"},
+ {n:5,x:252,y:180,nome:"Processo espinhoso longo",nota:"Inclinado para baixo, como telha"},
+ {n:6,x:202,y:62,nome:"Processo articular superior",nota:"Faceta plana e vertical — pouca rotação"}
+]},
+
+"vertebra-lombar":{titulo:"Vértebra lombar — vista superior",vb:"0 0 320 280",
+svg:`
+<path class="o1" d="M160,20 C220,20 246,44 244,72 C242,98 214,112 160,112 C106,112 78,98 76,72 C74,44 100,20 160,20 Z"/>
+<path class="o1" d="M92,104 L114,142 L206,142 L228,104 L216,94 L104,94 Z"/>
+<path class="o1" d="M114,144 L160,196 L206,144 Z"/>
+<path class="cav" d="M106,110 C130,98 190,98 214,110 L200,150 L160,172 L120,150 Z"/>
+<path class="o2" d="M108,116 L52,128 L22,140 L26,154 L64,144 L114,136 Z"/>
+<path class="o2" d="M212,116 L268,128 L298,140 L294,154 L256,144 L206,136 Z"/>
+<ellipse class="o3" cx="112" cy="128" rx="19" ry="14" transform="rotate(-15 112 128)"/>
+<ellipse class="o3" cx="208" cy="128" rx="19" ry="14" transform="rotate(15 208 128)"/>
+<circle class="o3" cx="96" cy="140" r="8"/>
+<circle class="o3" cx="224" cy="140" r="8"/>
+<rect class="o1" x="140" y="190" width="40" height="72" rx="6"/>
+`,
+pontos:[
+ {n:1,x:160,y:66,nome:"Corpo grande, em rim",nota:"O maior de toda a coluna"},
+ {n:2,x:160,y:140,nome:"Forame vertebral triangular",nota:"Aloja a cauda equina"},
+ {n:3,x:44,y:146,nome:"Processo transverso (costiforme)",nota:"Fino e longo — mas SEM faceta"},
+ {n:4,x:96,y:140,nome:"Processo mamilar",nota:"EXCLUSIVO das lombares — atrás do articular superior"},
+ {n:5,x:160,y:228,nome:"Processo espinhoso quadrangular",nota:"Curto e largo, como uma machadinha"},
+ {n:6,x:210,y:126,nome:"Processo articular superior",nota:"Faceta côncava, quase sagital"}
+]},
+
+"atlas-axis":{titulo:"Atlas (C1) e Áxis (C2) — vista superior",vb:"0 0 420 260",
+svg:`
+<path class="o1" d="M110,36 C154,36 186,58 190,92 C194,132 172,178 132,204 L88,204 C48,178 26,132 30,92 C34,58 66,36 110,36 Z"/>
+<path class="cav" d="M110,64 C142,64 162,82 164,106 C166,138 148,166 118,182 L102,182 C72,166 54,138 56,106 C58,82 78,64 110,64 Z"/>
+<path class="o2" d="M74,40 C90,32 130,32 146,40 L142,58 C128,52 92,52 78,58 Z"/>
+<ellipse class="o3" cx="110" cy="60" rx="16" ry="9"/>
+<ellipse class="o3" cx="52" cy="104" rx="20" ry="30" transform="rotate(-12 52 104)"/>
+<ellipse class="o3" cx="168" cy="104" rx="20" ry="30" transform="rotate(12 168 104)"/>
+<circle class="cav" cx="30" cy="118" r="12"/>
+<circle class="cav" cx="190" cy="118" r="12"/>
+<path class="ln" d="M70,196 C90,204 130,204 150,196"/>
+<path class="o1" d="M300,52 C336,52 356,68 356,92 C356,116 332,128 300,128 C268,128 244,116 244,92 C244,68 264,52 300,52 Z"/>
+<path class="o3" d="M286,30 C294,20 306,20 314,30 L314,54 L286,54 Z"/>
+<ellipse class="o3" cx="256" cy="76" rx="22" ry="14" transform="rotate(-14 256 76)"/>
+<ellipse class="o3" cx="344" cy="76" rx="22" ry="14" transform="rotate(14 344 76)"/>
+<path class="o1" d="M258,124 L272,158 L328,158 L342,124 L332,116 L268,116 Z"/>
+<path class="cav" d="M268,126 C286,118 314,118 332,126 L322,158 L300,176 L278,158 Z"/>
+<circle class="cav" cx="234" cy="98" r="11"/>
+<circle class="cav" cx="366" cy="98" r="11"/>
+<path class="o1" d="M288,170 L282,232 L296,234 L300,196 L304,234 L318,232 L312,170 Z"/>
+`,
+pontos:[
+ {n:1,x:110,y:44,nome:"Arco anterior do atlas",nota:"Com o tubérculo anterior"},
+ {n:2,x:110,y:60,nome:"Fóvea do dente",nota:"Onde encaixa o dente do áxis"},
+ {n:3,x:52,y:104,nome:"Massa lateral",nota:"Faceta côncava recebe o côndilo occipital"},
+ {n:4,x:110,y:200,nome:"Arco posterior",nota:"Com o sulco da artéria vertebral"},
+ {n:5,x:30,y:118,nome:"Forame transversário (C1)",nota:"Artéria vertebral"},
+ {n:6,x:300,y:32,nome:"Dente do áxis (processo odontoide)",nota:"O pivô da rotação — o “não”"},
+ {n:7,x:300,y:96,nome:"Corpo do áxis",nota:"O dente é a continuação dele"},
+ {n:8,x:344,y:76,nome:"Face articular superior do áxis",nota:"Onde o atlas gira por cima"},
+ {n:9,x:300,y:220,nome:"Espinhoso do áxis",nota:"Curto, robusto e bífido"},
+ {n:10,x:300,y:148,nome:"Forame vertebral triangular",nota:"Comum a todas as cervicais"}
+]},
+
+"sacro":{titulo:"Sacro e cóccix — vista anterior (esquerda) e posterior (direita)",vb:"0 0 460 320",
+svg:`
+<path class="o1" d="M36,44 C60,34 172,34 196,44 L182,120 C176,176 158,222 132,250 L100,250 C74,222 56,176 50,120 Z"/>
+<path class="o3" d="M78,36 C96,30 136,30 154,36 L152,52 C134,46 98,46 80,52 Z"/>
+<path class="ln2" d="M56,86 L176,86 M62,124 L170,124 M70,162 L162,162 M80,200 L152,200"/>
+<ellipse class="cav" cx="86" cy="68" rx="9" ry="7"/><ellipse class="cav" cx="146" cy="68" rx="9" ry="7"/>
+<ellipse class="cav" cx="90" cy="106" rx="9" ry="7"/><ellipse class="cav" cx="142" cy="106" rx="9" ry="7"/>
+<ellipse class="cav" cx="94" cy="144" rx="8" ry="6"/><ellipse class="cav" cx="138" cy="144" rx="8" ry="6"/>
+<ellipse class="cav" cx="99" cy="180" rx="7" ry="5"/><ellipse class="cav" cx="133" cy="180" rx="7" ry="5"/>
+<path class="o2" d="M104,254 L128,254 L124,290 C118,300 112,300 108,290 Z"/>
+<path class="o1" d="M266,44 C290,34 402,34 426,44 L412,120 C406,176 388,222 362,250 L330,250 C304,222 286,176 280,120 Z"/>
+<path class="o2" d="M336,40 L356,40 L360,210 L332,210 Z"/>
+<path class="ln" d="M340,60 L352,60 M340,96 L352,96 M340,132 L352,132 M340,168 L352,168"/>
+<ellipse class="cav" cx="314" cy="70" rx="8" ry="6"/><ellipse class="cav" cx="378" cy="70" rx="8" ry="6"/>
+<ellipse class="cav" cx="318" cy="108" rx="8" ry="6"/><ellipse class="cav" cx="374" cy="108" rx="8" ry="6"/>
+<ellipse class="cav" cx="322" cy="146" rx="7" ry="5"/><ellipse class="cav" cx="370" cy="146" rx="7" ry="5"/>
+<ellipse class="cav" cx="326" cy="182" rx="6" ry="5"/><ellipse class="cav" cx="366" cy="182" rx="6" ry="5"/>
+<path class="cav" d="M334,212 L358,212 L354,242 L338,242 Z"/>
+<path class="o3" d="M330,208 L336,208 L334,232 L328,230 Z"/>
+<path class="o3" d="M356,208 L362,208 L364,230 L358,232 Z"/>
+<path class="o3" d="M282,70 C296,92 300,132 296,164 L286,160 C280,128 278,94 282,70 Z"/>
+<path class="o2" d="M334,254 L358,254 L354,290 C348,300 342,300 338,290 Z"/>
+`,
+pontos:[
+ {n:1,x:116,y:38,nome:"Promontório",nota:"Borda ântero-superior de S1"},
+ {n:2,x:56,y:56,nome:"Asa do sacro",nota:"Parte lateral da base"},
+ {n:3,x:86,y:68,nome:"Forames sacrais anteriores",nota:"Maiores e mais lisos"},
+ {n:4,x:116,y:270,nome:"Cóccix",nota:"3 a 5 peças fundidas"},
+ {n:5,x:346,y:120,nome:"Crista sacral mediana",nota:"Espinhosos fundidos"},
+ {n:6,x:314,y:70,nome:"Forames sacrais posteriores",nota:"Menores que os anteriores"},
+ {n:7,x:346,y:226,nome:"Hiato sacral",nota:"Falha das lâminas de S5 — anestesia caudal"},
+ {n:8,x:328,y:216,nome:"Corno sacral",nota:"As duas “orelhinhas” que guiam a agulha"},
+ {n:9,x:288,y:118,nome:"Face auricular",nota:"Formato de orelha — articulação sacroilíaca"},
+ {n:10,x:346,y:46,nome:"Canal sacral",nota:"Continuação do canal vertebral"}
+]},
+
+"torax-musculos":{titulo:"Músculos do tórax — vista anterior (à direita, plano profundo)",vb:"0 0 360 300",
+svg:`
+<path class="pele" d="M40,30 L320,30 L320,286 L40,286 Z" opacity="0"/>
+<path class="m1" d="M172,44 L60,58 C40,74 34,110 44,140 L96,164 C130,150 158,120 170,86 Z"/>
+<path class="ln" d="M166,52 L64,66 M168,66 L52,86 M166,84 L48,116"/>
+<path class="m2" d="M188,44 L300,58 C320,74 326,110 316,140 L264,164 C230,150 202,120 190,86 Z" opacity="0.35"/>
+<path class="m3" d="M244,60 L302,74 L306,104 L262,116 Z"/>
+<path class="m1" d="M258,132 L288,124 L300,150 L304,182 L282,196 L262,168 Z"/>
+<path class="ln" d="M266,140 L276,190 M280,132 L290,182"/>
+<path class="m2" d="M300,150 L330,142 L336,166 L306,178 Z"/>
+<path class="m2" d="M304,182 L334,176 L340,200 L310,208 Z"/>
+<path class="m2" d="M306,210 L336,206 L342,230 L312,236 Z"/>
+<path class="m4" d="M96,172 L140,184 L138,206 L92,196 Z"/>
+<path class="ln" d="M100,176 L108,196 M114,180 L122,200 M128,184 L134,202"/>
+<path class="m4" d="M96,214 L140,224 L138,246 L92,238 Z"/>
+<path class="ln" d="M136,218 L128,242 M120,216 L112,240 M104,214 L98,236"/>
+`,
+pontos:[
+ {n:1,x:96,y:104,nome:"Peitoral maior",nota:"Leque superficial: adução e rotação medial do braço"},
+ {n:2,x:278,y:88,nome:"Peitoral menor",nota:"3ª–5ª costela → processo coracoide (plano profundo)"},
+ {n:3,x:284,y:162,nome:"Serrátil anterior",nota:"Digitações em dentes de serra → margem medial da escápula"},
+ {n:4,x:322,y:192,nome:"Digitações costais",nota:"Cada dente nasce de uma costela (1ª a 9ª)"},
+ {n:5,x:116,y:190,nome:"Intercostais externos",nota:"Fibras “mão no bolso” — INSPIRAM"},
+ {n:6,x:116,y:230,nome:"Intercostais internos",nota:"Fibras cruzadas em X — EXPIRAM (forçada)"}
+]},
+
+"diafragma":{titulo:"Diafragma — vista inferior (olhando de baixo para cima)",vb:"0 0 340 280",
+svg:`
+<path class="m1" d="M170,26 C250,26 314,84 314,150 C314,206 268,242 214,246 L126,246 C72,242 26,206 26,150 C26,84 90,26 170,26 Z"/>
+<path class="tendao" d="M170,60 C214,60 244,88 242,118 C240,146 214,160 190,158 L150,158 C126,160 100,146 98,118 C96,88 126,60 170,60 Z"/>
+<ellipse class="cav" cx="208" cy="96" rx="17" ry="13"/>
+<ellipse class="cav" cx="164" cy="150" rx="15" ry="19"/>
+<ellipse class="cav" cx="170" cy="212" rx="13" ry="16"/>
+<path class="m2" d="M146,180 C138,206 134,232 136,258 L156,258 C154,230 158,204 166,182 Z"/>
+<path class="m2" d="M194,180 C202,206 206,232 204,258 L184,258 C186,230 182,204 174,182 Z"/>
+<path class="ln" d="M60,120 L96,124 M52,150 L98,146 M60,180 L104,168 M280,120 L244,124 M288,150 L242,146 M280,180 L236,168"/>
+`,
+pontos:[
+ {n:1,x:170,y:110,nome:"Centro tendíneo",nota:"Trevo fibroso central — não contrai"},
+ {n:2,x:208,y:96,nome:"Hiato da veia cava (T8)",nota:"O mais alto e à direita, dentro do centro tendíneo"},
+ {n:3,x:164,y:150,nome:"Hiato esofágico (T10)",nota:"No meio da parte muscular"},
+ {n:4,x:170,y:212,nome:"Hiato aórtico (T12)",nota:"O mais baixo e posterior, entre os pilares"},
+ {n:5,x:140,y:230,nome:"Pilares (porção lombar)",nota:"Descem presos aos corpos vertebrais"},
+ {n:6,x:64,y:150,nome:"Porção costal",nota:"Nasce nas 6 últimas costelas"}
+]},
+
+"dorso":{titulo:"Músculos do dorso e do pescoço — vista posterior",vb:"0 0 320 400",
+svg:`
+<path class="pele" d="M160,20 C186,20 200,40 200,60 L246,86 C282,104 296,150 300,200 L296,340 L228,376 L92,376 L24,340 L20,200 C24,150 38,104 74,86 L120,60 C120,40 134,20 160,20 Z"/>
+<path class="m1" d="M160,44 L206,74 L262,118 L214,178 L160,196 L106,178 L58,118 L114,74 Z"/>
+<path class="ln" d="M160,50 L160,190 M132,66 L146,188 M188,66 L174,188 M118,88 L152,150 M202,88 L168,150"/>
+<path class="m2" d="M160,200 L212,182 L268,214 L282,300 L216,340 L160,352 L104,340 L38,300 L52,214 L108,182 Z"/>
+<path class="ln" d="M92,214 L152,320 M120,200 L158,300 M228,214 L168,320 M200,200 L162,300"/>
+<path class="m3" d="M122,96 L154,110 L150,150 L112,132 Z"/>
+<path class="m3" d="M198,96 L166,110 L170,150 L208,132 Z"/>
+<path class="m4" d="M146,120 L154,120 L152,330 L138,330 Z"/>
+<path class="m4" d="M166,120 L174,120 L182,330 L168,330 Z"/>
+<path class="m5" d="M112,44 C126,60 134,74 138,88 L118,96 C110,78 100,62 92,52 Z"/>
+<path class="m5" d="M208,44 C194,60 186,74 182,88 L202,96 C210,78 220,62 228,52 Z"/>
+`,
+pontos:[
+ {n:1,x:160,y:112,nome:"Trapézio",nota:"Losango: superior eleva, médio retrai, inferior deprime"},
+ {n:2,x:200,y:262,nome:"Grande dorsal",nota:"Extensão, adução e rotação medial do braço"},
+ {n:3,x:132,y:124,nome:"Romboides maior e menor",nota:"Profundos ao trapézio — retraem a escápula"},
+ {n:4,x:148,y:230,nome:"Eretores da espinha",nota:"Iliocostal (lateral), longuíssimo (meio), espinal (medial)"},
+ {n:5,x:110,y:66,nome:"Esternocleidomastoideo",nota:"Roda a cabeça para o lado OPOSTO"},
+ {n:6,x:216,y:74,nome:"Escalenos",nota:"Profundos ao ECOM, descem às 1ª e 2ª costelas"}
+]},
+
+"abdome":{titulo:"Músculos do abdome — vista anterior (camadas separadas por lado)",vb:"0 0 320 360",
+svg:`
+<path class="pele" d="M60,30 L260,30 L272,150 L256,300 L200,340 L120,340 L64,300 L48,150 Z"/>
+<path class="m1" d="M132,50 L156,50 L156,300 L128,300 Z"/>
+<path class="m1" d="M164,50 L188,50 L192,300 L164,300 Z"/>
+<path class="ln2" d="M128,96 L156,96 M128,146 L156,146 M128,200 L156,200 M164,96 L192,96 M164,146 L192,146 M164,200 L192,200"/>
+<path class="ln3" d="M160,44 L160,306"/>
+<path class="m2" d="M62,66 L124,96 L124,290 L74,266 L52,160 Z"/>
+<path class="ln" d="M66,80 L120,130 M60,110 L118,168 M56,142 L118,206 M58,178 L120,240 M64,214 L122,272"/>
+<path class="m3" d="M196,96 L258,66 L268,160 L246,266 L196,290 Z"/>
+<path class="ln" d="M200,130 L254,80 M200,168 L262,110 M200,206 L264,142 M200,240 L260,178 M200,272 L254,214"/>
+<path class="m4" d="M76,300 L244,300 L238,326 L82,326 Z" opacity="0.9"/>
+<path class="ln" d="M84,306 L84,320 M104,306 L104,320 M124,306 L124,320 M144,306 L144,320 M164,306 L164,320 M184,306 L184,320 M204,306 L204,320 M224,306 L224,320"/>
+`,
+pontos:[
+ {n:1,x:160,y:170,nome:"Reto abdominal",nota:"Vertical, flexiona o tronco"},
+ {n:2,x:142,y:96,nome:"Interseções tendíneas",nota:"São elas que desenham o “tanquinho”"},
+ {n:3,x:160,y:60,nome:"Linha alba",nota:"Costura central entre os dois retos"},
+ {n:4,x:82,y:180,nome:"Oblíquo externo (lado esquerdo do desenho)",nota:"Fibras “mão no bolso” — roda para o lado OPOSTO"},
+ {n:5,x:238,y:180,nome:"Oblíquo interno (lado direito do desenho)",nota:"Fibras cruzadas — roda para o MESMO lado"},
+ {n:6,x:160,y:314,nome:"Transverso do abdome",nota:"Fibras horizontais — o cinto que comprime"}
+]}
+
+};
+
+/* ---------- renderização dos diagramas ---------- */
+function montarDiagrama(fig){
+  const d=DIAGRAMAS[fig.dataset.diag];
+  if(!d){fig.remove();return;}
+  const marcadores=d.pontos.map(p=>
+    `<g class="marc" data-n="${p.n}"><circle cx="${p.x}" cy="${p.y}" r="11"/><text x="${p.x}" y="${p.y+4}">${p.n}</text></g>`
+  ).join("");
+  const legenda=d.pontos.map(p=>
+    `<li data-n="${p.n}"><b>${p.n}</b><span class="lg-nome">${esc(p.nome)}</span><span class="lg-nota">${esc(p.nota||"")}</span></li>`
+  ).join("");
+  fig.innerHTML=`
+    <div class="fig-topo"><span class="fig-tit">${esc(d.titulo)}</span>
+      <button class="treino" aria-pressed="false">Ocultar nomes</button></div>
+    <div class="fig-palco"><svg viewBox="${d.vb}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(d.titulo)}">${d.svg}${marcadores}</svg></div>
+    <ol class="legenda">${legenda}</ol>`;
+  const btn=fig.querySelector(".treino");
+  btn.addEventListener("click",()=>{
+    const on=fig.classList.toggle("treinando");
+    btn.setAttribute("aria-pressed",on);
+    btn.textContent=on?"Mostrar nomes":"Ocultar nomes";
+    fig.querySelectorAll(".legenda li").forEach(li=>li.classList.remove("revelado"));
+  });
+  fig.querySelectorAll(".legenda li").forEach(li=>{
+    li.addEventListener("click",()=>{
+      li.classList.toggle("revelado");
+      const n=li.dataset.n;
+      fig.querySelectorAll(".marc").forEach(m=>m.classList.toggle("ativo",m.dataset.n===n&&li.classList.contains("revelado")));
+    });
+  });
+}
+document.querySelectorAll(".fig").forEach(montarDiagrama);
 
 /* ============================================================
    4. MODO PROVA
