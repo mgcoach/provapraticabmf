@@ -206,6 +206,44 @@ footer b{color:var(--tinta)}
 .fig.treinando .lg-nota{display:none}
 .fig.treinando li.revelado .lg-nome{color:var(--verde);background:none}
 .fig.treinando li.revelado .lg-nota{display:block}
+
+/* ---------- lâminas de histologia ---------- */
+.matriz{fill:#E8DCC0;stroke:#3A3228;stroke-width:1.2}
+.fundo-claro{fill:#FBF6EC;stroke:none}
+.lamela{fill:none;stroke:#9A8763;stroke-width:1.5}
+.lacuna{fill:#3E362B;stroke:none}
+.lacuna-c{fill:#F7F3E8;stroke:#5E6E7A;stroke-width:1.2}
+.canalic{fill:none;stroke:#6B5D45;stroke-width:.8}
+.canal-luz{fill:#F7F1E2;stroke:#3A3228;stroke-width:1.4}
+.periosteo{fill:#E2D3B4;stroke:#3A3228;stroke-width:1.2}
+.osteoide{fill:#F2E6C8;stroke:#9A8763;stroke-width:1}
+.cel{fill:#E7C3B6;stroke:#77362F;stroke-width:1.2}
+.cel-grande{fill:#DFA091;stroke:#77362F;stroke-width:1.6}
+.cel-plana{fill:#E7C3B6;stroke:#77362F;stroke-width:1}
+.nucleo{fill:#4A3560;stroke:none}
+.pregueada{fill:none;stroke:#77362F;stroke-width:2}
+.cart{fill:#CBD8E2;stroke:#3A3228;stroke-width:1.2}
+.conj{fill:#E9DCC6;stroke:#3A3228;stroke-width:1.1}
+.conj2{fill:#DCCBAE;stroke:#3A3228;stroke-width:1}
+.fibrila{fill:none;stroke:#9A8763;stroke-width:.9}
+.condro{fill:#B9CBDA;stroke:#5E6E7A;stroke-width:1}
+.territorial{fill:#AFC2D2;stroke:none;opacity:.85}
+.elastica{fill:none;stroke:#4B3B2A;stroke-width:1.3}
+.colageno{fill:#EBD3B0;stroke:#9A7A50;stroke-width:1.1}
+.fasc{fill:#F3DED6;stroke:#A8776C;stroke-width:1.6}
+.fibra-t{fill:#D9877A;stroke:#77362F;stroke-width:1.2}
+.fibra-l{fill:#D9877A;stroke:#77362F;stroke-width:1.2}
+.fibra-lisa{fill:#DFA091;stroke:#77362F;stroke-width:1.2}
+.estria{stroke:#7E3A32;stroke-width:.9;opacity:.6}
+.disco{stroke:#4A211C;stroke-width:3.2;stroke-linecap:round}
+.vaso{fill:#B8433A;stroke:#5C201B;stroke-width:1.2}
+.miosina{fill:#8C4038;stroke:#4A211C;stroke-width:1}
+.ponte{stroke:#8C4038;stroke-width:1.4;stroke-linecap:round}
+.actina{stroke:#C4695F;stroke-width:2.6;stroke-linecap:round}
+.zlinha{stroke:#3A3228;stroke-width:5;stroke-linecap:round}
+.mlinha{stroke:#6B5D45;stroke-width:2.4;stroke-dasharray:5 4}
+.medida{fill:none;stroke:#3A3228;stroke-width:1.3}
+.medida2{fill:none;stroke:#1F5D4C;stroke-width:2}
 </style>
 </head>
 <body>
@@ -544,11 +582,139 @@ const SECOES=[
    {nome:"Psoas maior", onde:"Dos corpos e processos transversos de T12 a L5 até o trocanter menor do fêmur; com o ilíaco, forma o iliopsoas.", como:"Feixe fusiforme profundo que desce pela lateral dos corpos lombares e cruza a borda da pelve.", func:"Flexor mais potente do quadril; com o fêmur fixo, flexiona o tronco e influencia diretamente a curvatura lombar.", dica:"Psoa é o lombo — literalmente o filé mignon. É o cabo de aço que liga a coluna ao fêmur: encurtado, aumenta a lordose lombar."}
   ]}
  ]
+},
+{
+ id:"histo-osseo", n:"08", titulo:"Histologia — tecido ósseo", tag:"ossea",
+ resumo:"Na lâmina você identifica o tecido ósseo pelas lacunas com canalículos dentro de uma matriz calcificada. Depois é só localizar o ósteon e ler quem está em cada superfície.",
+ diagramas:["osteon","celulas-osseas"],
+ macete:"As três células pelo sufixo: BLASTO constrói (fileira na superfície), CITO mantém (preso na lacuna), CLASTO quebra (gigante e multinucleado na escavação).",
+ tabelas:[{
+  titulo:"As três células do tecido ósseo",
+  cols:["","Osteoblasto","Osteócito","Osteoclasto"],
+  linhas:[
+   ["Onde está","Enfileirado na superfície","Dentro da lacuna, na matriz","Na lacuna de Howship, sobre a matriz"],
+   ["Forma","Cúbico a colunar, em fileira","Achatado, com prolongamentos","Enorme, com borda pregueada"],
+   ["Núcleos","Um, excêntrico","Um","Vários (5 a 50)"],
+   ["Coloração","Basófilo (muito RER)","Pouco citoplasma visível","Acidófilo (rosa forte)"],
+   ["Origem","Célula osteoprogenitora (mesênquima)","Osteoblasto aprisionado","Monócitos (linhagem hematopoiética)"],
+   ["Função","Secreta osteoide e mineraliza","Mantém a matriz e sente carga mecânica","Reabsorve matriz óssea"]
+  ]}],
+ armadilhas:["Canal central (de Havers) é longitudinal e cercado por lamelas concêntricas; canal de Volkmann é transversal e ATRAVESSA as lamelas, sem anéis próprios.","Lamelas intersticiais não têm canal central — são restos de ósteons antigos entre os atuais.","Osso esponjoso não tem ósteons: só trabéculas com lamelas paralelas.","O halo claro em volta do osteócito é a lacuna, não é a célula."],
+ grupos:[
+  {titulo:"Células", tag:"musc", itens:[
+   {nome:"Célula osteoprogenitora (osteogênica)", onde:"Camada interna do periósteo e no endósteo, revestindo as superfícies.", como:"Célula fusiforme, achatada, com núcleo alongado e pálido, quase sem citoplasma corado.", func:"Célula-tronco que se diferencia em osteoblasto — responsável pelo crescimento e pelo reparo de fraturas.", dica:"É o “aprendiz de pedreiro” encostado na parede, esperando a vez de trabalhar."},
+   {nome:"Osteoblasto", onde:"Sempre na SUPERFÍCIE da matriz, formando uma fileira contínua.", como:"Células cúbicas ou colunares alinhadas lado a lado, como um epitélio; citoplasma bem basófilo (azulado) por causa do retículo rugoso, núcleo empurrado para longe da matriz.", func:"Sintetiza a matriz orgânica (osteoide, colágeno tipo I) e comanda a mineralização por hidroxiapatita.", dica:"Pedreiros enfileirados assentando tijolos. Se as células estão em fila indiana sobre o osso, são osteoblastos.", destaque:true},
+   {nome:"Osteócito", onde:"Dentro da matriz, aprisionado em uma lacuna (osteoplasto).", como:"Espaço lenticular escuro na matriz, com a célula achatada dentro e finíssimos canalículos irradiando como uma teia.", func:"Célula mais numerosa do tecido; mantém a matriz viva e funciona como sensor de carga mecânica — é ela que informa ao osso que ele precisa ficar mais forte.", dica:"O pedreiro que ficou preso na parede que ele mesmo construiu. Os canalículos são a teia de aranha por onde ele se comunica.", destaque:true},
+   {nome:"Osteoclasto", onde:"Sobre a superfície óssea que está sendo reabsorvida, dentro de uma depressão escavada (lacuna de Howship).", como:"Célula gigante, acidófila (rosa intenso), com vários núcleos e borda pregueada voltada para o osso — impossível confundir pelo tamanho.", func:"Reabsorve a matriz óssea, acidificando e digerindo o mineral e o colágeno; essencial na remodelação e na liberação de cálcio.", dica:"A escavadeira. Vários núcleos = vários operários dentro da mesma máquina cavando a cratera.", destaque:true}
+  ]},
+  {titulo:"Matriz e organização do osso compacto", itens:[
+   {nome:"Ósteon (sistema de Havers)", onde:"Unidade estrutural do osso compacto, paralela ao eixo longo do osso.", como:"Em corte transversal, um alvo: canal no centro e vários anéis concêntricos ao redor.", func:"Organiza vasos, nervos e matriz em colunas resistentes à compressão no eixo de carga.", dica:"Um tronco de árvore visto de cima: anéis em volta de um centro."},
+   {nome:"Canal central (de Havers)", onde:"No eixo do ósteon, longitudinal.", como:"Orifício central redondo, revestido por endósteo, com vaso no interior; sempre cercado pelos anéis concêntricos.", func:"Conduz vasos sanguíneos, linfáticos e nervos para dentro do osso.", dica:"O poço no meio do alvo. Tem anéis em volta = Havers.", destaque:true},
+   {nome:"Canal de Volkmann (perfurante)", onde:"Transversal ou oblíquo, ligando um canal de Havers ao outro e à superfície.", como:"Canal que ATRAVESSA as lamelas em diagonal, sem anéis concêntricos próprios em volta.", func:"Conecta a circulação do periósteo e da medula aos canais centrais.", dica:"Se o canal corta os anéis em vez de estar no meio deles, é Volkmann. Havers é vertical, Volkmann é o corredor transversal que liga os prédios.", destaque:true},
+   {nome:"Lamelas concêntricas", onde:"Ao redor de cada canal central.", como:"Anéis sucessivos de matriz, com as fibras colágenas mudando de direção a cada camada (aspecto de madeira compensada na luz polarizada).", func:"A alternância da direção das fibras dá enorme resistência mecânica.", dica:"Anéis de tronco de árvore, cada camada com o fio virado para um lado."},
+   {nome:"Lacunas e canalículos", onde:"Entre as lamelas concêntricas.", como:"Lacunas: pontos lenticulares escuros alinhados nos anéis. Canalículos: linhas finíssimas radiais que os conectam.", func:"Abrigam os osteócitos e permitem a troca de nutrientes por difusão, já que a matriz é impermeável.", dica:"Cada lacuna é uma casa e os canalículos são os corredores — nenhum osteócito fica a mais de 0,2 mm de um vaso."},
+   {nome:"Lamelas intersticiais", onde:"Nos espaços angulosos entre ósteons vizinhos.", como:"Fragmentos de anéis interrompidos, sem canal central próprio.", func:"São restos de ósteons antigos parcialmente reabsorvidos durante a remodelação.", dica:"São as “ruínas” dos ósteons antigos — o entulho que sobrou entre os prédios novos."},
+   {nome:"Lamelas circunferenciais externas e internas", onde:"Logo abaixo do periósteo (externas) e ao redor do canal medular (internas).", como:"Lamelas longas e paralelas que contornam todo o osso, sem formar anéis pequenos.", func:"Fecham o osso compacto por fora e por dentro.", dica:"São a “casca” e o “forro” do osso — camadas paralelas, não concêntricas."},
+   {nome:"Periósteo", onde:"Revestindo a superfície externa do osso, exceto nas superfícies articulares.", como:"Duas camadas: uma fibrosa externa (denso, com fibroblastos) e uma osteogênica interna (mais celular, junto ao osso).", func:"Nutre o osso, dá inserção a tendões e ligamentos pelas fibras de Sharpey e fornece células para crescimento em espessura e reparo.", dica:"É a “casca da árvore”: a camada de dentro é a viva, a que produz osso novo."},
+   {nome:"Endósteo", onde:"Revestindo o canal medular, os canais de Havers e as trabéculas do osso esponjoso.", como:"Camada única e finíssima de células achatadas — bem mais delgada que o periósteo.", func:"Mesma função osteogênica do periósteo, voltada para dentro.", dica:"O “papel de parede” de todas as cavidades internas do osso."},
+   {nome:"Osso esponjoso (trabecular)", onde:"Epífises e interior dos ossos curtos e chatos.", como:"Trabéculas irregulares com lamelas PARALELAS e sem ósteons; entre elas, medula óssea.", func:"Absorve impacto e aloja a medula; suas trabéculas seguem as linhas de força.", dica:"Se a lâmina tem “vigas” com espaços de medula no meio e nenhum alvo concêntrico, é esponjoso."},
+   {nome:"Matriz óssea", onde:"Entre as células, ocupando a maior parte do tecido.", como:"Material homogêneo e acidófilo; nas lâminas desgastadas aparece marrom com as lacunas escuras.", func:"Parte orgânica (colágeno tipo I) dá flexibilidade; parte inorgânica (hidroxiapatita de cálcio) dá dureza.", dica:"Concreto armado: o colágeno é o vergalhão que entorta sem quebrar, a hidroxiapatita é o cimento que resiste à compressão."}
+  ]}
+ ]
+},
+{
+ id:"histo-cartilagem", n:"09", titulo:"Histologia — tecido cartilaginoso", tag:"ossea",
+ resumo:"Três variedades, e a diferença está sempre na MATRIZ. Ache primeiro o condrócito na lacuna; depois olhe o que existe entre as células para dizer qual é o tipo.",
+ diagramas:["cartilagem-hialina","cartilagens-comparativo"],
+ macete:"Matriz lisa e azulada = HIALINA. Matriz com rede de fibras escuras e onduladas = ELÁSTICA. Matriz com feixes grossos e rosados em paralelo, com células em fileira = FIBROCARTILAGEM.",
+ tabelas:[{
+  titulo:"As três cartilagens na lâmina",
+  cols:["","Hialina","Elástica","Fibrocartilagem"],
+  linhas:[
+   ["Matriz","Homogênea, basófila, aspecto de vidro fosco","Cheia de fibras elásticas ramificadas","Feixes grossos de colágeno tipo I, acidófilos"],
+   ["Colágeno","Tipo II (mascarado, não se vê)","Tipo II + fibras elásticas","Tipo I, bem visível"],
+   ["Células","Grupos isógenos arredondados","Numerosas, em lacunas próximas","Poucas, alinhadas em FILEIRAS entre os feixes"],
+   ["Pericôndrio","Presente (menos nas superfícies articulares)","Presente","AUSENTE"],
+   ["Onde encontrar","Traqueia, costais, nariz, superfície articular, disco epifisário","Pavilhão da orelha, epiglote, tuba auditiva","Disco intervertebral, menisco, sínfise púbica, inserções tendíneas"]
+  ]}],
+ armadilhas:["Fibrocartilagem NÃO tem pericôndrio — se você achou pericôndrio, não é ela.","O espaço vazio ao redor do condrócito costuma ser artefato de retração: a célula encolheu no processamento.","Cartilagem é avascular: se a lâmina tem vasos no meio da matriz, você está olhando outro tecido.","Hialina e elástica se parecem muito sem coloração específica para elásticas (orceína, resorcina-fucsina)."],
+ grupos:[
+  {titulo:"Elementos comuns às três", tag:"musc", itens:[
+   {nome:"Pericôndrio", onde:"Envolvendo a cartilagem, exceto na fibrocartilagem e nas superfícies articulares.", como:"Faixa de tecido conjuntivo denso na borda da peça, com duas camadas: fibrosa externa (fibroblastos, vasos) e condrogênica interna (células mais arredondadas).", func:"Nutre a cartilagem por difusão (ela é avascular) e fornece células para o crescimento aposicional.", dica:"É a “casca” da cartilagem. Como não há vasos dentro, tudo entra por essa casca — por isso a cartilagem cicatriza tão mal.", destaque:true},
+   {nome:"Condroblasto", onde:"Na periferia da cartilagem, logo abaixo do pericôndrio.", como:"Células achatadas ou ovais, ainda alinhadas com a superfície, com citoplasma basófilo e sem lacuna bem formada.", func:"Sintetiza a matriz e vai ficando envolvido por ela, transformando-se em condrócito.", dica:"O condroblasto ainda está “solto e trabalhando na beirada”; assim que se cerca da própria matriz, vira condrócito."},
+   {nome:"Condrócito", onde:"No interior da matriz, dentro de uma lacuna (condroplasto).", como:"Célula arredondada em um espaço claro; muitas vezes retraída, deixando um halo vazio entre ela e a parede da lacuna.", func:"Mantém a matriz, produzindo colágeno e proteoglicanos ao longo da vida.", dica:"Mesma lógica do osteócito: cito = a célula que já está presa na sua própria construção."},
+   {nome:"Grupo isógeno (ninho celular)", onde:"Na região mais central e profunda da cartilagem.", como:"Dois, quatro ou mais condrócitos agrupados dentro de uma mesma lacuna, com uma matriz mais escura em volta.", func:"É o registro do crescimento intersticial: uma célula se dividiu dentro da lacuna e as filhas ainda não se separaram.", dica:"“Isógeno” = mesma origem. É uma família na mesma casa — todos vieram da mesma célula-mãe.", destaque:true},
+   {nome:"Matriz territorial e interterritorial", onde:"Ao redor dos grupos isógenos (territorial) e entre eles (interterritorial).", como:"A territorial é mais basófila (azul mais forte, cápsula escura em volta do ninho); a interterritorial é mais pálida.", func:"A territorial é recém-produzida e rica em proteoglicanos; a interterritorial é mais antiga.", dica:"O “quintal” de cada família é mais escuro que a rua entre as casas."},
+   {nome:"Crescimento aposicional e intersticial", onde:"Aposicional a partir do pericôndrio; intersticial a partir dos grupos isógenos.", como:"Aposicional: fileiras de condroblastos achatados na borda. Intersticial: ninhos celulares no interior.", func:"Aposicional aumenta a espessura; intersticial aumenta a cartilagem por dentro (típico do disco epifisário na infância).", dica:"De fora para dentro (casca) ou de dentro para fora (ninhos) — a lâmina mostra os dois ao mesmo tempo."}
+  ]},
+  {titulo:"Os três tipos", itens:[
+   {nome:"Cartilagem hialina", onde:"Traqueia e brônquios, cartilagens costais, septo nasal, superfícies articulares e disco epifisário.", como:"Matriz homogênea, lisa e basófila, sem fibras visíveis, com grupos isógenos bem definidos e pericôndrio nas bordas.", func:"Suporte flexível e superfície de deslizamento com baixíssimo atrito nas articulações.", dica:"Hyalos = vidro. Aspecto de vidro fosco: você não vê nada dentro da matriz. É a mais comum e a base do crescimento dos ossos longos.", destaque:true},
+   {nome:"Cartilagem elástica", onde:"Pavilhão auricular, epiglote, cartilagens da laringe e tuba auditiva.", como:"Matriz atravessada por uma rede densa de fibras elásticas escuras e ramificadas; costuma ter mais células que a hialina; tem pericôndrio.", func:"Sustenta mantendo grande flexibilidade e retorno à forma original.", dica:"É a cartilagem da orelha: dobra e volta sozinha. As fibras na matriz parecem uma rede rabiscada em cima do desenho.", destaque:true},
+   {nome:"Fibrocartilagem", onde:"Discos intervertebrais, meniscos, sínfise púbica, articulação temporomandibular e inserções tendíneas.", como:"Feixes grossos e paralelos de colágeno tipo I, acidófilos (rosados), com condrócitos isolados alinhados em FILEIRAS entre eles; nunca tem pericôndrio.", func:"Resiste a compressão e a tração ao mesmo tempo — é o amortecedor das articulações que sofrem carga.", dica:"É o meio-termo entre tendão e cartilagem: as células ficam em fila indiana no meio das cordas de colágeno.", destaque:true}
+  ]}
+ ]
+},
+{
+ id:"histo-muscular", n:"10", titulo:"Histologia — tecido muscular", tag:"musc",
+ resumo:"Três tipos e duas perguntas para separá-los: tem estriação transversal? Onde estão os núcleos? Depois é reconhecer as bainhas conjuntivas e o sarcômero.",
+ diagramas:["musculo-camadas","musculo-comparativo","sarcomero"],
+ macete:"Esquelético: estriado, MUITOS núcleos e PERIFÉRICOS. Cardíaco: estriado, 1–2 núcleos CENTRAIS e discos intercalares. Liso: sem estriação, 1 núcleo central em célula fusiforme.",
+ tabelas:[
+  {titulo:"Os três tecidos musculares",
+   cols:["","Esquelético","Cardíaco","Liso"],
+   linhas:[
+    ["Forma da célula","Cilíndrica, muito longa","Cilíndrica e ramificada","Fusiforme (charuto)"],
+    ["Núcleos","Muitos, na periferia","1 a 2, centrais","1, central"],
+    ["Estriação transversal","Sim","Sim","Não"],
+    ["Junções","Ausentes","Discos intercalares","Junções comunicantes"],
+    ["Controle","Voluntário","Involuntário","Involuntário"],
+    ["Regeneração","Limitada (células satélite)","Praticamente nula","Boa"]
+   ]},
+  {titulo:"Propriedades da fibra muscular",
+   cols:["Propriedade","O que significa"],
+   linhas:[
+    ["Excitabilidade","Responde a um estímulo gerando potencial de ação"],
+    ["Condutividade","Propaga esse potencial por todo o sarcolema e pelos túbulos T"],
+    ["Contratilidade","Encurta ativamente gerando força"],
+    ["Extensibilidade","Alonga-se além do comprimento de repouso sem se romper"],
+    ["Elasticidade","Volta ao comprimento original depois de alongada"]
+   ]},
+  {titulo:"Bandas do sarcômero e o que acontece na contração",
+   cols:["Faixa","O que contém","Na contração"],
+   linhas:[
+    ["Banda A (escura)","Toda a extensão da miosina","Não muda de tamanho"],
+    ["Banda I (clara)","Só actina, cortada ao meio pela linha Z","Diminui"],
+    ["Zona H","Só miosina, no centro da banda A","Diminui"],
+    ["Linha Z","Ancora a actina; limita o sarcômero","Aproxima-se da vizinha"],
+    ["Linha M","Ancora a miosina no centro","Permanece no centro"]
+   ]}
+ ],
+ armadilhas:["Núcleo periférico é a assinatura do esquelético; núcleo central em fibra estriada aponta para cardíaco (ou fibra em regeneração).","Endomísio envolve a FIBRA (a célula); perimísio envolve o FASCÍCULO; epimísio envolve o músculo inteiro.","O sarcômero vai de linha Z a linha Z — não de banda A a banda A.","Em corte transversal você não vê estriação: identifique pelas bainhas e pela posição dos núcleos."],
+ grupos:[
+  {titulo:"A célula muscular esquelética", tag:"musc", itens:[
+   {nome:"Mioblasto", onde:"No desenvolvimento embrionário e nos focos de regeneração.", como:"Célula mononucleada, alongada e basófila, ainda sem estriação.", func:"Funde-se com outros mioblastos formando o miotubo, que amadurece na fibra muscular multinucleada.", dica:"É por causa dessa fusão que a fibra adulta tem centenas de núcleos: cada núcleo veio de um mioblasto diferente.", destaque:true},
+   {nome:"Célula satélite", onde:"Entre a lâmina basal e o sarcolema da fibra madura.", como:"Núcleo pequeno e escuro colado à fibra, difícil de distinguir de um núcleo da própria fibra.", func:"Reserva de células-tronco: prolifera após lesão ou treinamento e doa núcleos à fibra — base da hipertrofia e do reparo muscular.", dica:"É o “estoque de mioblastos” guardado na fibra adulta. Sem ela, o músculo praticamente não se regenera."},
+   {nome:"Fibra muscular esquelética", onde:"Unidade celular do músculo, agrupada em fascículos.", como:"Célula cilíndrica muito longa, com estriações transversais no corte longitudinal e núcleos achatados na PERIFERIA, encostados no sarcolema.", func:"Contrai voluntariamente, produzindo movimento e estabilização articular.", dica:"Núcleo empurrado para a borda porque o centro está lotado de miofibrilas. Núcleo na periferia = esquelético.", destaque:true},
+   {nome:"Sarcolema, sarcoplasma e retículo sarcoplasmático", onde:"Membrana, citoplasma e retículo liso especializado da fibra.", como:"O sarcolema aparece como a linha nítida que contorna a fibra; o retículo não é visível na microscopia óptica de rotina.", func:"O retículo sarcoplasmático armazena e libera o cálcio que dispara a contração.", dica:"Prefixo “sarco-” = carne. Todo nome com sarco- é a versão muscular de uma organela comum."},
+   {nome:"Túbulos T e tríade", onde:"Invaginações do sarcolema na junção das bandas A e I.", como:"Não visíveis na lâmina comum; aparecem em microscopia eletrônica como um túbulo entre duas cisternas do retículo.", func:"Levam o potencial de ação para o interior da fibra, garantindo contração simultânea de toda a célula.", dica:"São os “corredores” que levam o sinal do lado de fora até o fundo da fibra — sem eles, só a superfície contrairia."},
+   {nome:"Miofibrilas e miofilamentos", onde:"Preenchendo todo o sarcoplasma, no eixo longo da fibra.", como:"Em corte transversal aparecem como pontinhos finos que dão aspecto granular ao citoplasma (campos de Cohnheim).", func:"Miofibrila é a coluna contrátil; é formada por miofilamentos de actina (fino) e miosina (grosso).", dica:"Músculo → fascículo → fibra → miofibrila → miofilamento. Cada nível é um feixe do nível seguinte."},
+   {nome:"Sarcômero", onde:"Entre duas linhas Z consecutivas, dentro da miofibrila.", como:"No corte longitudinal, o padrão repetido de faixas claras e escuras: banda A escura, banda I clara com a linha Z no meio.", func:"Unidade funcional da contração: a actina desliza sobre a miosina e as linhas Z se aproximam.", dica:"É o “tijolo” da contração. Guarde: A de Anisotrópica é a escura; I de Isotrópica é a clara. Na contração, a escura não muda.", destaque:true}
+  ]},
+  {titulo:"Bainhas conjuntivas", itens:[
+   {nome:"Endomísio", onde:"Ao redor de CADA fibra muscular, individualmente.", como:"Camada finíssima de fibras reticulares entre as fibras, visível como uma linha delicada com capilares e núcleos de fibroblastos.", func:"Sustenta os capilares e as terminações nervosas que servem cada fibra.", dica:"Endo = dentro. É o mais interno dos três: envolve a célula, uma por uma.", destaque:true},
+   {nome:"Perimísio", onde:"Envolvendo cada fascículo (grupo de fibras).", como:"Septo conjuntivo mais espesso que separa nitidamente os fascículos, com vasos e nervos maiores correndo dentro.", func:"Organiza os fascículos e conduz a vascularização e a inervação para dentro do músculo.", dica:"Peri = ao redor. É o septo que você vê a olho nu separando as “fibras” de um bife."},
+   {nome:"Epimísio", onde:"Envolvendo o músculo inteiro, por fora.", como:"Cápsula de tecido conjuntivo denso na borda da peça, contínua com a fáscia e com o tendão.", func:"Contém o músculo, transmite força ao tendão e permite o deslizamento entre músculos vizinhos.", dica:"Epi = sobre. Ordem de fora para dentro: EPI (músculo) → PERI (fascículo) → ENDO (fibra)."}
+  ]},
+  {titulo:"Os outros dois tecidos musculares", tag:"musc", itens:[
+   {nome:"Músculo cardíaco", onde:"Exclusivo do miocárdio e do início dos grandes vasos.", como:"Fibras estriadas, mas ramificadas e com 1 a 2 núcleos CENTRAIS; cruzadas por linhas escuras transversais — os discos intercalares.", func:"Contração involuntária, rítmica e automática, com acoplamento elétrico entre as células.", dica:"Estriado como o esquelético, mas com o núcleo no meio e as “emendas” escuras dos discos intercalares."},
+   {nome:"Músculo liso", onde:"Parede de vísceras, vasos, vias aéreas, útero e músculos eretores dos pelos.", como:"Células fusiformes, curtas, sem nenhuma estriação, com um único núcleo central alongado (aspecto de charuto).", func:"Contração involuntária, lenta e sustentada, com baixo gasto energético.", dica:"Sem estrias e núcleo no meio: parece um cardume de charutos alinhados."}
+  ]}
+ ]
 }
 ];
 
 const REVISAO=`
-<div class="cab"><div class="n">08</div><div><h2>Revisão final</h2><p>O que fazer nos últimos dias e como atacar uma peça desconhecida na bancada.</p></div></div>
+<div class="cab"><div class="n">11</div><div><h2>Revisão final</h2><p>O que fazer nos últimos dias e como atacar uma peça desconhecida na bancada.</p></div></div>
 <h3 style="font-size:20px;margin:18px 0 8px">Fluxo para qualquer peça na bancada</h3>
 <ol class="fluxo">
 <li><b>Que tipo de peça é?</b> Osso isolado, crânio inteiro, coluna montada, modelo muscular ou peça em corte.</li>
@@ -614,7 +780,7 @@ SECOES.forEach(sec=>{
   if(sec.armadilhas) html+=`<div class="armadilha"><b>Cuidado na prova</b><ul>${sec.armadilhas.map(a=>`<li>${esc(a)}</li>`).join("")}</ul></div>`;
   main.insertAdjacentHTML("beforeend",html+"</section>");
 });
-chips.insertAdjacentHTML("beforeend",`<a href="#revisao">08 · Revisão final</a>`);
+chips.insertAdjacentHTML("beforeend",`<a href="#revisao">11 · Revisão final</a>`);
 main.insertAdjacentHTML("beforeend",`<section id="revisao">${REVISAO}</section>`);
 
 /* ---------- progresso ---------- */
@@ -1272,6 +1438,236 @@ pontos:[
  {n:4,x:82,y:180,nome:"Oblíquo externo (lado esquerdo do desenho)",nota:"Fibras “mão no bolso” — roda para o lado OPOSTO"},
  {n:5,x:238,y:180,nome:"Oblíquo interno (lado direito do desenho)",nota:"Fibras cruzadas — roda para o MESMO lado"},
  {n:6,x:160,y:314,nome:"Transverso do abdome",nota:"Fibras horizontais — o cinto que comprime"}
+]},
+
+"osteon":{titulo:"Osso compacto — corte transversal (lâmina desgastada)",vb:"0 0 420 300",
+svg:`
+<rect class="matriz" x="0" y="0" width="420" height="300"/>
+${(()=>{let s="";[88,72,56,40,24].forEach(r=>s+=`<circle class="lamela" cx="150" cy="165" r="${r}"/>`);
+[56,42,28].forEach(r=>s+=`<circle class="lamela" cx="332" cy="112" r="${r}"/>`);return s;})()}
+${(()=>{let s="";const põe=(cx,cy,raios)=>{raios.forEach((r,i)=>{const n=7+i*2;for(let k=0;k<n;k++){const a=(k/n)*Math.PI*2+i*0.5;
+const x=(cx+Math.cos(a)*r).toFixed(1),y=(cy+Math.sin(a)*r).toFixed(1),g=(a*180/Math.PI+90).toFixed(1);
+s+=`<ellipse class="lacuna" cx="${x}" cy="${y}" rx="6" ry="2.8" transform="rotate(${g} ${x} ${y})"/>`;
+s+=`<path class="canalic" d="M${(cx+Math.cos(a)*(r-4)).toFixed(1)},${(cy+Math.sin(a)*(r-4)).toFixed(1)} L${(cx+Math.cos(a)*(r-12)).toFixed(1)},${(cy+Math.sin(a)*(r-12)).toFixed(1)}"/>`;
+s+=`<path class="canalic" d="M${(cx+Math.cos(a)*(r+4)).toFixed(1)},${(cy+Math.sin(a)*(r+4)).toFixed(1)} L${(cx+Math.cos(a)*(r+12)).toFixed(1)},${(cy+Math.sin(a)*(r+12)).toFixed(1)}"/>`;}})};
+põe(150,165,[32,48,64,80]);põe(332,112,[35,50]);return s;})()}
+<path class="canal-luz" d="M163,158 C210,146 268,128 306,120 L310,134 C270,142 214,160 166,172 Z"/>
+<circle class="canal-luz" cx="150" cy="165" r="13"/>
+<circle class="canal-luz" cx="332" cy="112" r="11"/>
+<path class="lamela" d="M250,214 C266,224 282,238 292,254"/>
+<path class="lamela" d="M262,206 C280,218 296,232 306,248"/>
+<path class="lamela" d="M274,200 C292,212 308,226 320,244"/>
+<path class="lamela" d="M0,266 C120,258 300,258 420,266"/>
+<path class="lamela" d="M0,258 C120,250 300,250 420,258"/>
+<rect class="periosteo" x="0" y="274" width="420" height="26"/>
+${(()=>{let s="";for(let x=8;x<420;x+=22)s+=`<ellipse class="cel-plana" cx="${x}" cy="${280}" rx="8" ry="3.4"/>`;
+for(let x=0;x<420;x+=14)s+=`<path class="canalic" d="M${x},292 L${x+10},299"/>`;return s;})()}
+`,
+pontos:[
+ {n:1,x:150,y:165,nome:"Canal central (de Havers)",nota:"Longitudinal, no meio dos anéis — leva vaso e nervo"},
+ {n:2,x:150,y:101,nome:"Lamelas concêntricas",nota:"Anéis de matriz com fibras alternadas"},
+ {n:3,x:150,y:245,nome:"Osteócito na lacuna",nota:"Espaço lenticular escuro entre as lamelas"},
+ {n:4,x:92,y:216,nome:"Canalículos",nota:"Fios finíssimos que ligam uma lacuna à outra"},
+ {n:5,x:240,y:140,nome:"Canal de Volkmann",nota:"Transversal: ATRAVESSA as lamelas, sem anéis próprios"},
+ {n:6,x:332,y:112,nome:"Ósteon (sistema de Havers)",nota:"Canal + seus anéis = a unidade do osso compacto"},
+ {n:7,x:286,y:228,nome:"Lamelas intersticiais",nota:"Arcos sem canal — restos de ósteons antigos"},
+ {n:8,x:60,y:262,nome:"Lamelas circunferenciais externas",nota:"Paralelas, contornando todo o osso"},
+ {n:9,x:60,y:288,nome:"Periósteo",nota:"Camada fibrosa por fora, osteogênica junto ao osso"}
+]},
+
+"celulas-osseas":{titulo:"Células do tecido ósseo — superfície de uma trabécula",vb:"0 0 420 270",
+svg:`
+<rect class="fundo-claro" x="0" y="0" width="420" height="270"/>
+<path class="matriz" d="M0,116 L250,116 C262,116 268,124 274,132 C286,150 306,154 322,142 C336,132 344,120 360,116 L420,116 L420,214 L0,214 Z"/>
+<rect class="osteoide" x="30" y="106" width="212" height="12"/>
+${(()=>{let s="";for(let i=0;i<9;i++){const x=32+i*23;
+s+=`<rect class="cel" x="${x}" y="80" width="20" height="27" rx="5"/><circle class="nucleo" cx="${x+10}" cy="90" r="6"/>`;}return s;})()}
+<path class="cel-grande" d="M258,132 C264,104 300,92 330,100 C356,106 366,124 358,140 C348,158 318,166 296,158 C276,152 262,144 258,132 Z"/>
+${(()=>{let s="";[[286,118],[306,110],[326,112],[340,126],[310,132]].forEach(p=>s+=`<circle class="nucleo" cx="${p[0]}" cy="${p[1]}" r="7"/>`);return s;})()}
+<path class="pregueada" d="M266,140 L274,150 L282,140 L290,150 L298,140 L306,150 L314,140 L322,150 L330,140 L338,148"/>
+${(()=>{let s="";[[60,150],[130,142],[196,158],[76,190],[150,186],[228,182],[300,190],[366,152],[372,196]].forEach(p=>{
+const [x,y]=p;s+=`<ellipse class="lacuna" cx="${x}" cy="${y}" rx="11" ry="6"/><circle class="nucleo" cx="${x}" cy="${y}" r="3.6"/>`;
+[[-1,-1],[1,-1],[-1,1],[1,1],[-1.4,0],[1.4,0]].forEach(d=>s+=`<path class="canalic" d="M${x+d[0]*9},${y+d[1]*5} L${x+d[0]*22},${y+d[1]*13}"/>`);});return s;})()}
+${(()=>{let s="";for(let x=20;x<410;x+=34)s+=`<ellipse class="cel-plana" cx="${x}" cy="220" rx="14" ry="5"/>`;return s;})()}
+`,
+pontos:[
+ {n:1,x:88,y:88,nome:"Osteoblastos",nota:"Fileira contínua de células cúbicas sobre a matriz"},
+ {n:2,x:150,y:112,nome:"Osteoide",nota:"Matriz recém-formada, ainda não mineralizada"},
+ {n:3,x:130,y:142,nome:"Osteócito",nota:"Célula aprisionada dentro da lacuna"},
+ {n:4,x:196,y:158,nome:"Lacuna (osteoplasto)",nota:"O espaço que aloja o osteócito"},
+ {n:5,x:76,y:190,nome:"Canalículos",nota:"Prolongamentos que conectam os osteócitos"},
+ {n:6,x:312,y:120,nome:"Osteoclasto",nota:"Gigante, multinucleado e acidófilo"},
+ {n:7,x:302,y:148,nome:"Borda pregueada",nota:"Face do osteoclasto voltada para o osso"},
+ {n:8,x:262,y:166,nome:"Lacuna de Howship",nota:"A cratera escavada pelo osteoclasto"},
+ {n:9,x:96,y:222,nome:"Endósteo",nota:"Células achatadas revestindo a face interna"},
+ {n:10,x:250,y:200,nome:"Matriz óssea mineralizada",nota:"Colágeno tipo I + hidroxiapatita"}
+]},
+
+"cartilagem-hialina":{titulo:"Cartilagem hialina — do pericôndrio ao centro",vb:"0 0 420 280",
+svg:`
+<rect class="cart" x="0" y="46" width="420" height="234"/>
+<rect class="conj" x="0" y="0" width="420" height="28"/>
+<rect class="conj2" x="0" y="28" width="420" height="18"/>
+${(()=>{let s="";for(let x=6;x<420;x+=16)s+=`<path class="fibrila" d="M${x},4 C${x+10},12 ${x+2},20 ${x+12},26"/>`;
+for(let x=14;x<420;x+=30)s+=`<ellipse class="cel-plana" cx="${x}" cy="37" rx="10" ry="4"/>`;return s;})()}
+${(()=>{let s="";for(let x=22;x<420;x+=44)s+=`<ellipse class="lacuna-c" cx="${x}" cy="60" rx="15" ry="6"/><ellipse class="condro" cx="${x}" cy="60" rx="11" ry="4"/>`;
+for(let x=30;x<420;x+=52)s+=`<ellipse class="lacuna-c" cx="${x}" cy="82" rx="15" ry="8"/><ellipse class="condro" cx="${x}" cy="82" rx="11" ry="5.5"/>`;return s;})()}
+${(()=>{let s="";const grupos=[[70,130,2],[190,124,3],[318,136,2],[110,206,4],[248,212,3],[368,196,2],[40,166,1],[290,168,1],[160,180,2]];
+grupos.forEach(g=>{const [cx,cy,n]=g;s+=`<ellipse class="territorial" cx="${cx}" cy="${cy}" rx="${16+n*9}" ry="${15+n*5}"/>`;
+for(let k=0;k<n;k++){const x=cx-(n-1)*11+k*22,y=cy+(k%2?7:-6);
+s+=`<circle class="lacuna-c" cx="${x}" cy="${y}" r="12"/><circle class="condro" cx="${x}" cy="${y}" r="8.5"/><circle class="nucleo" cx="${x}" cy="${y}" r="3.4"/>`;}});return s;})()}
+`,
+pontos:[
+ {n:1,x:60,y:14,nome:"Pericôndrio — camada fibrosa",nota:"Conjuntivo denso, com fibroblastos e vasos"},
+ {n:2,x:60,y:37,nome:"Pericôndrio — camada condrogênica",nota:"Fornece células novas (crescimento aposicional)"},
+ {n:3,x:198,y:60,nome:"Condroblastos",nota:"Achatados, logo abaixo do pericôndrio"},
+ {n:4,x:70,y:124,nome:"Condrócito",nota:"Arredondado, no interior da lacuna"},
+ {n:5,x:190,y:124,nome:"Grupo isógeno (ninho celular)",nota:"2 a 8 células vindas da mesma mãe — crescimento intersticial"},
+ {n:6,x:110,y:230,nome:"Matriz territorial",nota:"Halo mais basófilo em volta do ninho"},
+ {n:7,x:340,y:250,nome:"Matriz interterritorial",nota:"Mais pálida, entre os grupos"},
+ {n:8,x:240,y:96,nome:"Matriz hialina",nota:"Homogênea, sem fibras visíveis — vidro fosco"}
+]},
+
+"cartilagens-comparativo":{titulo:"As três cartilagens lado a lado",vb:"0 0 440 250",
+svg:`
+<rect class="cart" x="6" y="34" width="134" height="212"/>
+<rect class="conj" x="6" y="6" width="134" height="16"/>
+<rect class="conj2" x="6" y="22" width="134" height="12"/>
+${(()=>{let s="";[[46,80,2],[104,120,3],[54,168,2],[100,212,2]].forEach(g=>{const[cx,cy,n]=g;
+s+=`<ellipse class="territorial" cx="${cx}" cy="${cy}" rx="${14+n*8}" ry="20"/>`;
+for(let k=0;k<n;k++){const x=cx-(n-1)*10+k*20,y=cy+(k%2?6:-5);
+s+=`<circle class="lacuna-c" cx="${x}" cy="${y}" r="10"/><circle class="condro" cx="${x}" cy="${y}" r="7"/>`;}});return s;})()}
+<rect class="cart" x="152" y="34" width="134" height="212"/>
+<rect class="conj" x="152" y="6" width="134" height="16"/>
+<rect class="conj2" x="152" y="22" width="134" height="12"/>
+${(()=>{let s="";for(let i=0;i<26;i++){const x=156+(i%7)*19,y=44+Math.floor(i/7)*50;
+s+=`<path class="elastica" d="M${x},${y} C${x+12},${y+14} ${x-6},${y+26} ${x+10},${y+40}"/>`;
+s+=`<path class="elastica" d="M${x+4},${y+6} C${x+18},${y+16} ${x+2},${y+28} ${x+16},${y+42}"/>`;}
+[[188,74],[248,96],[196,150],[254,186],[178,214],[236,58],[264,138],[186,110]].forEach(p=>{
+s+=`<circle class="lacuna-c" cx="${p[0]}" cy="${p[1]}" r="11"/><circle class="condro" cx="${p[0]}" cy="${p[1]}" r="8"/><circle class="nucleo" cx="${p[0]}" cy="${p[1]}" r="3"/>`;});return s;})()}
+<rect class="fundo-claro" x="298" y="6" width="136" height="240"/>
+${(()=>{let s="";for(let i=0;i<9;i++){const y=14+i*27;
+s+=`<path class="colageno" d="M300,${y} C340,${y-6} 392,${y+8} 432,${y+2} L432,${y+15} C392,${y+21} 340,${y+7} 300,${y+13} Z"/>`;}
+for(let i=0;i<8;i++){const y=27+i*27,x=316+(i%3)*38;
+s+=`<ellipse class="lacuna-c" cx="${x}" cy="${y}" rx="11" ry="7"/><ellipse class="condro" cx="${x}" cy="${y}" rx="8" ry="4.6"/>`;
+s+=`<ellipse class="lacuna-c" cx="${x+44}" cy="${y+2}" rx="11" ry="7"/><ellipse class="condro" cx="${x+44}" cy="${y+2}" rx="8" ry="4.6"/>`;}return s;})()}
+`,
+pontos:[
+ {n:1,x:74,y:120,nome:"Hialina — matriz homogênea",nota:"Lisa e basófila, sem fibras aparentes"},
+ {n:2,x:104,y:120,nome:"Hialina — grupos isógenos",nota:"Ninhos arredondados com halo escuro"},
+ {n:3,x:20,y:14,nome:"Pericôndrio",nota:"Presente na hialina e na elástica"},
+ {n:4,x:222,y:130,nome:"Elástica — fibras elásticas",nota:"Rede escura e ramificada dentro da matriz"},
+ {n:5,x:248,y:96,nome:"Elástica — condrócitos numerosos",nota:"Mais células e menos matriz que a hialina"},
+ {n:6,x:388,y:70,nome:"Fibrocartilagem — feixes de colágeno I",nota:"Grossos, paralelos e acidófilos"},
+ {n:7,x:360,y:190,nome:"Fibrocartilagem — condrócitos em fileira",nota:"Alinhados entre os feixes"},
+ {n:8,x:314,y:238,nome:"Fibrocartilagem — sem pericôndrio",nota:"A borda passa direto para o conjuntivo vizinho"}
+]},
+
+"musculo-camadas":{titulo:"Músculo esquelético — corte transversal e suas bainhas",vb:"0 0 420 300",
+svg:`
+<rect class="fundo-claro" x="0" y="0" width="420" height="300"/>
+<rect class="conj" x="8" y="8" width="404" height="284" rx="26"/>
+<rect class="conj2" x="26" y="26" width="368" height="248" rx="20"/>
+${(()=>{const fasc=[[112,96,74],[292,100,72],[130,214,66],[300,212,64]];let s="";
+fasc.forEach(f=>{const[cx,cy,r]=f;s+=`<circle class="fasc" cx="${cx}" cy="${cy}" r="${r}"/>`;
+let i=0;for(let dy=-1;dy<=1;dy++)for(let dx=-2;dx<=2;dx++){
+ const x=cx+dx*25+(dy?12:0),y=cy+dy*26;
+ if(Math.hypot(x-cx,y-cy)>r-14) continue;
+ s+=`<circle class="fibra-t" cx="${x}" cy="${y}" r="12"/>`;
+ s+=`<circle class="nucleo" cx="${(x+9*Math.cos(i)).toFixed(1)}" cy="${(y+9*Math.sin(i)).toFixed(1)}" r="3"/>`;
+ s+=`<circle class="nucleo" cx="${(x+9*Math.cos(i+2)).toFixed(1)}" cy="${(y+9*Math.sin(i+2)).toFixed(1)}" r="2.6"/>`;
+ i+=1.1;}});return s;})()}
+<circle class="vaso" cx="206" cy="150" r="9"/>
+<circle class="vaso" cx="196" cy="60" r="6"/>
+<circle class="vaso" cx="214" cy="246" r="6"/>
+`,
+pontos:[
+ {n:1,x:18,y:150,nome:"Epimísio",nota:"Envolve o MÚSCULO inteiro — continua no tendão"},
+ {n:2,x:206,y:150,nome:"Perimísio",nota:"Envolve cada FASCÍCULO e carrega vasos e nervos"},
+ {n:3,x:112,y:96,nome:"Fascículo",nota:"Grupo de fibras delimitado pelo perimísio"},
+ {n:4,x:292,y:100,nome:"Fibra muscular (corte transversal)",nota:"Cada círculo é uma célula"},
+ {n:5,x:130,y:214,nome:"Endomísio",nota:"Película finíssima em volta de CADA fibra"},
+ {n:6,x:300,y:212,nome:"Núcleos periféricos",nota:"Encostados no sarcolema — assinatura do esquelético"},
+ {n:7,x:196,y:60,nome:"Vasos do perimísio",nota:"Chegam pelos septos e capilarizam no endomísio"}
+]},
+
+"musculo-comparativo":{titulo:"Os três tecidos musculares — corte longitudinal",vb:"0 0 440 260",
+svg:`
+<rect class="fundo-claro" x="0" y="0" width="440" height="260"/>
+${(()=>{let s="";for(let i=0;i<3;i++){const y=18+i*26;
+s+=`<rect class="fibra-l" x="8" y="${y}" width="126" height="20" rx="5"/>`;
+for(let x=12;x<132;x+=6)s+=`<path class="estria" d="M${x},${y+2} L${x},${y+18}"/>`;
+s+=`<ellipse class="nucleo" cx="${34+i*22}" cy="${y+3}" rx="6" ry="2.6"/><ellipse class="nucleo" cx="${96-i*14}" cy="${y+17}" rx="6" ry="2.6"/>`;}
+return s;})()}
+${(()=>{let s="";const y0=112;
+s+=`<path class="fibra-l" d="M8,${y0} L74,${y0} L94,${y0-16} L134,${y0-16} L134,${y0+4} L98,${y0+4} L80,${y0+20} L8,${y0+20} Z"/>`;
+s+=`<path class="fibra-l" d="M8,${y0+34} L70,${y0+34} L88,${y0+50} L134,${y0+50} L134,${y0+70} L80,${y0+70} L62,${y0+54} L8,${y0+54} Z"/>`;
+for(let x=12;x<134;x+=6){s+=`<path class="estria" d="M${x},${y0+2} L${x},${y0+18}"/><path class="estria" d="M${x},${y0+36} L${x},${y0+52}"/>`;}
+[[44,y0+10],[112,y0-6],[40,y0+44],[110,y0+60]].forEach(p=>s+=`<ellipse class="nucleo" cx="${p[0]}" cy="${p[1]}" rx="7" ry="4"/>`);
+[[70,y0,20],[86,y0+34,20]].forEach(d=>s+=`<path class="disco" d="M${d[0]},${d[1]} L${d[0]},${d[1]+d[2]}"/>`);
+s+=`<path class="disco" d="M30,${y0} L30,${y0+20}"/><path class="disco" d="M112,${y0-16} L112,${y0+4}"/><path class="disco" d="M120,${y0+50} L120,${y0+70}"/>`;
+return s;})()}
+${(()=>{let s="";for(let i=0;i<7;i++){const y=210+((i%2)?10:0),x=10+i*20;
+s+=`<ellipse class="fibra-lisa" cx="${x+20}" cy="${y}" rx="30" ry="9" transform="rotate(${i%2?6:-6} ${x+20} ${y})"/>`;
+s+=`<ellipse class="nucleo" cx="${x+20}" cy="${y}" rx="8" ry="3.4"/>`;}return s;})()}
+<path class="linha-corte" d="M150,6 L150,254"/>
+<path class="linha-corte" d="M150,100 L440,100"/>
+<path class="linha-corte" d="M150,182 L440,182"/>
+${(()=>{let s="";for(let i=0;i<4;i++){const y=20+i*20;
+s+=`<rect class="fibra-l" x="168" y="${y}" width="258" height="15" rx="4"/>`;
+for(let x=172;x<424;x+=5)s+=`<path class="estria" d="M${x},${y+2} L${x},${y+13}"/>`;
+s+=`<ellipse class="nucleo" cx="${210+i*46}" cy="${y+2}" rx="8" ry="2.6"/><ellipse class="nucleo" cx="${330-i*40}" cy="${y+13}" rx="8" ry="2.6"/>`;}return s;})()}
+${(()=>{let s="";const y0=118;
+s+=`<path class="fibra-l" d="M168,${y0} L268,${y0} L292,${y0-18} L426,${y0-18} L426,${y0+2} L298,${y0+2} L276,${y0+20} L168,${y0+20} Z"/>`;
+s+=`<path class="fibra-l" d="M168,${y0+30} L262,${y0+30} L286,${y0+48} L426,${y0+48} L426,${y0+66} L292,${y0+66} L268,${y0+50} L168,${y0+50} Z"/>`;
+for(let x=172;x<426;x+=5){s+=`<path class="estria" d="M${x},${y0+3} L${x},${y0+17}"/><path class="estria" d="M${x},${y0+33} L${x},${y0+47}"/>`;}
+[[214,y0+10],[340,y0-8],[210,y0+40],[350,y0+58]].forEach(p=>s+=`<ellipse class="nucleo" cx="${p[0]}" cy="${p[1]}" rx="9" ry="4.4"/>`);
+[[254,y0,20],[380,y0-18,20],[248,y0+30,20],[392,y0+48,18]].forEach(d=>s+=`<path class="disco" d="M${d[0]},${d[1]} L${d[0]},${d[1]+d[2]}"/>`);
+return s;})()}
+${(()=>{let s="";for(let i=0;i<8;i++){const x=172+i*32,y=214+((i%2)?12:0);
+s+=`<ellipse class="fibra-lisa" cx="${x}" cy="${y}" rx="30" ry="10" transform="rotate(${i%2?7:-7} ${x} ${y})"/>`;
+s+=`<ellipse class="nucleo" cx="${x}" cy="${y}" rx="9" ry="3.6"/>`;}return s;})()}
+`,
+pontos:[
+ {n:1,x:300,y:30,nome:"Fibra esquelética",nota:"Cilíndrica, longa e não ramificada"},
+ {n:2,x:210,y:22,nome:"Núcleos periféricos",nota:"Vários por fibra, encostados na borda"},
+ {n:3,x:400,y:60,nome:"Estriação transversal",nota:"Alternância das bandas claras e escuras"},
+ {n:4,x:300,y:128,nome:"Fibra cardíaca ramificada",nota:"Divide-se e volta a se unir"},
+ {n:5,x:214,y:128,nome:"Núcleo central (cardíaco)",nota:"Um ou dois, no meio da célula"},
+ {n:6,x:254,y:110,nome:"Disco intercalar",nota:"Linha escura transversal entre duas células"},
+ {n:7,x:300,y:216,nome:"Célula muscular lisa",nota:"Fusiforme e sem estriação"},
+ {n:8,x:236,y:226,nome:"Núcleo único e central (liso)",nota:"Alongado, em charuto"}
+]},
+
+"sarcomero":{titulo:"Sarcômero — a unidade contrátil",vb:"0 0 440 250",
+svg:`
+<rect class="fundo-claro" x="0" y="0" width="440" height="250"/>
+<path class="zlinha" d="M70,44 L70,164"/>
+<path class="zlinha" d="M370,44 L370,164"/>
+<path class="mlinha" d="M220,58 L220,150"/>
+${(()=>{let s="";[72,96,120,144].forEach(y=>{
+s+=`<rect class="miosina" x="130" y="${y-5}" width="180" height="10" rx="5"/>`;
+for(let x=138;x<306;x+=14){s+=`<path class="ponte" d="M${x},${y-5} L${x-5},${y-12}"/><path class="ponte" d="M${x},${y+5} L${x-5},${y+12}"/>`;}
+});
+[60,84,108,132,156].forEach(y=>{
+s+=`<path class="actina" d="M70,${y} L200,${y}"/>`;
+s+=`<path class="actina" d="M370,${y} L240,${y}"/>`;});
+return s;})()}
+<path class="medida" d="M130,180 L310,180 M130,175 L130,185 M310,175 L310,185"/>
+<path class="medida" d="M20,204 L130,204 M20,199 L20,209 M130,199 L130,209"/>
+<path class="medida" d="M310,204 L420,204 M310,199 L310,209 M420,199 L420,209"/>
+<path class="medida" d="M200,158 L240,158 M200,153 L200,163 M240,153 L240,163"/>
+<path class="medida2" d="M70,228 L370,228 M70,222 L70,234 M370,222 L370,234"/>
+`,
+pontos:[
+ {n:1,x:70,y:38,nome:"Linha Z",nota:"Ancora a actina e delimita o sarcômero"},
+ {n:2,x:220,y:52,nome:"Linha M",nota:"Ancora a miosina no centro"},
+ {n:3,x:220,y:180,nome:"Banda A (escura)",nota:"Extensão da miosina — NÃO muda na contração"},
+ {n:4,x:74,y:204,nome:"Banda I (clara)",nota:"Só actina — diminui na contração"},
+ {n:5,x:220,y:158,nome:"Zona H",nota:"Só miosina, no meio da banda A — diminui"},
+ {n:6,x:280,y:96,nome:"Filamento grosso (miosina)",nota:"Com as pontes cruzadas que puxam a actina"},
+ {n:7,x:120,y:132,nome:"Filamento fino (actina)",nota:"Preso à linha Z, desliza sobre a miosina"},
+ {n:8,x:220,y:228,nome:"Sarcômero",nota:"De uma linha Z até a próxima"}
 ]}
 
 };
