@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sistema Axial — Guia da Prova Prática | Anatomia Humana</title>
+<meta name="description" content="Guia completo de anatomia do sistema axial (crânio, coluna vertebral e tórax) para prova prática: onde fica, como identificar na peça, para que serve e a imagem mental de cada estrutura.">
+<meta property="og:title" content="Sistema Axial — Guia da Prova Prática">
+<meta property="og:description" content="Crânio, coluna vertebral e tórax: identificação, função e imagens mentais de cada estrutura do roteiro.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --papel:#EDEFE9; --osso:#FBFAF5; --tinta:#12211C; --verde:#1F5D4C; --verde-claro:#E2EBE5;
+  --marca:#B8433A; --marca-fundo:#F8E9E7; --mostarda:#C98B12; --mostarda-fundo:#FBF3DF; --mostarda-borda:#EBD9A8;
+  --cinza:#6C7972; --linha:#D3D8CE; --palco:#FFFFFF;
+  --sombra:0 1px 0 rgba(18,33,28,.06), 0 8px 24px -18px rgba(18,33,28,.5);
+  --raio:14px;
+}
+html[data-tema="escuro"]{
+  --papel:#121714; --osso:#19201C; --tinta:#E8EDE7; --verde:#7BC0A6; --verde-claro:#1E2E28;
+  --marca:#E38A80; --marca-fundo:#2C1F1D; --mostarda:#E0AE4A; --mostarda-fundo:#251F12; --mostarda-borda:#4A3D1E;
+  --cinza:#94A39B; --linha:#2A342E; --palco:#F4F4F0;
+  --sombra:0 1px 0 rgba(0,0,0,.3), 0 8px 24px -18px #000;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--papel);color:var(--tinta);
+  font-family:"Inter Tight",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:16px;line-height:1.55;padding-bottom:92px}
+h1,h2,h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.01em;line-height:1.05;margin:0}
+a{color:var(--verde)}
+:focus-visible{outline:2px solid var(--marca);outline-offset:2px}
+
+/* capa */
+.capa{padding:32px 18px 24px;border-bottom:1px solid var(--linha)}
+.capa-topo{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde)}
+.capa h1{font-size:clamp(36px,10.5vw,58px);margin:10px 0 8px}
+.capa h1 em{font-style:italic;color:var(--verde)}
+.capa .sub{color:var(--cinza);font-size:15px;max-width:48ch;margin:0}
+#tema{background:var(--osso);border:1px solid var(--linha);color:var(--tinta);width:38px;height:38px;
+  border-radius:10px;font-size:16px;cursor:pointer;flex:0 0 auto}
+.progresso{margin-top:18px}
+.progresso-barra{height:7px;border-radius:99px;background:var(--linha);overflow:hidden}
+.progresso-barra i{display:block;height:100%;background:var(--verde);width:0;transition:width .25s}
+.progresso p{margin:7px 0 0;font-size:12px;color:var(--cinza);font-family:"JetBrains Mono",monospace}
+
+/* nav */
+nav{position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--papel) 93%, transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--linha)}
+.chips{display:flex;gap:7px;overflow-x:auto;padding:9px 14px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chips a{flex:0 0 auto;text-decoration:none;color:var(--tinta);background:var(--osso);border:1px solid var(--linha);
+  padding:6px 12px;border-radius:99px;font-size:12.5px;font-weight:500;white-space:nowrap}
+.chips a:hover{border-color:var(--verde);color:var(--verde)}
+.busca-linha{padding:0 14px 10px}
+#busca{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--linha);background:var(--osso);
+  color:var(--tinta);font-family:inherit;font-size:14px}
+
+/* seções */
+section{padding:34px 16px 6px;max-width:840px;margin:0 auto}
+.cab{display:flex;gap:14px;align-items:flex-start;border-bottom:2px solid var(--tinta);padding-bottom:12px;margin-bottom:16px}
+.cab .n{font-family:"Instrument Serif",serif;font-size:42px;line-height:.85;color:var(--verde);min-width:50px}
+.cab h2{font-size:clamp(24px,6.2vw,33px)}
+.cab p{margin:6px 0 0;font-size:14px;color:var(--cinza)}
+.grupo{margin:24px 0}
+.grupo-tit{display:flex;align-items:center;gap:9px;margin-bottom:11px;flex-wrap:wrap}
+.grupo-tit h3{font-size:21px}
+.tag{font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--verde-claro);color:var(--verde);padding:4px 8px;border-radius:5px}
+.tag.musc{background:var(--marca-fundo);color:var(--marca)}
+
+/* peça */
+.peca{position:relative;background:var(--osso);border:1px solid var(--linha);border-radius:var(--raio);
+  padding:14px 14px 12px 20px;margin-bottom:11px;box-shadow:var(--sombra)}
+.peca::before{content:"";position:absolute;left:0;top:13px;bottom:13px;width:4px;border-radius:0 4px 4px 0;background:var(--verde)}
+.peca.destaque::before{background:var(--marca)}
+.peca.ok{opacity:.62}
+.peca-cab{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.peca-cab h4{margin:0;font-family:"Inter Tight",sans-serif;font-size:16.5px;font-weight:700;letter-spacing:-.01em;flex:1}
+.peca-cod{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--cinza);letter-spacing:.05em}
+.dominei{width:26px;height:26px;border-radius:8px;border:1px solid var(--linha);background:transparent;
+  cursor:pointer;font-size:13px;color:var(--cinza);flex:0 0 auto;line-height:1}
+.dominei[aria-pressed="true"]{background:var(--verde);border-color:var(--verde);color:#fff}
+.campo{display:grid;grid-template-columns:74px 1fr;gap:9px;padding:6px 0;border-top:1px dashed var(--linha)}
+.campo:first-of-type{border-top:none}
+.campo dt{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:var(--cinza);padding-top:3px}
+.campo dd{margin:0;font-size:14.5px}
+.campo.imagem dd{color:var(--tinta)}
+.campo.imagem dt{color:var(--mostarda)}
+dl{margin:0}
+
+/* caixas */
+.macete{background:var(--mostarda-fundo);border:1px solid var(--mostarda-borda);border-left:4px solid var(--mostarda);
+  border-radius:10px;padding:11px 13px;margin:14px 0;font-size:14.5px}
+.macete b,.armadilha b{display:block;font-family:"JetBrains Mono",monospace;font-size:9.5px;letter-spacing:.12em;
+  text-transform:uppercase;margin-bottom:4px}
+.macete b{color:var(--mostarda)}
+.armadilha{background:var(--marca-fundo);border:1px solid var(--marca);border-left:4px solid var(--marca);
+  border-radius:10px;padding:11px 13px;margin:14px 0;font-size:14.5px}
+.armadilha b{color:var(--marca)}
+.armadilha ul{margin:6px 0 0;padding-left:18px}
+.armadilha li{margin-bottom:5px}
+
+/* tabela */
+.tabela-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--linha);border-radius:var(--raio);background:var(--osso)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:13.5px}
+caption{text-align:left;padding:11px 13px 0;font-size:12px;color:var(--cinza);font-family:"JetBrains Mono",monospace;letter-spacing:.05em}
+th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--linha);vertical-align:top}
+th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--verde);font-weight:600;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+td:first-child{font-weight:600}
+
+/* figuras */
+.fig{margin:16px 0 18px;background:var(--osso);border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden}
+.fig-topo{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 12px;border-bottom:1px solid var(--linha)}
+.fig-tit{font-size:13px;font-weight:600}
+.fig-nav{display:flex;gap:5px;align-items:center}
+.fig-nav button{border:1px solid var(--linha);background:var(--papel);color:var(--tinta);width:29px;height:29px;
+  border-radius:8px;font-size:15px;cursor:pointer;line-height:1}
+.fig-nav button:hover{border-color:var(--verde);color:var(--verde)}
+.fig-nav .cont{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--cinza);min-width:32px;text-align:center}
+.fig-palco{background:var(--palco);display:flex;align-items:center;justify-content:center;min-height:180px;padding:8px}
+.fig-palco img{max-width:100%;height:auto;display:block;border-radius:6px}
+.fig-estado{font-size:13px;color:var(--cinza);padding:26px 16px;text-align:center}
+.fig-olhar{padding:9px 12px;font-size:13px;border-top:1px solid var(--linha);background:var(--verde-claro);color:var(--tinta)}
+.fig-olhar span{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--verde);display:block;margin-bottom:2px}
+.fig-pe{padding:8px 12px;font-size:11px;color:var(--cinza);border-top:1px solid var(--linha);display:flex;justify-content:space-between;gap:10px}
+
+/* revisão final */
+.fluxo{counter-reset:p;margin:16px 0;padding:0;list-style:none}
+.fluxo li{position:relative;padding:12px 14px 12px 46px;background:var(--osso);border:1px solid var(--linha);
+  border-radius:12px;margin-bottom:9px;font-size:14.5px}
+.fluxo li::before{counter-increment:p;content:counter(p);position:absolute;left:13px;top:12px;
+  font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--verde);border:1px solid var(--verde);
+  width:22px;height:22px;border-radius:50%;display:grid;place-items:center}
+
+/* barra + prova */
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--tinta);color:var(--papel);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px}
+html[data-tema="escuro"] .barra{background:#0A0E0C}
+.barra p{margin:0;font-size:12.5px;opacity:.72}
+.barra button{background:var(--mostarda);color:#22190A;border:none;padding:10px 16px;border-radius:9px;
+  font-weight:700;font-size:14px;cursor:pointer;font-family:inherit}
+dialog{border:none;border-radius:16px;padding:0;width:min(560px,92vw);background:var(--osso);color:var(--tinta)}
+dialog::backdrop{background:rgba(8,14,11,.65)}
+.prova{padding:18px}
+.prova-topo{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.prova-topo b{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--verde)}
+.prova-topo button{background:none;border:none;font-size:22px;cursor:pointer;color:var(--cinza);line-height:1}
+.carta{border:1px solid var(--linha);border-radius:12px;padding:15px;background:var(--papel);min-height:180px}
+.carta .dica{font-size:14.5px;margin:0 0 9px}
+.dica-rot{font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--cinza);display:block;margin-bottom:2px}
+.resposta{margin-top:11px;padding-top:11px;border-top:1px dashed var(--linha);display:none}
+.resposta.on{display:block}
+.resposta h5{margin:0 0 5px;font-size:19px;font-family:"Instrument Serif",serif;font-weight:400;color:var(--verde)}
+.resposta p{margin:0 0 7px;font-size:13.5px}
+.prova-acoes{display:flex;gap:9px;margin-top:12px}
+.prova-acoes button{flex:1;padding:11px;border-radius:10px;font-weight:600;font-size:14px;cursor:pointer;
+  font-family:inherit;border:1px solid var(--tinta);background:var(--tinta);color:var(--papel)}
+.prova-acoes .sec{background:transparent;color:var(--tinta)}
+.filtro{width:100%;margin-top:11px;padding:10px;border-radius:9px;border:1px solid var(--linha);
+  background:var(--papel);font-family:inherit;font-size:13px;color:var(--tinta)}
+footer{max-width:840px;margin:36px auto 0;padding:20px 16px 26px;border-top:1px solid var(--linha);font-size:13px;color:var(--cinza)}
+footer b{color:var(--tinta)}
+.oculto{display:none!important}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+@media(min-width:700px){.campo{grid-template-columns:92px 1fr}}
+</style>
+</head>
+<body>
+
+<header class="capa">
+  <div class="capa-topo">
+    <div>
+      <div class="eyebrow">Componente Biomorfofuncional I · Núcleo Comum</div>
+      <h1>Sistema <em>Axial</em></h1>
+    </div>
+    <button id="tema" aria-label="Alternar tema">◐</button>
+  </div>
+  <p class="sub">Crânio, coluna vertebral e tórax. Cada estrutura traz onde fica, como reconhecer na peça, o que faz e a imagem mental que faz o nome grudar.</p>
+  <div class="progresso">
+    <div class="progresso-barra"><i id="barraFill"></i></div>
+    <p id="progressoTxt">0 de 0 estruturas marcadas</p>
+  </div>
+</header>
+
+<nav>
+  <div class="chips" id="chips"></div>
+  <div class="busca-linha"><input id="busca" type="search" placeholder="Buscar estrutura (ex.: ptério, sela, hiato…)" autocomplete="off"></div>
+</nav>
+
+<main id="main"></main>
+
+<footer>
+  <p><b>Imagens:</b> carregadas do Wikimedia Commons (domínio público / Creative Commons). Precisa de internet na primeira abertura de cada seção; o texto funciona offline.</p>
+  <p><b>Referências do roteiro:</b> Moore, Dalley &amp; Agur — <i>Anatomia orientada para a clínica</i>, 8ª ed.; Netter — <i>Atlas de Anatomia Humana</i>, 7ª ed.</p>
+</footer>
+
+<div class="barra">
+  <p>Reconheça antes de nomear</p>
+  <button id="abrirProva">Modo prova</button>
+</div>
+
+<dialog id="dlg">
+  <div class="prova">
+    <div class="prova-topo"><b id="provaSec">Modo prova</b><button id="fechar" aria-label="Fechar">×</button></div>
+    <div class="carta">
+      <p class="dica"><span class="dica-rot">Onde está</span><span id="qOnde"></span></p>
+      <p class="dica"><span class="dica-rot">Como identificar</span><span id="qComo"></span></p>
+      <div class="resposta" id="resp">
+        <h5 id="qNome"></h5>
+        <p><span class="dica-rot">Função</span><span id="qFunc"></span></p>
+        <p><span class="dica-rot">Imagem mental</span><span id="qDica"></span></p>
+      </div>
+    </div>
+    <div class="prova-acoes">
+      <button class="sec" id="revelar">Revelar</button>
+      <button id="proxima">Próxima</button>
+    </div>
+    <select class="filtro" id="filtro"></select>
+  </div>
+</dialog>
+
+<script>
+/* ============================================================
+   1. CONTEÚDO
+   campos por estrutura: onde · como (identificar) · func · dica (nome + imagem mental)
+   ============================================================ */
+const SECOES=[
+{
+ id:"cranio", n:"01", titulo:"Ossos do crânio", tag:"ossea",
+ resumo:"Neurocrânio (8 ossos, a caixa) + viscerocrânio (14 ossos, a face). Na bancada, oriente a peça por três referências antes de qualquer coisa: órbita, meato acústico externo e forame magno.",
+ figuras:[
+  {t:"Crânio — vista lateral", file:"705 Lateral View of Skull-01.jpg", q:"skull lateral view labeled bones", olhar:"Ache o meato acústico externo. Atrás dele: mastoide. À frente e abaixo: fossa mandibular e arco zigomático. Acima e à frente: ptério."},
+  {t:"Crânio — vista anterior", q:"skull anterior view labeled bones anatomy", olhar:"Margem supraorbital, órbita, abertura piriforme do nariz, maxila e mandíbula com seus processos alveolares."},
+  {t:"Crânio — vista superior e suturas", q:"skull superior view sutures coronal sagittal lambdoid", olhar:"Sutura coronal cruzando a sagital = bregma. Sagital com a lambdóidea = lambda."},
+  {t:"Base do crânio — vistas interna e externa", file:"707 Superior-Inferior View of Skull Base-01.jpg", q:"skull base inferior view labeled foramen magnum", olhar:"Forame magno no centro, côndilos occipitais nas laterais, processos estiloide e mastoide, palato duro à frente."},
+  {t:"Fossas cranianas (interior da base)", q:"cranial fossae interior skull base sella turcica", olhar:"Degraus de três andares: fossa anterior (crista galli e lâmina cribriforme), média (sela túrcica) e posterior (forame magno)."},
+  {t:"Osso frontal isolado", q:"frontal bone anatomy isolated labeled", olhar:"Glabela na linha média, margens supraorbitais nas bordas e a incisura supraorbital no terço medial."},
+  {t:"Osso temporal isolado", q:"temporal bone anatomy isolated labeled", olhar:"As quatro partes (escamosa, timpânica, mastóidea, petrosa) e os três processos: zigomático, estiloide e mastoide."},
+  {t:"Osso esfenoide isolado", q:"sphenoid bone superior view labeled", olhar:"O 'morcego': asas menores à frente, asas maiores atrás e a sela túrcica bem no meio do corpo."},
+  {t:"Osso etmoide isolado", q:"ethmoid bone anatomy labeled crista galli", olhar:"Crista galli apontando para cima, lâmina cribriforme peneirada e as conchas superior e média penduradas."},
+  {t:"Mandíbula", q:"mandible bone lateral view labeled coronoid condylar", olhar:"Corpo em ferradura, ramo subindo, ângulo no canto e os dois processos separados pela incisura mandibular."},
+  {t:"Cavidade nasal e conchas", q:"nasal cavity lateral wall conchae labeled", olhar:"Três conchas empilhadas: superior e média são do etmoide; a inferior é osso independente e a maior."}
+ ],
+ macete:"22 ossos: 8 no neurocrânio (frontal, occipital, esfenoide, etmoide + 2 parietais e 2 temporais) e 14 na face. Só a mandíbula se move — o resto está travado por suturas.",
+ armadilhas:["Concha nasal superior e média pertencem ao ETMOIDE; a inferior é um osso próprio e independente.","O processo zigomático do temporal e o processo temporal do zigomático são coisas diferentes — juntos formam o arco.","O ptério não é um osso, é um encontro de quatro ossos.","Nem todo forame grande da base é o magno: os forames jugular e oval também são amplos — o magno é o central e o maior."],
+ grupos:[
+  {titulo:"Frontal", itens:[
+   {nome:"Glabela", onde:"Linha média da testa, entre os dois arcos superciliares, acima da raiz do nariz.", como:"Área lisa e levemente elevada, sem sutura, no ponto mais anterior entre as sobrancelhas.", func:"Ponto craniométrico de referência e zona de transição entre a escama frontal e a parte nasal do osso.", dica:"Do latim glaber = liso, sem pelo. É literalmente a clareira sem pelos entre as sobrancelhas."},
+   {nome:"Margem supraorbital", onde:"Borda superior da órbita, formada inteiramente pelo osso frontal.", como:"Borda óssea nítida acima do olho; no terço medial há a incisura (ou forame) supraorbital.", func:"Protege o globo ocular contra impactos frontais e dá passagem ao nervo e vasos supraorbitais.", dica:"Supra = acima, órbita = órbita. É o parapeito da janela do olho — e o entalhe é a passagem do fio elétrico (o nervo)."},
+   {nome:"Seio frontal", onde:"Dentro do osso frontal, acima da margem supraorbital e da raiz do nariz.", como:"Só aparece em peça seccionada ou crânio aberto: cavidade aerada e irregular no meio da díploe.", func:"Aquece e umidifica o ar, dá ressonância à voz e alivia o peso do crânio.", dica:"Bolha de ar dentro do osso. É por isso que a sinusite frontal dói exatamente na testa, atrás da sobrancelha."}
+  ]},
+  {titulo:"Parietal", itens:[
+   {nome:"Linhas temporais superior e inferior", onde:"Face externa (lateral) do parietal, arqueando-se de frente para trás.", como:"Duas linhas curvas rasas e paralelas; a superior é mais alta e delimita o teto da fossa temporal.", func:"Superior: inserção da fáscia temporal. Inferior: inserção do músculo temporal.", dica:"Dois trilhos curvos desenhados no osso. Temporal vem de tempus (tempo) — é a têmpora, onde aparecem os primeiros cabelos brancos."}
+  ]},
+  {titulo:"Occipital", itens:[
+   {nome:"Protuberância occipital externa (ínio)", onde:"Linha média da face posterior do crânio.", como:"Saliência mediana palpável na nuca, com as linhas nucais partindo dela lateralmente.", func:"Inserção do ligamento nucal e das fibras superiores do trapézio.", dica:"É o calombo em que o capuz do moletom apoia. Ínio = nuca, em grego."},
+   {nome:"Côndilos occipitais", onde:"Lateralmente ao forame magno, na face inferior do occipital.", como:"Duas superfícies ovais, convexas e lisas, uma de cada lado do maior buraco do crânio.", func:"Articulam com as massas laterais do atlas (articulação atlantoccipital) — movimento de dizer “sim”.", dica:"Kondylos = nó de articulação. Imagine dois patins encaixados nas conchas do atlas: o crânio balança para frente e para trás sobre eles."},
+   {nome:"Forame magno", onde:"Centro da base do crânio, na porção basilar do occipital.", como:"O maior forame do crânio — é a referência para orientar qualquer peça craniana.", func:"Passagem do tronco encefálico para a medula espinhal, artérias vertebrais e raízes espinhais do nervo acessório.", dica:"“Buraco grande”. É a porta principal do crânio: tudo que é grande e essencial passa por ali."}
+  ]},
+  {titulo:"Temporal", itens:[
+   {nome:"Meato acústico externo", onde:"Parte timpânica do temporal, na face lateral do crânio.", como:"Orifício arredondado na altura da orelha.", func:"Conduz as ondas sonoras até a membrana timpânica.", dica:"Meatus = passagem. Use como bússola da lateral do crânio: mastoide atrás, fossa mandibular à frente, ptério acima e à frente."},
+   {nome:"Fossa mandibular", onde:"Face inferior da porção escamosa, imediatamente à frente do meato acústico externo.", como:"Depressão oval e lisa, com o tubérculo articular formando um degrau à frente dela.", func:"Recebe a cabeça da mandíbula — é o componente craniano da ATM.", dica:"O berço onde a mandíbula deita. Ao abrir muito a boca, a cabeça escorrega para cima do tubérculo — é assim que a mandíbula luxa."},
+   {nome:"Processo mastoide", onde:"Póstero-inferior ao meato acústico externo.", como:"Saliência cônica, rugosa e espessa, palpável atrás do lóbulo da orelha.", func:"Inserção do esternocleidomastoideo, do esplênio da cabeça e do longuíssimo da cabeça.", dica:"Mastos = mama + eidos = forma: “em forma de mama”. É o mamilo ósseo atrás da orelha — e ele é oco (células mastóideas), por isso a otite pode virar mastoidite."},
+   {nome:"Processo estiloide", onde:"Ântero-medial ao mastoide, apontando para baixo e para frente.", como:"Espícula fina e pontiaguda como uma agulha (nas peças costuma estar quebrada).", func:"Ancoragem dos músculos e ligamentos “estilo-”: estilo-hióideo, estiloglosso e estilofaríngeo.", dica:"Stylos = estilete, a caneta dos antigos. Sempre que ver “estilo-” no nome de um músculo, ele nasce nesse lápis ósseo."},
+   {nome:"Processo zigomático do temporal", onde:"Projeta-se para frente a partir da porção escamosa, acima do meato.", como:"Braço ósseo horizontal que se une ao processo temporal do zigomático.", func:"Forma o arco zigomático: origem do masseter e ponte sob a qual passa o tendão do temporal.", dica:"Zygon = jugo, a canga que une dois bois. É a ponte que une dois ossos — e a alça por onde o temporal mergulha."}
+  ]},
+  {titulo:"Etmoide", itens:[
+   {nome:"Lâmina cribriforme", onde:"Horizontal, no teto da cavidade nasal e assoalho da fossa craniana anterior.", como:"Lâmina cheia de furinhos, com a crista galli erguida no meio.", func:"Dá passagem aos filetes do nervo olfatório (I par) da mucosa nasal até o bulbo olfatório.", dica:"Cribrum = peneira. É a peneira de farinha do crânio — e crista galli é a “crista de galo” fincada nela. Trauma que fratura essa peneira causa perda de olfato."},
+   {nome:"Conchas nasais superior e média", onde:"Parede lateral da cavidade nasal, projetando-se medialmente.", como:"Lamelas ósseas finas e enroladas, penduradas na massa lateral do etmoide.", func:"Criam turbulência no ar inspirado, aumentando aquecimento, umidificação e filtragem.", dica:"Parecem conchas do mar enroladas — em português antigo, “cornetos”. Se a concha vier solta como osso próprio, é a inferior, não é do etmoide."}
+  ]},
+  {titulo:"Esfenoide", itens:[
+   {nome:"Asa maior e asa menor", onde:"Laterais ao corpo do esfenoide, no centro da base do crânio.", como:"Com o osso isolado: asas menores acima e à frente, asas maiores atrás e mais largas.", func:"Asa menor limita a fossa craniana anterior e contém o canal óptico; asa maior forma o assoalho da fossa média e aparece na parede lateral do crânio, no ptério.", dica:"O esfenoide isolado é um morcego (ou borboleta) de asas abertas. Sphenos = cunha: é a cunha central que trava todos os outros ossos do crânio — ele toca quase todos.", destaque:true},
+   {nome:"Sela túrcica (fossa hipofisial)", onde:"Face superior do corpo do esfenoide, bem no centro da base do crânio.", como:"Depressão em forma de sela, com os processos clinoides nos cantos e o dorso da sela como encosto posterior.", func:"Aloja e protege a hipófise.", dica:"É uma sela de montaria turca, que tinha arção alto na frente e atrás. A hipófise é o cavaleiro sentado nela — tumor hipofisário alarga essa sela na radiografia.", destaque:true},
+   {nome:"Seio esfenoidal", onde:"Dentro do corpo do esfenoide, logo abaixo da sela túrcica.", como:"Cavidade aerada visível em corte sagital, atrás da cavidade nasal.", func:"Pneumatização que alivia peso e dá ressonância à voz.", dica:"É o porão logo abaixo da sela — por isso a cirurgia de hipófise entra pelo nariz (via transesfenoidal): sobe pelo porão e chega no cofre."}
+  ]},
+  {titulo:"Pontos craniométricos", itens:[
+   {nome:"Bregma", onde:"Encontro da sutura coronal com a sutura sagital, no alto do crânio.", como:"Ponto em “T” invertido no topo da abóbada.", func:"Corresponde à fontanela anterior do recém-nascido, que fecha por volta dos 18 a 24 meses.", dica:"É a moleira do bebê — a maior delas. Enquanto aberta, permite o crânio moldar-se no parto e o cérebro crescer."},
+   {nome:"Lambda", onde:"Encontro da sutura sagital com a sutura lambdóidea, na parte posterior do crânio.", como:"Forma a letra grega λ deitada; ali podem aparecer ossos suturais (wormianos).", func:"Corresponde à fontanela posterior, que fecha por volta dos 2 a 3 meses.", dica:"O nome é o desenho: procure o λ na nuca alta."},
+   {nome:"Ptério", onde:"Face lateral do crânio, cerca de dois dedos acima do arco zigomático, atrás do processo frontal do zigomático.", como:"Encontro em “H” de quatro ossos: frontal, parietal, temporal e asa maior do esfenoide.", func:"Região mais fina e frágil do crânio; internamente corre a artéria meníngea média — trauma ali produz hematoma extradural.", dica:"Pteron = asa (a asa do esfenoide chega aí). Pense em papel de seda: é o ponto onde o crânio é mais fino, e o “H” das suturas é a marca registrada.", destaque:true}
+  ]},
+  {titulo:"Viscerocrânio — maxila e mandíbula", tag:"ossea", itens:[
+   {nome:"Processo alveolar da maxila", onde:"Borda inferior da maxila, em arco.", como:"Arco com os alvéolos dentários superiores.", func:"Aloja e sustenta os dentes superiores; reabsorve quando há perda dentária.", dica:"Alveolus = pequena cavidade. É o favo de mel onde os dentes moram — a mesma palavra dos alvéolos pulmonares."},
+   {nome:"Processo palatino da maxila", onde:"Face inferior da maxila, horizontal, na frente do palato.", como:"Forma os dois terços anteriores do palato duro; une-se ao do lado oposto pela sutura palatina mediana.", func:"Separa a cavidade nasal da cavidade oral.", dica:"São duas metades que se encontram no meio como duas mãos em concha. Se a fusão falha no embrião, nasce a fenda palatina."},
+   {nome:"Corpo da mandíbula", onde:"Porção horizontal, em ferradura.", como:"Alvéolos inferiores acima, protuberância mentual à frente, forame mentual abaixo do 2º pré-molar.", func:"Sustenta os dentes inferiores e a musculatura do assoalho da boca.", dica:"É a ferradura do queixo. O forame mentual é a saída do nervo que anestesia o lábio inferior no dentista."},
+   {nome:"Ramo da mandíbula", onde:"Porção vertical, que sobe do corpo em direção ao crânio.", como:"Placa quadrangular com dois processos no alto, separados pela incisura mandibular.", func:"Recebe o masseter na face lateral e o pterigóideo medial na face medial; o forame mandibular, por dentro, dá passagem ao nervo alveolar inferior.", dica:"“Ramo” como galho de árvore: sobe do tronco (corpo) para se dividir em dois (coronoide e condilar)."},
+   {nome:"Ângulo da mandíbula (gônio)", onde:"Junção do corpo com o ramo.", como:"Canto rugoso e palpável, logo abaixo do lóbulo da orelha.", func:"Alça musculofascial: masseter por fora e pterigóideo medial por dentro; define o contorno do rosto.", dica:"Gonia = ângulo (a mesma raiz de polígono). Imagine uma tipoia muscular abraçando esse canto por dentro e por fora."},
+   {nome:"Processo coronoide", onde:"Extremidade superior e anterior do ramo.", como:"Projeção triangular e pontiaguda, à frente da incisura mandibular.", func:"Inserção do músculo temporal.", dica:"Korone = corvo. É o bico de corvo apontando para cima — e o temporal é quem puxa esse bico."},
+   {nome:"Processo condilar", onde:"Extremidade superior e posterior do ramo (colo + cabeça).", como:"Termina em cabeça arredondada que encaixa na fossa mandibular do temporal.", func:"Forma a ATM; o pterigóideo lateral se prende ao colo e ao disco articular.", dica:"Cabeça redonda = côndilo. Dois processos no alto do ramo: o pontudo é do temporal, o redondo é da articulação."}
+  ]},
+  {titulo:"Viscerocrânio — demais ossos", tag:"ossea", itens:[
+   {nome:"Zigomático", onde:"Lateral da face, entre a órbita e a maxila.", como:"É a maçã do rosto; seu processo temporal completa o arco zigomático.", func:"Dá forma à face, resiste a impactos laterais e serve de origem ao masseter.", dica:"Mesma raiz do arco: zygon = ponte/jugo. Osso da “maçã do rosto”, o que mais aparece em soco lateral."},
+   {nome:"Nasal", onde:"Par, na linha média superior do nariz.", como:"Dois ossinhos retangulares formando a ponte do nariz — o resto é cartilagem.", func:"Sustentam o dorso nasal.", dica:"É onde o óculos apoia. Osso da face mais fraturado justamente por ser pequeno e saliente."},
+   {nome:"Lacrimal", onde:"Parede medial da órbita, atrás do processo frontal da maxila.", como:"O menor osso da face — lâmina fina como uma unha, com o sulco lacrimal.", func:"Forma a fossa do saco lacrimal, início do canal nasolacrimal.", dica:"Lacrima = lágrima. É a calha por onde a lágrima escoa para o nariz — por isso chorar dá nariz escorrendo."},
+   {nome:"Vômer", onde:"Linha média da cavidade nasal, parte póstero-inferior do septo.", como:"Lâmina única, fina, em forma de arado, entre as duas narinas.", func:"Compõe o septo nasal ósseo junto com a lâmina perpendicular do etmoide.", dica:"Vomer, em latim, é a relha do arado. Imagine o arado fincado no meio do nariz dividindo os dois lados."},
+   {nome:"Ossos palatinos", onde:"Atrás dos processos palatinos da maxila, na profundidade da face.", como:"Osso em “L”: lâmina horizontal (palato) + lâmina perpendicular (parede nasal lateral).", func:"Completam o terço posterior do palato duro.", dica:"Dois “L” encaixados no fundo da boca. Regra do palato: 2/3 da frente são maxila, 1/3 de trás é palatino."},
+   {nome:"Concha nasal inferior", onde:"Parede lateral da cavidade nasal, abaixo da concha média.", como:"Única concha que é osso independente — a maior e mais esponjosa das três.", func:"Direciona e condiciona o fluxo aéreo; sua hipertrofia obstrui a respiração nasal.", dica:"É a irmã caçula que saiu de casa: as duas de cima moram no etmoide, ela é osso próprio. Guarde: maior e solta = inferior.", destaque:true}
+  ]}
+ ]
+},
+{
+ id:"face", n:"02", titulo:"Músculos da face e da mastigação", tag:"musc",
+ resumo:"Dois grupos com lógicas opostas. A mímica se insere na PELE, é fina, superficial e inervada pelo nervo facial (VII). A mastigação move a MANDÍBULA, é espessa, potente e inervada pelo trigêmeo (V3).",
+ figuras:[
+  {t:"Músculos da expressão facial", q:"muscles of facial expression head anatomy labeled", olhar:"Repare que quase todos convergem para o orbicular da boca ou para a órbita — e que nenhum termina em osso na outra ponta."},
+  {t:"Face — vista lateral superficial", q:"facial muscles lateral view platysma risorius", olhar:"O platisma é a folha mais superficial descendo para o pescoço; o risório corre horizontal em direção ao canto da boca."},
+  {t:"Temporal e masseter", q:"temporalis masseter muscle mastication anatomy", olhar:"O temporal é um leque que passa POR DENTRO do arco zigomático; o masseter é um bloco que vem POR FORA do arco."},
+  {t:"Pterigóideos medial e lateral", q:"medial lateral pterygoid muscle anatomy dissection", olhar:"O lateral é o único com fibras horizontais, indo para o colo do côndilo; o medial desce em espelho ao masseter até o ângulo."}
+ ],
+ macete:"Terminou na PELE e faz careta → mímica → nervo facial (VII). Terminou na MANDÍBULA e faz força → mastigação → trigêmeo (V3).",
+ tabelas:[{
+  titulo:"Mímica × mastigação",
+  cols:["","Mímica facial","Mastigação"],
+  linhas:[
+   ["Inserção","Pele e fáscia","Osso da mandíbula"],
+   ["Espessura","Finos, superficiais","Espessos, potentes"],
+   ["Nervo","Facial (VII)","Trigêmeo, ramo mandibular (V3)"],
+   ["Função","Expressão, esfíncteres da boca e do olho","Elevar, protrair, retrair e lateralizar a mandíbula"],
+   ["Lesão típica","Paralisia de Bell: rosto assimétrico","Dor e limitação na ATM"]
+  ]}],
+ armadilhas:["Bucinador é músculo da MÍMICA (VII), mesmo ajudando na mastigação — ele não move a mandíbula, comprime a bochecha.","O pterigóideo lateral é o único que ABRE a boca; todos os outros da mastigação fecham.","Zigomático maior vai ao ÂNGULO da boca; o menor vai ao LÁBIO superior."],
+ grupos:[
+  {titulo:"Mímica facial — nervo facial (VII)", tag:"musc", itens:[
+   {nome:"Frontal (ventre frontal do occipitofrontal)", onde:"Testa, da gálea aponeurótica até a pele das sobrancelhas.", como:"Lâmina fina e vertical sobre o osso frontal, sem inserção óssea inferior.", func:"Eleva as sobrancelhas e enruga a testa em linhas horizontais.", dica:"É o músculo do “sério?!”. Como não tem osso embaixo para puxar, ele puxa a própria pele — daí as rugas horizontais."},
+   {nome:"Prócero", onde:"Da parte inferior do osso nasal até a pele da glabela.", como:"Pequeno feixe triangular vertical na raiz do nariz, entre as sobrancelhas.", func:"Traciona a pele da glabela para baixo, formando rugas horizontais na raiz do nariz.", dica:"É o músculo do “eca”. Ele faz a ruga deitada da glabela; o corrugador faz as rugas em pé — não confunda os dois."},
+   {nome:"Orbicular do olho", onde:"Circunda a órbita (parte orbital) e ocupa as pálpebras (parte palpebral).", como:"Anel muscular concêntrico ao redor do olho.", func:"Esfíncter palpebral: a parte palpebral pisca suavemente, a parte orbital fecha com força e espalha a lágrima.", dica:"Orbis = círculo. Todo músculo “orbicular” é um anel esfincteriano — aqui, o anel que protege o olho. Suas rugas são os pés de galinha."},
+   {nome:"Orbicular da boca", onde:"Circunda a rima bucal, na espessura dos lábios.", como:"Anel muscular ao redor da boca, onde convergem quase todos os outros músculos da mímica.", func:"Fecha, comprime e protrai os lábios — assobiar, beijar, reter o alimento.", dica:"O segundo anel da face. É o ponto de encontro: pense nele como a rotatória para onde todas as ruas (músculos) convergem."},
+   {nome:"Corrugador do supercílio", onde:"Profundo ao frontal e ao orbicular, da extremidade medial do arco superciliar à pele da sobrancelha.", como:"Feixe pequeno e oblíquo, visível só ao rebater o frontal.", func:"Traciona a sobrancelha para baixo e medialmente — as rugas verticais da glabela.", dica:"Corrugare = enrugar (mesma raiz de papelão “corrugado”). É o músculo da concentração e da bronca — as famosas “rugas do bravo”."},
+   {nome:"Nasal", onde:"Sobre o dorso e as asas do nariz (partes transversa e alar).", como:"Fibras finas em leque cobrindo a cartilagem nasal.", func:"A parte transversa comprime as narinas; a parte alar as dilata.", dica:"É o nariz do touro bravo bufando: a parte alar abre as narinas no esforço físico."},
+   {nome:"Zigomático maior", onde:"Do osso zigomático até o ângulo da boca, em diagonal.", como:"Feixe oblíquo mais longo e mais lateral da bochecha.", func:"Eleva e traciona o ângulo da boca para cima e para fora — o sorriso verdadeiro.", dica:"O músculo do sorriso: sai da maçã do rosto e puxa o canto da boca na diagonal. Maior = vai ao canto (ÂNGULO)."},
+   {nome:"Zigomático menor", onde:"Do zigomático até o lábio superior, medial ao maior.", como:"Feixe paralelo e mais curto, medial ao zigomático maior.", func:"Eleva o lábio superior, expondo os dentes.", dica:"Menor = vai ao LÁBIO. É o músculo do choro e do desdém, o que levanta o lábio e aprofunda o sulco nasolabial."},
+   {nome:"Risório", onde:"Da fáscia do masseter e da parótida até o ângulo da boca.", como:"Fibras horizontais e superficiais cruzando a bochecha.", func:"Puxa o ângulo da boca lateralmente.", dica:"Risus = riso. É o sorriso forçado de foto: puxa reto para o lado, sem levantar — por isso não chega aos olhos."},
+   {nome:"Mentual", onde:"Da fossa incisiva da mandíbula até a pele do mento.", como:"Par de feixes curtos e verticais na ponta do queixo.", func:"Eleva e protrai o lábio inferior e enruga a pele do mento.", dica:"Mentum = queixo. É o bico de criança emburrada — e a “casquinha de laranja” que aparece no queixo quando alguém segura o choro."},
+   {nome:"Bucinador", onde:"Parede lateral da bochecha, dos processos alveolares e da rafe pterigomandibular até o ângulo da boca.", como:"Camada profunda e horizontal — o único músculo dentro da bochecha, atravessado pelo ducto parotídeo.", func:"Comprime a bochecha contra os dentes: assopra, assobia e devolve o alimento à mesa de mastigação.", dica:"Buccina era a trombeta romana. É o músculo do trompetista — e o motivo de você não morder a própria bochecha ao mastigar.", destaque:true},
+   {nome:"Levantadores do lábio superior e do ângulo da boca", onde:"Da margem infraorbital e da fossa canina da maxila até o lábio e o ângulo da boca.", como:"Feixes verticais entre a órbita e a boca, profundos aos zigomáticos.", func:"Elevam o lábio superior e o ângulo da boca.", dica:"O nome já é o manual de instruções: levantador do lábio levanta lábio; do ângulo, levanta o canto. Expressão de desdém e de “cheirou algo ruim”."},
+   {nome:"Depressores do lábio inferior e do ângulo da boca", onde:"Da base da mandíbula até o lábio inferior e o ângulo da boca.", como:"Feixes que descem em leque do canto da boca até a borda da mandíbula.", func:"Abaixam o lábio e o canto da boca.", dica:"São os músculos da tristeza — a boca “em U invertido”. Depressor = puxa para baixo."},
+   {nome:"Platisma", onde:"Lâmina superficial do pescoço: da fáscia peitoral e deltóidea até a base da mandíbula e a pele da face.", como:"Folha muscular fina e larga logo abaixo da pele do pescoço — a primeira estrutura que aparece na dissecção cervical.", func:"Tensiona a pele do pescoço, abaixa a mandíbula e o ângulo da boca.", dica:"Platys = chato, largo (mesma raiz de “plataforma”). É o lençol muscular do pescoço — o músculo do susto e do esforço máximo, quando os cordões saltam no pescoço."}
+  ]},
+  {titulo:"Mastigação — nervo trigêmeo (V3)", tag:"musc", itens:[
+   {nome:"Temporal", onde:"Preenche a fossa temporal e converge por baixo do arco zigomático até o processo coronoide.", como:"Grande leque na têmpora; palpável cerrando os dentes.", func:"Eleva a mandíbula (fecha a boca) e, pelas fibras posteriores, faz a retração.", dica:"Leque que aperta: as fibras anteriores são verticais (fecham) e as posteriores quase horizontais (puxam para trás). É o músculo do bruxismo — dor de cabeça na têmpora."},
+   {nome:"Masseter", onde:"Do arco zigomático à face lateral do ramo e do ângulo da mandíbula.", como:"Bloco quadrangular e espesso na lateral do rosto, que salta ao morder.", func:"O elevador mais potente da mandíbula.", dica:"Masesthai = mastigar. É o músculo mais forte do corpo por área de secção — o “bloco” que você sente ao cerrar os dentes."},
+   {nome:"Pterigóideo medial", onde:"Da fossa pterigóidea do esfenoide até a face medial do ângulo da mandíbula.", como:"Espelho interno do masseter — juntos formam uma alça que abraça o ângulo.", func:"Eleva e protrai a mandíbula; alternado, produz o movimento de moagem.", dica:"Pteryx = asa: nasce nas lâminas pterigóideas (as “asas” do esfenoide). Pense em uma tipoia: masseter por fora, pterigóideo medial por dentro, o ângulo no meio."},
+   {nome:"Pterigóideo lateral", onde:"Da asa maior e da lâmina lateral do processo pterigoide até o colo do côndilo e o disco da ATM.", como:"Único com fibras horizontais, em dois ventres, na fossa infratemporal.", func:"Protrai e abaixa a mandíbula — o único que abre a boca; unilateral, produz o desvio lateral.", dica:"É o horizontal, e horizontal aqui significa PUXAR PARA A FRENTE. Como se prende ao disco da ATM, é o principal suspeito nas dores e estalos da articulação.", destaque:true}
+  ]}
+ ]
+},
+{
+ id:"torax-ossos", n:"03", titulo:"Ossos do tórax", tag:"ossea",
+ resumo:"Caixa formada por 12 pares de costelas, 12 vértebras torácicas e o esterno, fechada pelas cartilagens costais. A referência que organiza tudo é o ângulo do esterno.",
+ figuras:[
+  {t:"Caixa torácica completa", q:"rib cage thorax skeleton anterior view labeled", olhar:"Conte de cima para baixo: 1–7 chegam ao esterno com cartilagem própria, 8–10 se apoiam na de cima, 11 e 12 param no meio do caminho."},
+  {t:"Costela típica", q:"typical rib anatomy head neck tubercle angle labeled", olhar:"Da coluna para a frente: cabeça (2 facetas) → colo → tubérculo (1 faceta) → ângulo → corpo."},
+  {t:"Costela — face interna e sulco costal", q:"rib costal groove internal surface anatomy", olhar:"Vire a costela: a calha fica na borda inferior, por dentro. É onde correm veia, artéria e nervo."},
+  {t:"Esterno", file:"", q:"sternum manubrium body xiphoid process labeled", olhar:"A espada: manúbrio (cabo), corpo (lâmina), xifoide (ponta). O degrau entre cabo e lâmina é o ângulo do esterno."},
+  {t:"Articulações costovertebrais", q:"costovertebral joint rib vertebra articulation anatomy", olhar:"A cabeça encaixa entre DUAS vértebras; o tubérculo encaixa no processo transverso de UMA."}
+ ],
+ macete:"Costelas 1–7 verdadeiras (cartilagem própria até o esterno) · 8–10 falsas (unem-se à cartilagem de cima, formando o arco costal) · 11–12 flutuantes (terminam livres na parede).",
+ tabelas:[{
+  titulo:"Classificação das costelas",
+  cols:["Grupo","Números","Como chegam à frente"],
+  linhas:[
+   ["Verdadeiras","1 a 7","Cartilagem própria direto no esterno"],
+   ["Falsas","8 a 10","Cartilagem se funde à da costela acima (arco costal)"],
+   ["Flutuantes","11 e 12","Não chegam à frente — terminam livres na musculatura"]
+  ]}],
+ armadilhas:["O ÂNGULO da costela não é o tubérculo: o tubérculo tem faceta articular, o ângulo é só a curva mais posterior.","O sulco costal fica na borda INFERIOR e por DENTRO — por isso a punção pleural é feita rente à borda SUPERIOR da costela de baixo.","O ângulo do esterno corresponde à 2ª costela, não à 1ª."],
+ grupos:[
+  {titulo:"Costela típica (3ª à 9ª)", itens:[
+   {nome:"Cabeça da costela", onde:"Extremidade posterior, voltada para a coluna.", como:"Traz duas faces articulares separadas por uma crista.", func:"Articula-se com as fóveas costais de duas vértebras adjacentes e com o disco entre elas.", dica:"Duas facetas = duas vértebras. A crista no meio é exatamente onde o disco intervertebral encosta."},
+   {nome:"Colo da costela", onde:"Entre a cabeça e o tubérculo.", como:"Segmento estreito e liso, sem faces articulares.", func:"Transição; recebe os ligamentos costotransversários.", dica:"Como no fêmur e no úmero: depois da cabeça vem sempre o pescoço."},
+   {nome:"Tubérculo da costela", onde:"Junção do colo com o corpo, na face posterior.", como:"Elevação com uma pequena faceta lisa voltada para trás.", func:"Articula-se com a fóvea costal do processo transverso da vértebra de mesmo número.", dica:"Tubérculo TEM faceta; ângulo NÃO tem. Essa é a pergunta clássica de bancada."},
+   {nome:"Ângulo da costela", onde:"Poucos centímetros lateral ao tubérculo.", como:"Ponto em que o corpo muda bruscamente de direção — a parte mais posterior da costela.", func:"Linha de inserção dos músculos profundos do dorso e região mais frequente de fratura.", dica:"É a dobra da costela. Deitado de barriga para cima, é a parte que encosta na maca."},
+   {nome:"Corpo da costela", onde:"Do ângulo até a extremidade anterior.", como:"Lâmina achatada, curva e levemente torcida, com face externa convexa.", func:"Forma a parede da caixa torácica e protege as vísceras.", dica:"Uma lâmina de sabre curva — e torcida, o que faz cada costela caber só de um lado do corpo."},
+   {nome:"Sulco costal", onde:"Face interna, ao longo da margem inferior do corpo.", como:"Calha rasa que só aparece olhando a costela por dentro e por baixo.", func:"Abriga o feixe intercostal — veia, artéria e nervo, nessa ordem de cima para baixo.", dica:"“VAN” estacionado na garagem embaixo da costela: Veia, Artéria, Nervo. Por isso a agulha entra rente à borda superior da costela de baixo.", destaque:true},
+   {nome:"Faces articulares superior e inferior da cabeça", onde:"Na cabeça, separadas pela crista.", como:"Duas facetas planas e lisas, uma acima da outra.", func:"A inferior encaixa na fóvea costal superior da vértebra de mesmo número; a superior, na fóvea costal inferior da vértebra acima.", dica:"Regra do cruzamento: a faceta de baixo da costela vai para a fóvea de cima da vértebra. Cada costela “abraça” duas vértebras."}
+  ]},
+  {titulo:"Esterno", itens:[
+   {nome:"Manúbrio", onde:"Porção superior, mais larga e espessa.", como:"Formato de gravata ou trapézio, no topo da peça.", func:"Articula-se com as clavículas e a 1ª costela; sustenta a entrada torácica.", dica:"Manubrium = cabo (de espada). O esterno inteiro é um gladius romano: cabo, lâmina e ponta.", destaque:true},
+   {nome:"Corpo do esterno", onde:"Porção média e alongada, abaixo do manúbrio.", como:"Lâmina plana com incisuras costais nas margens (2ª a 7ª).", func:"Recebe as cartilagens costais e dá origem ao peitoral maior.", dica:"É a lâmina da espada. As mossas laterais são as marcas das costelas que chegam."},
+   {nome:"Processo xifoide", onde:"Extremidade inferior do esterno.", como:"Ponta pequena e variável, cartilaginosa até por volta dos 40 anos.", func:"Inserção do diafragma e do reto do abdome; referência para a compressão torácica na RCP.", dica:"Xiphos = espada, em grego. É a ponta da espada — e é justamente ela que quebra quando a compressão da RCP é feita baixa demais."},
+   {nome:"Incisura jugular (supraesternal)", onde:"Margem superior do manúbrio, na linha média.", como:"Entalhe em “U” entre as duas articulações esternoclaviculares.", func:"Referência de superfície: corresponde ao disco entre T2 e T3.", dica:"É a “covinha” da base do pescoço, aquela que se vê a olho nu."},
+   {nome:"Incisuras claviculares", onde:"Cantos súpero-laterais do manúbrio.", como:"Duas depressões ovais, uma de cada lado da incisura jugular.", func:"Formam a articulação esternoclavicular.", dica:"É a única ligação óssea entre o membro superior e o esqueleto axial — todo o resto do ombro é preso por músculo."},
+   {nome:"Incisuras costais", onde:"Margens laterais do manúbrio e do corpo.", como:"Série de entalhes numerados de cima para baixo.", func:"Recebem as cartilagens costais da 1ª à 7ª costela.", dica:"Conte os entalhes e você conta as costelas verdadeiras."},
+   {nome:"Ângulo do esterno (de Louis)", onde:"Junção entre o manúbrio e o corpo.", como:"Crista transversal palpável; a costela que chega nele é a 2ª.", func:"Ponto de partida para contar costelas; marca o nível do disco T4–T5, a bifurcação da traqueia e o arco da aorta.", dica:"É o degrau do esterno: deslize o dedo do pescoço para baixo e o primeiro degrau é ele. Achou o degrau, achou a 2ª costela — e a partir dela conta-se todas.", destaque:true}
+  ]},
+  {titulo:"Cartilagens costais", itens:[
+   {nome:"Cartilagens costais", onde:"Entre a extremidade anterior das costelas e o esterno.", como:"Barras de cartilagem hialina — brancas e lisas nas peças conservadas, calcificadas nos idosos.", func:"Dão elasticidade à caixa: permitem a expansão inspiratória e absorvem impacto.", dica:"São as molas da caixa torácica. Quando calcificam com a idade, o tórax fica rígido e a respiração perde amplitude."}
+  ]}
+ ]
+},
+{
+ id:"torax-musc", n:"04", titulo:"Músculos do tórax", tag:"musc",
+ resumo:"Dois papéis diferentes: uns partem do tórax para mover o membro superior (peitorais, serrátil); outros movem a própria caixa para respirar (intercostais, diafragma).",
+ figuras:[
+  {t:"Peitoral maior e menor", q:"pectoralis major minor muscle anatomy labeled", olhar:"O peitoral menor só aparece quando o maior é rebatido — procure o gancho no processo coracoide."},
+  {t:"Serrátil anterior", q:"serratus anterior muscle anatomy digitations", olhar:"As digitações em dentes de serra na lateral das costelas, indo por baixo da escápula."},
+  {t:"Intercostais", q:"external internal intercostal muscles thoracic wall", olhar:"Compare a direção: os externos descem para frente; os internos cruzam em X com eles."},
+  {t:"Diafragma — vista inferior", q:"thoracic diaphragm inferior view crura hiatus labeled", olhar:"Centro tendíneo claro no meio, pilares descendo pela coluna e os três hiatos: cava, esôfago e aorta."}
+ ],
+ macete:"Inspiração tranquila = diafragma (cerca de 70%) + intercostais externos. Expiração tranquila = passiva, pelo recuo elástico. Forçada = abdominais + intercostais internos.",
+ tabelas:[{
+  titulo:"Hiatos do diafragma",
+  cols:["Nível","Estrutura","Como lembrar"],
+  linhas:[
+   ["T8","Veia cava inferior","Cava tem 4 letras → 8 = 4×2, o mais alto"],
+   ["T10","Esôfago","Esôfago tem 7 letras… mas guarde a sequência par: 8, 10, 12"],
+   ["T12","Aorta","A aorta é a mais posterior e a mais baixa, passando entre os pilares"]
+  ]}],
+ armadilhas:["Intercostais EXTERNOS inspiram; INTERNOS (porção interóssea) expiram.","O diafragma é inervado pelo nervo frênico (C3–C5), que vem do PESCOÇO — lesão cervical alta pode parar a respiração.","O hiato aórtico não perfura o músculo: a aorta passa por trás, entre os pilares."],
+ grupos:[
+  {titulo:"Parede torácica e cintura escapular", tag:"musc", itens:[
+   {nome:"Peitoral maior", onde:"Superficial na parede anterior do tórax: da clavícula, esterno e cartilagens costais até a crista do tubérculo maior do úmero.", como:"Grande leque com três porções (clavicular, esternocostal e abdominal) convergindo para a axila.", func:"Adução, rotação medial e flexão do braço; a porção clavicular flexiona e a esternocostal estende o braço a partir da flexão.", dica:"Pense no abraço: é o músculo que traz o braço para a linha média. As fibras convergem e se torcem antes de chegar ao úmero, como uma toalha sendo enrolada."},
+   {nome:"Peitoral menor", onde:"Profundo ao peitoral maior: da 3ª à 5ª costela ao processo coracoide da escápula.", como:"Triângulo pequeno que só aparece quando se rebate o peitoral maior.", func:"Abaixa e protrai a escápula (báscula anterior); com a escápula fixa, eleva as costelas na inspiração forçada.", dica:"Korax = corvo: ele se pendura no “bico de corvo” da escápula. Encurtado, puxa o ombro para frente e para baixo — o ombro protruso de quem fica muito no celular."},
+   {nome:"Serrátil anterior", onde:"Face lateral do tórax, da 1ª à 9ª costela até a margem medial da escápula.", como:"Digitações em dentes de serra na lateral das costelas, passando por baixo da escápula.", func:"Protrai a escápula e faz sua rotação superior — indispensável para elevar o braço acima de 90°; mantém a escápula colada ao tórax.", dica:"É o músculo do boxeador: o soco é protração pura. Se ele falha (lesão do nervo torácico longo), a escápula descola e vira “escápula alada”.", destaque:true}
+  ]},
+  {titulo:"Músculos respiratórios", tag:"musc", itens:[
+   {nome:"Intercostais externos", onde:"Camada mais superficial dos espaços intercostais, do tubérculo até a junção costocondral.", como:"Fibras oblíquas, descendo para frente e para baixo.", func:"Elevam as costelas: aumentam os diâmetros ântero-posterior e transverso na inspiração.", dica:"Direção “mãos nos bolsos da calça”. Mão entrando no bolso = você inspira."},
+   {nome:"Intercostais internos", onde:"Camada intermediária, do esterno até o ângulo da costela.", como:"Fibras perpendiculares às dos externos, descendo para trás e para baixo.", func:"A porção interóssea abaixa as costelas na expiração forçada; a porção intercondral auxilia a inspiração.", dica:"Cruzam em X com os externos. Se o externo é a mão entrando no bolso, o interno é a mão saindo — expira."},
+   {nome:"Diafragma", onde:"Septo musculotendíneo entre tórax e abdome, com porções esternal, costal e lombar (pilares) convergindo para o centro tendíneo.", como:"Cúpula dupla com centro tendíneo esbranquiçado em forma de trevo; a cúpula direita é mais alta por causa do fígado.", func:"Principal músculo inspiratório: ao contrair, achata e aumenta o volume torácico. Inervação pelo nervo frênico (C3–C5).", dica:"Dia + phragma = parede divisória. Imagine um paraquedas: ao contrair, o pano abaixa e o volume acima aumenta. Hiatos em números pares: cava T8, esôfago T10, aorta T12.", destaque:true}
+  ]}
+ ]
+},
+{
+ id:"coluna", n:"05", titulo:"Coluna vertebral", tag:"ossea",
+ resumo:"33 vértebras: 7 cervicais, 12 torácicas, 5 lombares, 5 sacrais fundidas e 4 coccígeas. Na prova, identifique a REGIÃO pelo detalhe exclusivo antes de olhar qualquer outra coisa.",
+ figuras:[
+  {t:"Coluna vertebral inteira", file:"Vertebral column.png", q:"vertebral column lateral view regions curvatures labeled", olhar:"As quatro curvaturas alternadas e a mudança de tamanho dos corpos, que crescem de cima para baixo."},
+  {t:"Vértebra típica", file:"718 Vertebra.jpg", q:"typical vertebra superior view labeled body pedicle lamina", olhar:"Corpo à frente, forame no meio, pedículos e lâminas fechando o arco, quatro processos articulares nos cantos."},
+  {t:"Atlas (C1)", q:"atlas vertebra C1 superior view labeled", olhar:"Não tem corpo nem espinhoso: só dois arcos e duas massas laterais com facetas côncavas em cima."},
+  {t:"Áxis (C2)", q:"axis vertebra C2 dens odontoid process labeled", olhar:"O dente subindo do corpo — é o único osso do corpo com esse formato."},
+  {t:"Vértebra cervical típica", q:"cervical vertebra superior view transverse foramen bifid", olhar:"Os dois forames transversários e o espinhoso bifurcado em garfo."},
+  {t:"Vértebra torácica", q:"thoracic vertebra lateral superior view costal facets", olhar:"Meias-facetas nas laterais do corpo, faceta na ponta do processo transverso e espinhoso longo apontando para baixo."},
+  {t:"Vértebra lombar", q:"lumbar vertebra superior view mammillary process labeled", olhar:"Corpo grande em rim, espinhoso quadrado como uma machadinha, transversos finos e longos."},
+  {t:"Sacro e cóccix", q:"sacrum coccyx anterior posterior view labeled", olhar:"Frente: forames lisos e promontório. Atrás: crista mediana e hiato sacral entre os cornos."}
+ ],
+ macete:"Fluxo de identificação: tem forame transversário? CERVICAL. Tem fóvea costal? TORÁCICA. Corpo grande e espinhoso quadrado? LOMBAR. Sem corpo? ATLAS. Com dente? ÁXIS.",
+ tabelas:[{
+  titulo:"Comparativo entre as regiões",
+  cols:["","Cervical","Torácica","Lombar"],
+  linhas:[
+   ["Exclusivo","Forame transversário","Fóveas costais","Processo mamilar"],
+   ["Corpo","Pequeno e retangular","Médio, em coração","Grande, em rim"],
+   ["Forame vertebral","Grande e triangular","Pequeno e redondo","Médio e triangular"],
+   ["Espinhoso","Curto e bífido (C3–C6)","Longo e inclinado para baixo","Curto, largo e quadrangular"],
+   ["Transverso","Perfurado","Com faceta para a costela","Fino e alongado"],
+   ["Movimento dominante","Rotação e flexo-extensão","Rotação limitada pelas costelas","Flexo-extensão"]
+  ]}],
+ armadilhas:["O processo transverso lombar é longo e fino e engana quem procura costela — mas não tem faceta articular.","C7 tem forame transversário, mas a artéria vertebral NÃO passa por ele (entra em C6).","Fóvea costal do CORPO recebe a cabeça; fóvea do PROCESSO TRANSVERSO recebe o tubérculo.","Atlas e áxis não têm disco intervertebral entre si."],
+ grupos:[
+  {titulo:"Vértebra típica — características gerais", itens:[
+   {nome:"Corpo vertebral", onde:"Porção anterior, cilíndrica.", como:"Bloco maciço com faces superior e inferior rugosas, onde encostam os discos.", func:"Sustenta a carga axial; cresce de tamanho de cima para baixo, acompanhando o peso que suporta.", dica:"É o pilar do prédio. Quanto mais baixo o andar, mais grosso o pilar."},
+   {nome:"Pedículos", onde:"Ligam o corpo ao arco posterior, um de cada lado.", como:"Pontes ósseas curtas e espessas; suas incisuras formam o forame intervertebral.", func:"Transmitem a carga do arco para o corpo e delimitam a saída do nervo espinhal.", dica:"Pediculus = pezinho. São os dois pés que sustentam o arco sobre o corpo — e o vão entre eles é a porta de saída do nervo."},
+   {nome:"Lâminas", onde:"Parte posterior do arco, unindo os processos transversos ao espinhoso.", como:"Duas placas achatadas que fecham o forame vertebral por trás.", func:"Protegem a medula espinhal.", dica:"São o telhado do canal. É exatamente o que se remove na laminectomia para descomprimir a medula."},
+   {nome:"Forame vertebral", onde:"Entre o corpo (à frente) e o arco (atrás).", como:"O buraco central de cada vértebra; empilhados, formam o canal vertebral.", func:"Aloja a medula espinhal e suas meninges.", dica:"O formato entrega a região: triangular grande na cervical, redondinho pequeno na torácica, triangular médio na lombar."},
+   {nome:"Processo espinhoso", onde:"Posterior, na linha média, na junção das lâminas.", como:"Projeção única voltada para trás — é a que você palpa nas costas.", func:"Alavanca para músculos e ligamentos do dorso.", dica:"São os “bicos” que você conta com o dedo nas costas de alguém. O formato deles é a assinatura de cada região."},
+   {nome:"Processos transversos", onde:"Laterais, na junção do pedículo com a lâmina.", como:"Duas projeções para os lados.", func:"Inserção muscular e ligamentar; nas torácicas recebem as costelas, nas cervicais são perfurados.", dica:"São os braços abertos da vértebra — e o que está dentro ou preso neles denuncia a região."},
+   {nome:"Processos articulares superiores e inferiores", onde:"Quatro no total, dois voltados para cima e dois para baixo.", como:"Superfícies lisas revestidas de cartilagem, viradas em direções opostas.", func:"Formam as articulações zigapofisárias (facetárias), que guiam e limitam o movimento de cada região.", dica:"São as dobradiças. A orientação delas explica por que a cervical roda muito, a torácica pouco e a lombar quase nada."}
+  ]},
+  {titulo:"Cervicais", itens:[
+   {nome:"C1 — Atlas", onde:"Primeira vértebra, articulada com o occipital.", como:"Anel sem corpo e sem espinhoso: arco anterior (com tubérculo e a fóvea do dente), arco posterior (com o sulco da artéria vertebral) e duas massas laterais.", func:"Sustenta o crânio; suas faces articulares superiores côncavas recebem os côndilos occipitais — movimento de “sim”.", dica:"Atlas era o titã condenado a carregar o mundo nos ombros. Ele carrega a cabeça — e por isso abriu mão do corpo vertebral: virou um anel.", destaque:true},
+   {nome:"C2 — Áxis", onde:"Segunda vértebra cervical.", como:"Reconhecida pelo dente (processo odontoide) projetando-se para cima do corpo; espinhoso curto, robusto e bífido.", func:"É o eixo da rotação da cabeça — movimento de “não”. O dente é mantido no lugar pelo ligamento transverso do atlas.", dica:"Áxis = eixo. O dente é o pino de um carrossel: o atlas (e a cabeça) giram em volta dele. Se o ligamento transverso rompe, o dente comprime a medula.", destaque:true},
+   {nome:"Forame transversário", onde:"Nos processos transversos de C1 a C7.", como:"Dois orifícios laterais, um em cada processo transverso — exclusivo das cervicais.", func:"Dá passagem à artéria vertebral (de C6 até C1) e à veia vertebral.", dica:"O túnel blindado da artéria que irriga o tronco encefálico. Se você vê dois furinhos laterais, é cervical: não existe em nenhuma outra região.", destaque:true},
+   {nome:"Corpo e forame das cervicais típicas (C3–C7)", onde:"Cervicais típicas.", como:"Corpo pequeno e retangular, mais largo que profundo; forame vertebral grande e triangular.", func:"Corpo pequeno porque a carga é baixa; forame amplo porque a medula é espessa na intumescência cervical.", dica:"Pouco peso em cima, muito cabo passando dentro: corpo pequeno, buraco grande."},
+   {nome:"Processo espinhoso cervical", onde:"Posterior, em C3–C7.", como:"Curto e bífido em C3–C6; em C7 é longo, único e muito saliente.", func:"C7 é a vértebra proeminente, referência para contar as vértebras no dorso.", dica:"Bífido = garfo de duas pontas. Peça para alguém baixar a cabeça: o “calombo” mais saltado no fim do pescoço é C7."}
+  ]},
+  {titulo:"Torácicas", itens:[
+   {nome:"Fóveas costais superior e inferior do corpo", onde:"Laterais do corpo vertebral, junto ao pedículo.", como:"Meias-facetas lisas, uma perto da borda superior e outra da inferior.", func:"Recebem a cabeça da costela, que se articula com duas vértebras vizinhas.", dica:"São meias-luas: metade em uma vértebra, metade na outra. Duas metades formam o soquete completo da cabeça da costela."},
+   {nome:"Fóvea costal do processo transverso", onde:"Face anterior da ponta do processo transverso, de T1 a T10.", como:"Pequena faceta lisa e arredondada na ponta do processo.", func:"Articula-se com o tubérculo da costela, permitindo o movimento de “alça de balde” na respiração.", dica:"Ponta do braço da vértebra com um espelhinho liso = torácica, sempre. T11 e T12 não têm (as flutuantes não precisam)."},
+   {nome:"Processo espinhoso torácico", onde:"Posterior.", como:"Longo, fino e inclinado para baixo, sobrepondo-se ao de baixo.", func:"Limita a extensão da coluna torácica.", dica:"Empilhados como telhas de um telhado. É por isso que a torácica é a região que menos estende."},
+   {nome:"Forame vertebral torácico", onde:"Centro da vértebra.", como:"Pequeno e circular.", func:"Canal mais estreito da coluna.", dica:"Região menos móvel, cabo mais fino, buraco menor e redondo — tudo combina."}
+  ]},
+  {titulo:"Lombares", itens:[
+   {nome:"Corpo da vértebra lombar", onde:"Anterior.", como:"O maior de todos, em forma de rim visto de cima.", func:"Suporta a maior carga axial da coluna.", dica:"Pilar do térreo: o mais grosso do prédio, porque segura todo o peso acima."},
+   {nome:"Processo espinhoso lombar", onde:"Posterior.", como:"Curto, largo e quadrangular, apontando para trás na horizontal.", func:"Grande alavanca para os eretores da espinha; permite ampla flexo-extensão.", dica:"Parece a lâmina de uma machadinha ou um cutelo apontado para trás. Grosso e quadrado = lombar."},
+   {nome:"Processo transverso (costiforme)", onde:"Lateral.", como:"Fino, longo e achatado — sem nenhuma faceta articular.", func:"Inserção do quadrado lombar e do psoas maior.", dica:"“Costiforme” = parece uma costela, e é aí que muita gente erra. A diferença: costela tem faceta, esse processo não tem."},
+   {nome:"Processo mamilar", onde:"Face posterior do processo articular superior.", como:"Pequeno tubérculo arredondado na borda do processo articular — exclusivo das lombares.", func:"Inserção dos multífidos e intertransversários.", dica:"Mamilla = pequena elevação, como no mastoide. É a “verruguinha” atrás da dobradiça superior: viu isso, é lombar.", destaque:true},
+   {nome:"Forame vertebral lombar", onde:"Centro.", como:"Triangular, de tamanho intermediário.", func:"Aloja a cauda equina, já que a medula termina por volta de L1–L2.", dica:"Como a medula já acabou, a punção lombar é feita abaixo de L2: só há raízes soltas ali, que se afastam da agulha."}
+  ]},
+  {titulo:"Sacro e cóccix", itens:[
+   {nome:"Forames sacrais anteriores e posteriores", onde:"Quatro pares em cada face do sacro.", como:"Fileiras de orifícios laterais à linha média; os anteriores (pélvicos) são maiores e mais lisos.", func:"Passagem dos ramos anteriores e posteriores dos nervos espinhais sacrais.", dica:"As vértebras se fundiram, mas as “portas” dos nervos continuaram abertas — agora em quatro pares alinhados."},
+   {nome:"Canal sacral", onde:"Continuação do canal vertebral dentro do sacro.", como:"Túnel triangular visto pela base do sacro.", func:"Contém as raízes da cauda equina e o filamento terminal.", dica:"É o túnel que sobrou depois que as cinco vértebras se soldaram."},
+   {nome:"Hiato sacral", onde:"Extremidade inferior e posterior do canal sacral.", como:"Abertura em “U” invertido, ladeada pelos cornos sacrais — resulta da falha das lâminas de S5.", func:"Via de acesso para a anestesia epidural caudal.", dica:"É a porta dos fundos do canal, que ficou sem telhado. Os cornos sacrais são as duas “orelhinhas” que a emolduram e servem de guia para a agulha.", destaque:true},
+   {nome:"Face articular lombossacra", onde:"Na base do sacro, posteriormente.", como:"Par de processos articulares superiores voltados para trás e medialmente.", func:"Articula-se com os processos articulares inferiores de L5.", dica:"É a última dobradiça da coluna móvel — e a região de maior estresse mecânico, onde ocorre a espondilolistese."},
+   {nome:"Promontório", onde:"Borda ântero-superior do corpo de S1.", como:"Saliência anterior mais proeminente da base do sacro.", func:"Referência do estreito superior da pelve, usada nas medidas obstétricas.", dica:"Promontorium é o cabo (a ponta de terra) que avança sobre o mar. Aqui, é a ponta óssea que avança sobre a cavidade pélvica."},
+   {nome:"Asa do sacro", onde:"Porção lateral da base, ao lado do corpo de S1.", como:"Superfície triangular e lisa de cada lado.", func:"Formada pela fusão dos processos transversos; transmite a carga do tronco para o ilíaco.", dica:"São os braços abertos que sobraram das vértebras fundidas."},
+   {nome:"Face auricular", onde:"Face lateral do sacro, na altura de S1–S3.", como:"Superfície rugosa com formato de orelha.", func:"Articulação sacroilíaca — transfere a carga do tronco para os membros inferiores.", dica:"Auris = orelha. Procure literalmente o desenho de uma orelha na lateral do sacro."},
+   {nome:"Crista sacral mediana", onde:"Linha média da face posterior do sacro.", como:"Cordilheira de tubérculos alinhados.", func:"Resulta da fusão dos processos espinhosos.", dica:"É a “serra” do sacro: os espinhosos derretidos uns nos outros."},
+   {nome:"Cóccix", onde:"Extremidade inferior da coluna, abaixo do sacro.", como:"3 a 5 peças rudimentares fundidas, com os cornos coccígeos no topo.", func:"Inserção do ligamento anococcígeo e de músculos do assoalho pélvico.", dica:"Kokkyx = cuco, em grego: lembra o bico da ave. É o resto do nosso rabo — e dói muito ao sentar quando fraturado."}
+  ]}
+ ]
+},
+{
+ id:"dorso", n:"06", titulo:"Músculos do dorso e do pescoço", tag:"musc",
+ resumo:"Extrínsecos movem o membro superior a partir do dorso; intrínsecos movem a própria coluna. No pescoço, ECOM e escalenos orientam a cabeça e ajudam a respirar no esforço.",
+ figuras:[
+  {t:"Dorso — camada superficial", q:"superficial back muscles trapezius latissimus dorsi labeled", olhar:"Trapézio em losango na parte alta; grande dorsal cobrindo a região lombar e subindo para a axila."},
+  {t:"Romboides (camada abaixo do trapézio)", q:"rhomboid major minor levator scapulae muscles", olhar:"Feixes oblíquos descendo dos espinhosos até a margem medial da escápula."},
+  {t:"Eretores da espinha", q:"erector spinae iliocostalis longissimus spinalis muscles", olhar:"Três colunas verticais: iliocostal (lateral), longuíssimo (meio), espinal (junto à linha média)."},
+  {t:"ECOM e escalenos", q:"sternocleidomastoid scalene muscles neck anatomy labeled", olhar:"O ECOM cruzando o pescoço na diagonal e, por baixo dele, os três escalenos descendo às primeiras costelas."}
+ ],
+ macete:"Eretores da espinha de lateral para medial: I Love Spaghetti — Iliocostal, Longuíssimo, Espinal.",
+ armadilhas:["Trapézio é inervado pelo nervo acessório (XI), não por nervos espinhais comuns.","Os romboides são profundos ao trapézio — não aparecem na vista superficial.","O ECOM roda a cabeça para o lado OPOSTO ao músculo que contrai."],
+ grupos:[
+  {titulo:"Extrínsecos — camada superficial", tag:"musc", itens:[
+   {nome:"Trapézio", onde:"Do occipital, ligamento nucal e espinhosos de C7 a T12 até a clavícula, o acrômio e a espinha da escápula.", como:"Grande losango cobrindo a nuca e a parte alta do dorso.", func:"Fibras superiores elevam a escápula, médias retraem e inferiores deprimem; juntas fazem a rotação superior. Inervação: nervo acessório (XI).", dica:"Os dois trapézios juntos desenham um losango (um trapézio geométrico de cada lado). Superior = encolher os ombros; médio = remada; inferior = puxar o ombro para baixo."},
+   {nome:"Grande dorsal (latíssimo do dorso)", onde:"Dos espinhosos de T7 a L5 pela fáscia toracolombar, crista ilíaca e últimas costelas até o sulco intertubercular do úmero.", como:"Lâmina larga e triangular cobrindo a região lombar e convergindo para a axila.", func:"Extensão, adução e rotação medial do braço.", dica:"Latissimus = “o mais largo”. É o músculo da barra fixa e da escalada: puxa o corpo para cima em direção ao braço fixo."},
+   {nome:"Romboides maior e menor", onde:"Dos espinhosos C7–T1 (menor) e T2–T5 (maior) até a margem medial da escápula.", como:"Feixes oblíquos, profundos ao trapézio, descendo de medial para lateral.", func:"Retraem (aduzem) a escápula e fazem sua rotação inferior; fixam a escápula ao tórax.", dica:"Rombo = losango. São as “alças” que puxam a escápula para a coluna — o gesto de juntar as escápulas."}
+  ]},
+  {titulo:"Intrínsecos — camada intermediária", tag:"musc", itens:[
+   {nome:"Iliocostal", onde:"Coluna lateral dos eretores, da massa comum (sacro e crista ilíaca) até os ângulos das costelas.", como:"O feixe mais lateral do grupo, próximo às costelas.", func:"Extensão e inclinação lateral do tronco; controle excêntrico durante a flexão.", dica:"O nome é o trajeto: do ÍLIO às COSTELAS. Mais lateral dos três."},
+   {nome:"Longuíssimo", onde:"Coluna intermediária, da massa comum até os processos transversos e o processo mastoide.", como:"O mais longo e volumoso dos três, entre o iliocostal e o espinal.", func:"Extensão e inclinação lateral do tronco e do pescoço; estabilização postural.", dica:"O nome já diz: é o mais comprido, vai do sacro até atrás da orelha."},
+   {nome:"Espinal", onde:"Coluna medial, ligando processos espinhosos entre si.", como:"O feixe mais fino, colado à linha média.", func:"Extensão da coluna torácica e cervical.", dica:"Corre junto às ESPINHAS (processos espinhosos) — por isso é o mais medial."}
+  ]},
+  {titulo:"Pescoço", tag:"musc", itens:[
+   {nome:"Esternocleidomastoideo (ECOM)", onde:"Do manúbrio do esterno e do terço medial da clavícula até o processo mastoide e a linha nucal superior.", como:"Cordão oblíquo cruzando a lateral do pescoço; salta ao girar a cabeça para o lado oposto.", func:"Unilateral: inclina a cabeça para o mesmo lado e a roda para o lado oposto. Bilateral: flexiona o pescoço e auxilia a inspiração forçada.", dica:"O nome é o mapa completo: ESTERNO + CLEIDO (clavícula) → MASTOIDE. Para ver o direito, peça para a pessoa olhar por cima do ombro esquerdo.", destaque:true},
+   {nome:"Escalenos anterior, médio e posterior", onde:"Dos processos transversos cervicais até a 1ª costela (anterior e médio) e a 2ª costela (posterior).", como:"Três feixes oblíquos profundos ao ECOM, descendo do pescoço para as primeiras costelas.", func:"Inclinam lateralmente o pescoço e elevam as costelas na inspiração forçada. Entre o anterior e o médio passam o plexo braquial e a artéria subclávia.", dica:"Skalenos = triângulo escaleno, de lados desiguais — os três feixes têm tamanhos diferentes. A passagem entre eles é o desfiladeiro do plexo braquial: se apertar, dá formigamento no braço."}
+  ]}
+ ]
+},
+{
+ id:"abdome", n:"07", titulo:"Músculos do abdome e lombares", tag:"musc",
+ resumo:"Uma cinta de quatro camadas na frente e dois estabilizadores profundos atrás. A direção das fibras identifica cada um deles.",
+ figuras:[
+  {t:"Parede abdominal anterior", q:"abdominal wall muscles rectus abdominis linea alba labeled", olhar:"As duas faixas verticais do reto, com as interseções tendíneas, dentro da bainha do reto."},
+  {t:"Oblíquos e transverso", q:"external internal oblique transversus abdominis muscle layers", olhar:"Três camadas cruzadas como compensado de madeira: externo oblíquo para baixo, interno para cima, transverso horizontal."},
+  {t:"Quadrado lombar e psoas maior", q:"quadratus lumborum psoas major muscle posterior abdominal wall", olhar:"O quadrado lombar preenchendo o vão entre a 12ª costela e a crista ilíaca; o psoas descendo pela lateral dos corpos lombares."}
+ ],
+ macete:"Oblíquo externo: fibras de “mão no bolso”. Oblíquo interno: perpendicular a ele. Transverso: horizontal, como um cinto. Externo roda para o lado OPOSTO; interno, para o MESMO lado.",
+ tabelas:[{
+  titulo:"Direção das fibras e rotação",
+  cols:["Músculo","Direção das fibras","Rotação do tronco"],
+  linhas:[
+   ["Oblíquo externo","De cima e de fora para baixo e para dentro","Contralateral (lado oposto)"],
+   ["Oblíquo interno","De baixo e de fora para cima e para dentro","Ipsilateral (mesmo lado)"],
+   ["Transverso","Horizontal","Não roda — comprime"],
+   ["Reto abdominal","Vertical","Não roda — flexiona"]
+  ]}],
+ armadilhas:["Ao girar o tronco para a direita, trabalham o oblíquo EXTERNO esquerdo e o INTERNO direito, juntos.","O psoas maior é músculo da parede abdominal posterior, não do dorso.","O transverso do abdome não flexiona nem roda: ele comprime."],
+ grupos:[
+  {titulo:"Parede abdominal", tag:"musc", itens:[
+   {nome:"Reto abdominal", onde:"Da crista púbica até as cartilagens costais 5–7 e o processo xifoide, dentro da bainha do reto.", como:"Duas faixas verticais paralelas à linha alba, cortadas por interseções tendíneas.", func:"Flexiona o tronco, faz a retroversão da pelve e aumenta a pressão intra-abdominal.", dica:"O “tanquinho” são as interseções tendíneas, não músculos separados. Rectus = reto, vertical."},
+   {nome:"Oblíquo externo", onde:"Camada mais superficial da parede lateral: das 8 últimas costelas à crista ilíaca e à linha alba.", como:"Fibras descendo de cima e de fora para baixo e para dentro.", func:"Flexiona e inclina o tronco; roda para o lado oposto.", dica:"Direção “mão no bolso da frente da calça”. Como puxa a costela em diagonal, gira o tórax para o lado contrário."},
+   {nome:"Oblíquo interno", onde:"Camada média: da fáscia toracolombar e crista ilíaca às últimas costelas e à linha alba.", como:"Fibras perpendiculares às do externo, subindo de fora para dentro.", func:"Flexiona e inclina o tronco; roda para o mesmo lado.", dica:"Faz um X com o externo. Guarde o par: no soco com o braço direito, trabalham o externo direito e o interno esquerdo."},
+   {nome:"Transverso do abdome", onde:"Camada mais profunda: das cartilagens costais, fáscia toracolombar e crista ilíaca até a linha alba.", como:"Fibras horizontais envolvendo o abdome de lado a lado.", func:"Comprime as vísceras e aumenta a pressão intra-abdominal — principal estabilizador profundo do tronco.", dica:"É o cinto (ou espartilho) natural. Pense em “puxar o umbigo para dentro”: é ele agindo.", destaque:true}
+  ]},
+  {titulo:"Região lombar profunda", tag:"musc", itens:[
+   {nome:"Quadrado lombar", onde:"Da crista ilíaca e do ligamento iliolombar até a 12ª costela e os processos transversos de L1–L4.", como:"Placa quadrangular profunda, preenchendo o vão entre a última costela e a pelve.", func:"Inclinação lateral do tronco, elevação do quadril e fixação da 12ª costela para o diafragma trabalhar.", dica:"Quadrado pelo formato: um retângulo de músculo entre costela e bacia. É ele quem “levanta o quadril” de quem manca."},
+   {nome:"Psoas maior", onde:"Dos corpos e processos transversos de T12 a L5 até o trocanter menor do fêmur; com o ilíaco, forma o iliopsoas.", como:"Feixe fusiforme profundo que desce pela lateral dos corpos lombares e cruza a borda da pelve.", func:"Flexor mais potente do quadril; com o fêmur fixo, flexiona o tronco e influencia diretamente a curvatura lombar.", dica:"Psoa é o lombo — literalmente o filé mignon. É o cabo de aço que liga a coluna ao fêmur: encurtado, aumenta a lordose lombar."}
+  ]}
+ ]
+}
+];
+
+const REVISAO=`
+<div class="cab"><div class="n">08</div><div><h2>Revisão final</h2><p>O que fazer nos últimos dias e como atacar uma peça desconhecida na bancada.</p></div></div>
+<h3 style="font-size:20px;margin:18px 0 8px">Fluxo para qualquer peça na bancada</h3>
+<ol class="fluxo">
+<li><b>Que tipo de peça é?</b> Osso isolado, crânio inteiro, coluna montada, modelo muscular ou peça em corte.</li>
+<li><b>Oriente a peça:</b> ache o que é anterior, superior e lateral antes de tentar nomear qualquer coisa. No crânio, use órbita, meato acústico e forame magno.</li>
+<li><b>Procure o detalhe exclusivo:</b> forame transversário, fóvea costal, dente, processo mamilar, hiato, dois furinhos. É ele que define a região.</li>
+<li><b>Só então nomeie</b> — e confira se o nome bate com a localização que você acabou de descrever.</li>
+<li><b>Descreva a função em uma frase.</b> Se a banca perguntar “para que serve?”, responda pela articulação ou pelo músculo que se prende ali.</li>
+</ol>
+<div class="macete"><b>Últimas 48 horas</b>Passe uma vez lendo só o campo “identificar” de cada estrutura, tapando o nome. Depois use o modo prova filtrando por seção e repita as que você marcou como não dominadas. Reconhecer é a habilidade cobrada; recitar não.</div>
+<div class="armadilha"><b>Erros que mais custam ponto</b><ul>
+<li>Confundir concha nasal média (etmoide) com concha nasal inferior (osso independente).</li>
+<li>Chamar o ângulo da costela de tubérculo — só o tubérculo tem faceta articular.</li>
+<li>Apontar o processo transverso lombar achando que é costela.</li>
+<li>Trocar a direção dos intercostais: externo inspira, interno expira.</li>
+<li>Dizer que o temporal abre a boca — quem abre é o pterigóideo lateral.</li>
+<li>Localizar o ptério como um osso, quando é o encontro de quatro ossos.</li>
+<li>Esquecer que o sulco costal fica na borda inferior e por dentro.</li>
+</ul></div>`;
+
+/* ============================================================
+   2. RENDERIZAÇÃO
+   ============================================================ */
+const main=document.getElementById("main"), chips=document.getElementById("chips");
+const esc=s=>String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+
+const store={
+  get(k,f){try{const v=localStorage.getItem(k);return v===null?f:JSON.parse(v);}catch(e){return f;}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}
+};
+let dominadas=store.get("axial:dominadas",{});
+
+function tabelaHTML(t){
+  return `<div class="tabela-wrap"><table><caption>${esc(t.titulo)}</caption>
+  <thead><tr>${t.cols.map(c=>`<th>${esc(c)}</th>`).join("")}</tr></thead>
+  <tbody>${t.linhas.map(l=>`<tr>${l.map(c=>`<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+}
+
+SECOES.forEach(sec=>{
+  chips.insertAdjacentHTML("beforeend",`<a href="#${sec.id}">${sec.n} · ${esc(sec.titulo)}</a>`);
+  let html=`<section id="${sec.id}">
+    <div class="cab"><div class="n">${sec.n}</div><div><h2>${esc(sec.titulo)}</h2><p>${esc(sec.resumo)}</p></div></div>`;
+  sec.figuras.forEach(f=>{
+    html+=`<figure class="fig" data-q="${esc(f.q)}"${f.file?` data-file="${esc(f.file)}"`:""}>
+      <div class="fig-topo"><span class="fig-tit">${esc(f.t)}</span>
+        <span class="fig-nav"><button data-dir="-1" aria-label="Imagem anterior">‹</button><span class="cont">–</span><button data-dir="1" aria-label="Próxima imagem">›</button></span></div>
+      <div class="fig-palco"><div class="fig-estado">Carregando imagens…</div></div>
+      ${f.olhar?`<div class="fig-olhar"><span>O que procurar</span>${esc(f.olhar)}</div>`:""}
+      <figcaption class="fig-pe"><span class="cred">Wikimedia Commons</span><a class="orig" href="https://commons.wikimedia.org/w/index.php?search=${encodeURIComponent(f.q)}&ns6=1" target="_blank" rel="noopener">ver original</a></figcaption>
+    </figure>`;
+  });
+  if(sec.macete) html+=`<div class="macete"><b>Macete</b>${esc(sec.macete)}</div>`;
+  (sec.tabelas||[]).forEach(t=>html+=tabelaHTML(t));
+  sec.grupos.forEach(g=>{
+    const tg=g.tag||sec.tag;
+    html+=`<div class="grupo"><div class="grupo-tit"><h3>${esc(g.titulo)}</h3><span class="tag ${tg}">${tg==="musc"?"músculo":"osso"}</span></div>`;
+    g.itens.forEach((it,i)=>{
+      const id=sec.id+":"+it.nome;
+      const cod=sec.id.slice(0,3).toUpperCase()+"·"+String(i+1).padStart(2,"0");
+      html+=`<article class="peca${it.destaque?" destaque":""}${dominadas[id]?" ok":""}" data-id="${esc(id)}" data-busca="${esc((it.nome+" "+it.onde+" "+it.como+" "+it.dica).toLowerCase())}">
+        <div class="peca-cab"><span class="peca-cod">${cod}</span><h4>${esc(it.nome)}</h4>
+          <button class="dominei" aria-pressed="${!!dominadas[id]}" title="Marcar como dominada">✓</button></div>
+        <dl>
+          <div class="campo"><dt>Onde</dt><dd>${esc(it.onde)}</dd></div>
+          <div class="campo"><dt>Identificar</dt><dd>${esc(it.como)}</dd></div>
+          <div class="campo"><dt>Função</dt><dd>${esc(it.func)}</dd></div>
+          <div class="campo imagem"><dt>Imagem mental</dt><dd>${esc(it.dica)}</dd></div>
+        </dl></article>`;
+    });
+    html+=`</div>`;
+  });
+  if(sec.armadilhas) html+=`<div class="armadilha"><b>Cuidado na prova</b><ul>${sec.armadilhas.map(a=>`<li>${esc(a)}</li>`).join("")}</ul></div>`;
+  main.insertAdjacentHTML("beforeend",html+"</section>");
+});
+chips.insertAdjacentHTML("beforeend",`<a href="#revisao">08 · Revisão final</a>`);
+main.insertAdjacentHTML("beforeend",`<section id="revisao">${REVISAO}</section>`);
+
+/* ---------- progresso ---------- */
+const TOTAL=document.querySelectorAll(".peca").length;
+function atualizarProgresso(){
+  const n=Object.values(dominadas).filter(Boolean).length;
+  document.getElementById("barraFill").style.width=(TOTAL?n/TOTAL*100:0)+"%";
+  document.getElementById("progressoTxt").textContent=n+" de "+TOTAL+" estruturas marcadas";
+}
+document.addEventListener("click",e=>{
+  const b=e.target.closest(".dominei"); if(!b) return;
+  const peca=b.closest(".peca"), id=peca.dataset.id;
+  dominadas[id]=!dominadas[id];
+  b.setAttribute("aria-pressed",!!dominadas[id]);
+  peca.classList.toggle("ok",!!dominadas[id]);
+  store.set("axial:dominadas",dominadas);
+  atualizarProgresso();
+});
+atualizarProgresso();
+
+/* ---------- busca ---------- */
+document.getElementById("busca").addEventListener("input",e=>{
+  const t=e.target.value.trim().toLowerCase();
+  document.querySelectorAll(".peca").forEach(p=>p.classList.toggle("oculto",!!t&&!p.dataset.busca.includes(t)));
+  document.querySelectorAll(".grupo").forEach(g=>{
+    const vis=g.querySelectorAll(".peca:not(.oculto)").length;
+    g.classList.toggle("oculto",!!t&&vis===0);
+  });
+  document.querySelectorAll(".fig,.macete,.tabela-wrap,.armadilha").forEach(x=>x.classList.toggle("oculto",!!t));
+});
+
+/* ---------- tema ---------- */
+const html=document.documentElement;
+html.dataset.tema=store.get("axial:tema","claro");
+document.getElementById("tema").addEventListener("click",()=>{
+  html.dataset.tema=html.dataset.tema==="escuro"?"claro":"escuro";
+  store.set("axial:tema",html.dataset.tema);
+});
+
+/* ============================================================
+   3. IMAGENS REAIS — Wikimedia Commons
+   ============================================================ */
+async function buscarCommons(termo,limite){
+  const url="https://commons.wikimedia.org/w/api.php?action=query&format=json&origin=*"
+    +"&generator=search&gsrnamespace=6&gsrlimit="+limite
+    +"&gsrsearch="+encodeURIComponent("filetype:bitmap "+termo)
+    +"&prop=imageinfo&iiprop=url&iiurlwidth=1100";
+  const r=await fetch(url);
+  if(!r.ok) throw new Error("rede");
+  const d=await r.json();
+  const p=(d&&d.query&&d.query.pages)||{};
+  return Object.values(p).sort((a,b)=>a.index-b.index).map(x=>({
+    src:x.imageinfo&&x.imageinfo[0]&&(x.imageinfo[0].thumburl||x.imageinfo[0].url),
+    titulo:(x.title||"").replace(/^File:/,""),
+    pag:x.imageinfo&&x.imageinfo[0]&&x.imageinfo[0].descriptionurl
+  })).filter(x=>x.src);
+}
+function montarFig(fig,imgs){
+  const palco=fig.querySelector(".fig-palco"), cont=fig.querySelector(".cont");
+  const cred=fig.querySelector(".cred"), orig=fig.querySelector(".orig");
+  let i=0;
+  const pintar=()=>{
+    const im=imgs[i];
+    palco.innerHTML=`<img src="${im.src}" alt="${esc(im.titulo)}" loading="lazy">`;
+    cont.textContent=(i+1)+"/"+imgs.length;
+    cred.textContent=im.titulo.length>40?im.titulo.slice(0,40)+"…":im.titulo;
+    if(im.pag) orig.href=im.pag;
+  };
+  fig.querySelectorAll(".fig-nav button").forEach(b=>b.addEventListener("click",()=>{
+    i=(i+Number(b.dataset.dir)+imgs.length)%imgs.length; pintar();
+  }));
+  pintar();
+}
+async function carregarFig(fig){
+  const imgs=[];
+  if(fig.dataset.file){
+    imgs.push({src:"https://commons.wikimedia.org/wiki/Special:FilePath/"+encodeURIComponent(fig.dataset.file)+"?width=1100",
+      titulo:fig.dataset.file,
+      pag:"https://commons.wikimedia.org/wiki/File:"+encodeURIComponent(fig.dataset.file)});
+  }
+  try{
+    const achados=await buscarCommons(fig.dataset.q, fig.dataset.file?4:5);
+    achados.forEach(a=>{ if(!imgs.some(x=>x.titulo===a.titulo)) imgs.push(a); });
+  }catch(e){}
+  if(!imgs.length){
+    fig.querySelector(".fig-palco").innerHTML='<div class="fig-estado">Sem conexão para carregar as imagens. Toque em “ver original” quando estiver online.</div>';
+    return;
+  }
+  montarFig(fig,imgs);
+}
+const obs=new IntersectionObserver(ents=>{
+  ents.forEach(e=>{ if(e.isIntersecting){ obs.unobserve(e.target); carregarFig(e.target); } });
+},{rootMargin:"350px"});
+document.querySelectorAll(".fig").forEach(f=>obs.observe(f));
+
+/* ============================================================
+   4. MODO PROVA
+   ============================================================ */
+const BANCO=[];
+SECOES.forEach(s=>s.grupos.forEach(g=>g.itens.forEach(it=>BANCO.push(Object.assign({},it,{sec:s.id,secNome:s.n+" · "+s.titulo})))));
+const dlg=document.getElementById("dlg"), filtro=document.getElementById("filtro");
+filtro.innerHTML=`<option value="todos">Todas as seções (${BANCO.length} estruturas)</option>`
+  +`<option value="pendentes">Só as não marcadas</option>`
+  +SECOES.map(s=>`<option value="${s.id}">${s.n} · ${s.titulo}</option>`).join("");
+function sortear(){
+  let pool=BANCO;
+  if(filtro.value==="pendentes") pool=BANCO.filter(b=>!dominadas[b.sec+":"+b.nome]);
+  else if(filtro.value!=="todos") pool=BANCO.filter(b=>b.sec===filtro.value);
+  if(!pool.length) pool=BANCO;
+  const a=pool[Math.floor(Math.random()*pool.length)];
+  document.getElementById("provaSec").textContent=a.secNome;
+  document.getElementById("qOnde").textContent=a.onde;
+  document.getElementById("qComo").textContent=a.como;
+  document.getElementById("qNome").textContent=a.nome;
+  document.getElementById("qFunc").textContent=" "+a.func;
+  document.getElementById("qDica").textContent=" "+a.dica;
+  document.getElementById("resp").classList.remove("on");
+}
+document.getElementById("abrirProva").addEventListener("click",()=>{sortear();dlg.showModal();});
+document.getElementById("fechar").addEventListener("click",()=>dlg.close());
+document.getElementById("revelar").addEventListener("click",()=>document.getElementById("resp").classList.add("on"));
+document.getElementById("proxima").addEventListener("click",sortear);
+filtro.addEventListener("change",sortear);
+</script>
+</body>
+</html>
